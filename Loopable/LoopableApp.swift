@@ -11,7 +11,7 @@ import SwiftUI
 struct LoopableApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            RootView()
         }
     }
 }

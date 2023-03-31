@@ -1,26 +1,26 @@
 //
 //  ContentView.swift
-//  Loopable
+//  RootView
 //
 //  Created by Mattia Cintura on 31/03/23.
 //
 
 import SwiftUI
 
-struct ContentView: View {
+struct RootView: View {
     var body: some View {
         VStack {
             Image(systemName: "globe")
                 .imageScale(.large)
                 .foregroundColor(.accentColor)
-            Text("Hello, world!")
+            Text("Homepage.Greeting")
         }
         .padding()
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct RootView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        RootView()
     }
 }
