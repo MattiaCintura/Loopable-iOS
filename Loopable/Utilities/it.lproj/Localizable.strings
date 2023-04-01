@@ -7,3 +7,7 @@
 */
 "Homepage.Greeting" = "Ciao";
 "Homepage.SearchFieldPlaceholder" = "Cerca un articolo";
+"Homepage.Categories.DIY" = "Fai da te";
+"Homepage.Categories.Outdoor" = "Attività all'aperto";
+"Homepage.Categories.Technology" = "Tecnologia";
+"Homepage.Categories.Other" = "Altro";

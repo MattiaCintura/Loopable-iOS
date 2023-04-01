@@ -14,6 +14,7 @@ struct HomepageView: View {
         NavigationStack {
             VStack {
                 SearchField
+                Categories
                 Spacer()
             }
             .padding(3)
@@ -51,5 +52,68 @@ extension HomepageView {
             .padding()
         }
         .padding(.horizontal)
+        .padding(.bottom)
+    }
+    
+    private var Categories: some View {
+        HStack(spacing: 20) {
+            Group {
+                VStack {
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 10)
+                            .frame(width: 60, height: 60)
+                            .foregroundColor(.orange.opacity(0.25))
+                        Image(systemName: "hammer.fill")
+                            .font(.title2)
+                            .foregroundColor(.orange)
+                    }
+                    Text("Homepage.Categories.DIY")
+                        .font(.system(.caption, design: .rounded))
+                        .foregroundColor(.darkGrey)
+                }
+                VStack {
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 10)
+                            .frame(width: 60, height: 60)
+                            .foregroundColor(.blue.opacity(0.25))
+                        Image(systemName: "tent.fill")
+                            .font(.title2)
+                            .foregroundColor(.blue)
+                    }
+                    Text("Homepage.Categories.Outdoor")
+                        .font(.system(.caption, design: .rounded))
+                        .foregroundColor(.darkGrey)
+                }
+                VStack {
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 10)
+                            .frame(width: 60, height: 60)
+                            .foregroundColor(.purple.opacity(0.25))
+                        Image(systemName: "laptopcomputer")
+                            .font(.title2)
+                            .foregroundColor(.purple)
+                    }
+                    Text("Homepage.Categories.Technology")
+                        .font(.system(.caption, design: .rounded))
+                        .foregroundColor(.darkGrey)
+                }
+                VStack {
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 10)
+                            .frame(width: 60, height: 60)
+                            .foregroundColor(.gray.opacity(0.25))
+                        Image(systemName: "ellipsis")
+                            .font(.title2)
+                            .foregroundColor(.gray)
+                    }
+                    Text("Homepage.Categories.Other")
+                        .font(.system(.caption, design: .rounded))
+                        .foregroundColor(.darkGrey)
+                }
+            }
+            .frame(width: 75)
+        }
+        .multilineTextAlignment(.center)
+        .lineLimit(2, reservesSpace: true)
     }
 }
