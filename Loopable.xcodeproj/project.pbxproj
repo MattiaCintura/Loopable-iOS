@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3EB03DCC29D85EC00076DBDB /* Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB03DCB29D85EC00076DBDB /* Extentions.swift */; };
 		3EB03DCE29D86D040076DBDB /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB03DCD29D86D040076DBDB /* Enums.swift */; };
+		3EB03DD129D89D9B0076DBDB /* SearchResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB03DD029D89D9B0076DBDB /* SearchResultView.swift */; };
 		3EEC83D429D7096E003320E5 /* LoopableApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EEC83D329D7096E003320E5 /* LoopableApp.swift */; };
 		3EEC83D629D7096E003320E5 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EEC83D529D7096E003320E5 /* RootView.swift */; };
 		3EEC83D829D7096E003320E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3EEC83D729D7096E003320E5 /* Assets.xcassets */; };
@@ -21,6 +22,7 @@
 /* Begin PBXFileReference section */
 		3EB03DCB29D85EC00076DBDB /* Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extentions.swift; sourceTree = "<group>"; };
 		3EB03DCD29D86D040076DBDB /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
+		3EB03DD029D89D9B0076DBDB /* SearchResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultView.swift; sourceTree = "<group>"; };
 		3EEC83D029D7096E003320E5 /* Loopable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Loopable.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EEC83D329D7096E003320E5 /* LoopableApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoopableApp.swift; sourceTree = "<group>"; };
 		3EEC83D529D7096E003320E5 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
@@ -43,6 +45,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3EB03DCF29D89D630076DBDB /* SearchResult */ = {
+			isa = PBXGroup;
+			children = (
+				3EB03DD029D89D9B0076DBDB /* SearchResultView.swift */,
+			);
+			path = SearchResult;
+			sourceTree = "<group>";
+		};
 		3EEC83C729D7096D003320E5 = {
 			isa = PBXGroup;
 			children = (
@@ -83,9 +93,10 @@
 			isa = PBXGroup;
 			children = (
 				3EEC83D529D7096E003320E5 /* RootView.swift */,
+				3EB03DCF29D89D630076DBDB /* SearchResult */,
+				3EEC83E329D70D0C003320E5 /* Homepage */,
 				3EEC83E729D70D98003320E5 /* CreateListing */,
 				3EEC83E629D70D76003320E5 /* Profile */,
-				3EEC83E329D70D0C003320E5 /* Homepage */,
 				3EEC83E529D70D3D003320E5 /* Chat */,
 				3EEC83E429D70D19003320E5 /* Search */,
 			);
@@ -217,6 +228,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3EB03DCC29D85EC00076DBDB /* Extentions.swift in Sources */,
+				3EB03DD129D89D9B0076DBDB /* SearchResultView.swift in Sources */,
 				3EEC83E929D70DC6003320E5 /* HomepageView.swift in Sources */,
 				3EB03DCE29D86D040076DBDB /* Enums.swift in Sources */,
 				3EEC83D629D7096E003320E5 /* RootView.swift in Sources */,
