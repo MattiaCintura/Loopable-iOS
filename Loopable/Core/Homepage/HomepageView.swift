@@ -12,10 +12,11 @@ struct HomepageView: View {
 
     var body: some View {
         NavigationStack {
-            VStack {
+            ScrollView {
                 SearchField
                 Categories
                 NearYou
+                Highlight
                 Spacer()
             }
             .navigationBarTitleDisplayMode(.inline)
@@ -227,6 +228,43 @@ extension HomepageView {
                 .padding(.horizontal ,20)
                 .padding(.vertical, 10)
             }
+        }
+    }
+    
+    private var Highlight: some View {
+        VStack {
+            HStack {
+                Text("Homepage.Highlight")
+                    .font(.system(.title, design: .rounded, weight: .bold))
+                    .foregroundColor(.darkGrey)
+                Spacer()
+            }
+            .padding(.horizontal)
+            .padding(.top, 5)
+            
+            HStack {
+                HStack {
+                    Image("Homepage_Adv")
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 100, height: 100)
+                    
+                    Text("Scopri come Loopable\n aiuta il pianeta 🌿")
+                        .font(.subheadline)
+                        .foregroundColor(.darkGrey)
+                }
+                .background(
+                    RoundedRectangle(cornerRadius: 15)
+                        .stroke(Color.accentColor.opacity(0.25), lineWidth: 4)
+                        .frame(width: 290, height: 125)
+                        .foregroundColor(Color(UIColor.systemBackground))
+                )
+                .padding(.horizontal)
+                .padding(.top)
+
+                Spacer()
+            }
+            .padding(.horizontal)
         }
     }
 }
