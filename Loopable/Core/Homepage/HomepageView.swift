@@ -15,9 +15,9 @@ struct HomepageView: View {
             VStack {
                 SearchField
                 Categories
+                NearYou
                 Spacer()
             }
-            .padding(3)
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .principal) {
@@ -115,5 +115,118 @@ extension HomepageView {
         }
         .multilineTextAlignment(.center)
         .lineLimit(2, reservesSpace: true)
+    }
+    
+    private var NearYou: some View {
+        VStack {
+            HStack {
+                Text("Homepage.NearYou")
+                    .font(.system(.title, design: .rounded, weight: .bold))
+                    .foregroundColor(.darkGrey)
+                Spacer()
+            }
+            .padding(.horizontal)
+            .padding(.top, 5)
+            
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack(spacing: 20) {
+                    ZStack(alignment: .top) {
+                        // Container
+                        RoundedRectangle(cornerRadius: 15)
+                            .frame(width: 140, height: 160)
+                            .foregroundColor(Color(UIColor.systemBackground))
+                            .shadow(color: .darkGrey.opacity(0.25), radius: 4)
+                        
+                        // Container
+                        VStack(alignment: .leading, spacing: 3) {
+                            Image("helmet_mock")
+                                .resizable()
+                                .scaledToFill()
+                                .frame(width: 115, height: 70)
+                                .cornerRadius(15)
+                                .padding(.top, 10)
+                                .padding(.bottom, 5)
+                            
+                            Group {
+                                Text("Casco da sci")
+                                    .font(.system(.headline, design: .rounded, weight: .bold))
+                                    .foregroundColor(.darkGrey)
+                                Text("Verbania (VB)")
+                                    .font(.system(.subheadline, design: .rounded))
+                                    .foregroundColor(.darkGrey25)
+                                Text("15€ al giorno")
+                                    .font(.system(.subheadline, design: .rounded, weight: .semibold))
+                                    .foregroundColor(.accentColor)
+                            }
+                            .padding(.leading, 5)
+                        }
+                    }
+                    ZStack(alignment: .top) {
+                        // Container
+                        RoundedRectangle(cornerRadius: 15)
+                            .frame(width: 140, height: 160)
+                            .foregroundColor(Color(UIColor.systemBackground))
+                            .shadow(color: .darkGrey.opacity(0.25), radius: 4)
+                        
+                        // Container
+                        VStack(alignment: .leading, spacing: 3) {
+                            Image("bike_mock")
+                                .resizable()
+                                .scaledToFill()
+                                .frame(width: 115, height: 70)
+                                .cornerRadius(15)
+                                .padding(.top, 10)
+                                .padding(.bottom, 5)
+                            
+                            Group {
+                                Text("Bici da corsa")
+                                    .font(.system(.headline, design: .rounded, weight: .bold))
+                                    .foregroundColor(.darkGrey)
+                                Text("Intra (VB)")
+                                    .font(.system(.subheadline, design: .rounded))
+                                    .foregroundColor(.darkGrey25)
+                                Text("30€ al giorno")
+                                    .font(.system(.subheadline, design: .rounded, weight: .semibold))
+                                    .foregroundColor(.accentColor)
+                            }
+                            .padding(.leading, 5)
+                        }
+                    }
+                    ZStack(alignment: .top) {
+                        // Container
+                        RoundedRectangle(cornerRadius: 15)
+                            .frame(width: 140, height: 160)
+                            .foregroundColor(Color(UIColor.systemBackground))
+                            .shadow(color: .darkGrey.opacity(0.25), radius: 4)
+                        
+                        // Container
+                        VStack(alignment: .leading, spacing: 3) {
+                            Image("drill_mock")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 115, height: 70)
+                                .cornerRadius(15)
+                                .padding(.top, 10)
+                                .padding(.bottom, 5)
+                            
+                            Group {
+                                Text("Trapano")
+                                    .font(.system(.headline, design: .rounded, weight: .bold))
+                                    .foregroundColor(.darkGrey)
+                                Text("Pallanza (VB)")
+                                    .font(.system(.subheadline, design: .rounded))
+                                    .foregroundColor(.darkGrey25)
+                                Text("5€ al giorno")
+                                    .font(.system(.subheadline, design: .rounded, weight: .semibold))
+                                    .foregroundColor(.accentColor)
+                            }
+                            .padding(.leading, 5)
+                        }
+                    }
+                }
+                .padding(.horizontal ,20)
+                .padding(.vertical, 10)
+            }
+        }
     }
 }
