@@ -203,7 +203,7 @@ extension HomepageView {
                         VStack(alignment: .leading, spacing: 3) {
                             Image("drill_mock")
                                 .resizable()
-                                .scaledToFit()
+                                .scaledToFill()
                                 .frame(width: 115, height: 70)
                                 .cornerRadius(15)
                                 .padding(.top, 10)
