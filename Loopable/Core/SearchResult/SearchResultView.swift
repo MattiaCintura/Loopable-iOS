@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SearchResultView: View {
-    @State private var searchQuery: String = ""
+    @State var searchQuery: String
     
     var body: some View {
         NavigationStack {
@@ -21,6 +21,7 @@ struct SearchResultView: View {
                 ResultList
             }
             .navigationBarTitleDisplayMode(.inline)
+            .navigationBarBackButtonHidden(true)
             .toolbarBackground(Color.accentColor, for: .navigationBar)
             .toolbarBackground(.visible, for: .navigationBar)
             .toolbar {
@@ -36,7 +37,7 @@ struct SearchResultView: View {
 
 struct SearchResultView_Previews: PreviewProvider {
     static var previews: some View {
-        SearchResultView()
+        SearchResultView(searchQuery: "")
     }
 }
 

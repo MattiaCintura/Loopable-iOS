@@ -46,8 +46,13 @@ extension HomepageView {
                 .shadow(color: .darkGrey.opacity(0.25), radius: 4)
             
             HStack {
-                Image(systemName: "magnifyingglass")
-                    .foregroundColor(.darkGrey)
+                NavigationLink {
+                    SearchResultView(searchQuery: searchQuery)
+                } label: {
+                    Image(systemName: "magnifyingglass")
+                        .foregroundColor(.darkGrey)
+                }
+
                 TextField("Homepage.SearchFieldPlaceholder", text: $searchQuery)
             }
             .padding()
