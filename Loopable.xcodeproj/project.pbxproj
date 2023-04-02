@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E1E2C4629D98380004D171E /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E1E2C4529D98380004D171E /* Launch Screen.storyboard */; };
 		3EB03DCC29D85EC00076DBDB /* Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB03DCB29D85EC00076DBDB /* Extentions.swift */; };
 		3EB03DCE29D86D040076DBDB /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB03DCD29D86D040076DBDB /* Enums.swift */; };
 		3EB03DD129D89D9B0076DBDB /* SearchResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB03DD029D89D9B0076DBDB /* SearchResultView.swift */; };
@@ -17,10 +18,10 @@
 		3EEC83DB29D7096E003320E5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3EEC83DA29D7096E003320E5 /* Preview Assets.xcassets */; };
 		3EEC83E929D70DC6003320E5 /* HomepageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EEC83E829D70DC6003320E5 /* HomepageView.swift */; };
 		3EEC83EC29D70E83003320E5 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3EEC83EE29D70E83003320E5 /* Localizable.strings */; };
-		3EEC83F229D710ED003320E5 /* AshComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 3EEC83F129D710ED003320E5 /* AshComponents */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3E1E2C4529D98380004D171E /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		3EB03DCB29D85EC00076DBDB /* Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extentions.swift; sourceTree = "<group>"; };
 		3EB03DCD29D86D040076DBDB /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		3EB03DD029D89D9B0076DBDB /* SearchResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultView.swift; sourceTree = "<group>"; };
@@ -40,7 +41,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3EEC83F229D710ED003320E5 /* AshComponents in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,6 +120,7 @@
 				3EEC83EE29D70E83003320E5 /* Localizable.strings */,
 				3EB03DCB29D85EC00076DBDB /* Extentions.swift */,
 				3EB03DCD29D86D040076DBDB /* Enums.swift */,
+				3E1E2C4529D98380004D171E /* Launch Screen.storyboard */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -177,7 +178,6 @@
 			);
 			name = Loopable;
 			packageProductDependencies = (
-				3EEC83F129D710ED003320E5 /* AshComponents */,
 			);
 			productName = Loopable;
 			productReference = 3EEC83D029D7096E003320E5 /* Loopable.app */;
@@ -209,7 +209,6 @@
 			);
 			mainGroup = 3EEC83C729D7096D003320E5;
 			packageReferences = (
-				3EEC83F029D710ED003320E5 /* XCRemoteSwiftPackageReference "AshComponents" */,
 			);
 			productRefGroup = 3EEC83D129D7096E003320E5 /* Products */;
 			projectDirPath = "";
@@ -227,6 +226,7 @@
 			files = (
 				3EEC83DB29D7096E003320E5 /* Preview Assets.xcassets in Resources */,
 				3EEC83EC29D70E83003320E5 /* Localizable.strings in Resources */,
+				3E1E2C4629D98380004D171E /* Launch Screen.storyboard in Resources */,
 				3EEC83D829D7096E003320E5 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -387,7 +387,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Loopable/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = L4Q33JXGU4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -395,6 +395,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
@@ -422,7 +423,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Loopable/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = L4Q33JXGU4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -430,6 +431,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
@@ -471,25 +473,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		3EEC83F029D710ED003320E5 /* XCRemoteSwiftPackageReference "AshComponents" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/MattiaCintura/AshComponents";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.0.9;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		3EEC83F129D710ED003320E5 /* AshComponents */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 3EEC83F029D710ED003320E5 /* XCRemoteSwiftPackageReference "AshComponents" */;
-			productName = AshComponents;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3EEC83C829D7096D003320E5 /* Project object */;
 }

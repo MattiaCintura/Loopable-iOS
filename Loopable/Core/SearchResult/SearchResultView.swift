@@ -86,23 +86,27 @@ extension SearchResultView {
     
     private var ResultList: some View {
         VStack(spacing: 20) {
-            ZStack(alignment: .top) {
-                // Container
-                RoundedRectangle(cornerRadius: 15)
-                    .frame(width: .infinity, height: 280)
-                    .foregroundColor(Color(UIColor.systemBackground))
-                    .shadow(color: .darkGrey.opacity(0.25), radius: 4)
-                
-                // Container
-                VStack(alignment: .leading, spacing: 3) {
-                    Image("helmet_mock")
-                        .resizable()
-                        .scaledToFill()
-                        .frame(width: .infinity, height: 170)
-                        .cornerRadius(15)
-                        .padding(.top, 10)
-                        .padding(.bottom, 5)
-                        .padding(.horizontal)
+            NavigationLink {
+                ProductListingView()
+                    .toolbar(.hidden, for: .tabBar)
+            } label: {
+                ZStack(alignment: .top) {
+                    // Container
+                    RoundedRectangle(cornerRadius: 15)
+                        .frame(width: .infinity, height: 280)
+                        .foregroundColor(Color(UIColor.systemBackground))
+                        .shadow(color: .darkGrey.opacity(0.25), radius: 4)
+                    
+                    // Container
+                    VStack(alignment: .leading, spacing: 3) {
+                        Image("helmet_mock")
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: .infinity, height: 170)
+                            .cornerRadius(15)
+                            .padding(.top, 10)
+                            .padding(.bottom, 5)
+                            .padding(.horizontal)
                         HStack {
                             Text("Casco da sci")
                                 .font(.system(.title, design: .rounded, weight: .bold))
@@ -121,8 +125,10 @@ extension SearchResultView {
                             .font(.system(.headline, design: .rounded, weight: .semibold))
                             .foregroundColor(.accentColor)
                             .padding(.leading)
+                    }
                 }
             }
+
             ZStack(alignment: .top) {
                 // Container
                 RoundedRectangle(cornerRadius: 15)

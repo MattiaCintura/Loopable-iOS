@@ -237,6 +237,7 @@ extension HomepageView {
     }
     
     private var Highlight: some View {
+        
         VStack {
             HStack {
                 Text("Homepage.Highlight")

@@ -5,6 +5,10 @@
   Created by Mattia Cintura on 31/03/23.
   
 */
+// MARK: Shared
+"Shared.Back" = "Indietro";
+
+// MARK: Homepage
 "Homepage.Greeting" = "Ciao";
 "Homepage.SearchFieldPlaceholder" = "Cerca un articolo";
 "Homepage.Categories.DIY" = "Fai da te";
