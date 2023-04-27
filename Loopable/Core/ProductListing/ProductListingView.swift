@@ -85,7 +85,7 @@ extension ProductListingView {
                     .stroke(Color.darkGrey25, lineWidth: 1)
                     .foregroundColor(Color(UIColor.systemBackground))
                 VStack(spacing: 10) {
-                    Text("Giornaliero")
+                    Text("ProductListing.Prices.OneDay")
                         .font(.system(.footnote, design: .rounded))
                         .foregroundColor(.darkGrey50)
                     Text("15€ al giorno")
@@ -98,7 +98,7 @@ extension ProductListingView {
                     .stroke(Color.darkGrey25, lineWidth: 1)
                     .foregroundColor(Color(UIColor.systemBackground))
                 VStack(spacing: 10) {
-                    Text("3 giorni")
+                    Text("ProductListing.Prices.ThreeDays")
                         .font(.system(.footnote, design: .rounded))
                         .foregroundColor(.darkGrey50)
                     Text("12€ al giorno")
@@ -111,7 +111,7 @@ extension ProductListingView {
                     .stroke(Color.darkGrey25, lineWidth: 1)
                     .foregroundColor(Color(UIColor.systemBackground))
                 VStack(spacing: 10) {
-                    Text("7 giorni")
+                    Text("ProductListing.Prices.SevenDays")
                         .font(.system(.footnote, design: .rounded))
                         .foregroundColor(.darkGrey50)
                     Text("10€ al giorno")

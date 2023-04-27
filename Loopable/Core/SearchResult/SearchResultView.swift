@@ -52,7 +52,7 @@ extension SearchResultView {
             HStack {
                 Image(systemName: "magnifyingglass")
                     .foregroundColor(.darkGrey)
-                TextField("Homepage.SearchFieldPlaceholder", text: $searchQuery)
+                TextField("SearchResult.SearchFieldPlaceholder", text: $searchQuery)
                 Spacer()
                 if !searchQuery.isEmpty {
                     Button {
@@ -73,7 +73,7 @@ extension SearchResultView {
     private var Location: some View {
         HStack {
             Label {
-                Text("Provincia del Verbano-Cusio-Ossola")
+                Text("SearchResult.Location \("Verbano-Cusio-Ossola")")
             } icon: {
                 Image(systemName: "location.circle.fill")
             }
@@ -141,7 +141,7 @@ extension SearchResultView {
                     Image("helmet_mock_2")
                         .resizable()
                         .scaledToFill()
-                        .frame(width: .infinity, height: 170)
+                        .frame(height: 170)
                         .cornerRadius(15)
                         .padding(.top, 10)
                         .padding(.bottom, 5)

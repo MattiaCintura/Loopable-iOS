@@ -17,3 +17,12 @@
 "Homepage.Categories.Other" = "Other";
 "Homepage.NearYou" = "Near you";
 "Homepage.Highlight" = "Highlight";
+
+// MARK: Search Result
+"SearchResult.SearchFieldPlaceholder" = "Search an item";
+"SearchResult.Location %@" = "%@ Province";
+
+// MARK: Product Listing
+"ProductListing.Prices.OneDay" = "Daily";
+"ProductListing.Prices.ThreeDays" = "3 days";
+"ProductListing.Prices.SevenDays" = "7 days";

@@ -109,7 +109,6 @@
 				3EEC83E729D70D98003320E5 /* CreateListing */,
 				3EEC83E629D70D76003320E5 /* Profile */,
 				3EEC83E529D70D3D003320E5 /* Chat */,
-				3EEC83E429D70D19003320E5 /* Search */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -131,13 +130,6 @@
 				3EEC83E829D70DC6003320E5 /* HomepageView.swift */,
 			);
 			path = Homepage;
-			sourceTree = "<group>";
-		};
-		3EEC83E429D70D19003320E5 /* Search */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Search;
 			sourceTree = "<group>";
 		};
 		3EEC83E529D70D3D003320E5 /* Chat */ = {
