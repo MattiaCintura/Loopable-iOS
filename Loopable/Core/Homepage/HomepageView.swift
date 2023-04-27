@@ -9,11 +9,15 @@ import SwiftUI
 
 struct HomepageView: View {
     @State private var searchQuery: String = ""
+    @State private var showProgressWidget = false
 
     var body: some View {
         NavigationStack {
             ScrollView {
                 SearchField
+                if showProgressWidget {
+                    ProgressWidget(showProgressWidget: $showProgressWidget)                    
+                }
                 Categories
                 NearYou
                 Highlight
