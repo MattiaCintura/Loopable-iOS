@@ -14,7 +14,7 @@ struct RootView: View {
                 .tabItem {
                     Label("Homepage", systemImage: "house")
                 }
-            Color.white
+            CreateListingView()
                 .tabItem {
                     Label("Nuovo annuncio", systemImage: "plus.square")
                 }

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct HomepageView: View {
     @State private var searchQuery: String = ""
-    @State private var showProgressWidget = false
+    @State private var showProgressWidget = true
 
     var body: some View {
         NavigationStack {

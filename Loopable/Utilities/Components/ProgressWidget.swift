@@ -32,6 +32,7 @@ struct ProgressWidget: View {
                 Text("")
             }
         }
+        .transition(.identity)
         .padding([.horizontal, .bottom])
         .onTapGesture {
             if progress < 4 {
@@ -204,7 +205,9 @@ extension ProgressWidget {
                 .foregroundColor(.darkGrey)
             HStack(spacing: 10) {
                 Button("Chiudi") {
-                    showProgressWidget = false
+                    withAnimation {
+                        showProgressWidget = false
+                    }
                 }
                 .buttonBorderShape(.capsule)
                 .buttonStyle(.borderedProminent)

@@ -93,7 +93,7 @@ extension SearchResultView {
                 ZStack(alignment: .top) {
                     // Container
                     RoundedRectangle(cornerRadius: 15)
-                        .frame(width: .infinity, height: 280)
+                        .frame(height: 280)
                         .foregroundColor(Color(UIColor.systemBackground))
                         .shadow(color: .darkGrey.opacity(0.25), radius: 4)
                     
@@ -102,7 +102,7 @@ extension SearchResultView {
                         Image("helmet_mock")
                             .resizable()
                             .scaledToFill()
-                            .frame(width: .infinity, height: 170)
+                            .frame(height: 170)
                             .cornerRadius(15)
                             .padding(.top, 10)
                             .padding(.bottom, 5)
@@ -132,7 +132,7 @@ extension SearchResultView {
             ZStack(alignment: .top) {
                 // Container
                 RoundedRectangle(cornerRadius: 15)
-                    .frame(width: .infinity, height: 280)
+                    .frame(height: 280)
                     .foregroundColor(Color(UIColor.systemBackground))
                     .shadow(color: .darkGrey.opacity(0.25), radius: 4)
                 
