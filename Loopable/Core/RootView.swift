@@ -22,7 +22,7 @@ struct RootView: View {
                 .tabItem {
                     Label("Chat", systemImage: "bubble.left.and.bubble.right")
                 }
-            Color.white
+            ProfileView()
                 .tabItem {
                     Label("Profilo", systemImage: "person.circle")
                 }
