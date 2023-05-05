@@ -45,7 +45,7 @@ extension ProfileView {
                 .font(.system(.caption, design: .rounded))
                 .foregroundColor(.yellow)
                 
-                Text("3 Annunci pubblicati")
+                Text("Profile.ListingNumber \("3")")
                     .font(.system(.subheadline, design: .rounded))
                     .foregroundColor(.lightGrey)
 
@@ -65,13 +65,13 @@ extension ProfileView {
         VStack {
             HStack(spacing: 5) {
                 Image(systemName: "heart")
-                Text("Preferiti")
+                Text("Profile.Favorites")
                 Spacer()
             }
             .font(.system(.headline, design: .rounded))
             .foregroundColor(.darkGrey)
 
-            Text("Non hai annunci preferiti al momento")
+            Text("Profile.Favorites.EmptyListPlaceholder")
                 .font(.system(.subheadline, design: .rounded))
                 .foregroundColor(.lightGrey)
                 .padding(.top,50)
@@ -84,13 +84,13 @@ extension ProfileView {
         VStack {
             HStack(spacing: 5) {
                 Image(systemName: "shippingbox")
-                Text("I tuoi annunci")
+                Text("Profile.YourListings")
                 Spacer()
             }
             .font(.system(.headline, design: .rounded))
             .foregroundColor(.darkGrey)
 
-            Text("Non hai annunci pubblicati al momento")
+            Text("Profile.YourListings.EmptyListPlaceholder")
                 .font(.system(.subheadline, design: .rounded))
                 .foregroundColor(.lightGrey)
                 .padding(.top,50)

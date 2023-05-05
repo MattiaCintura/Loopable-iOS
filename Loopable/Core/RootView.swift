@@ -12,19 +12,19 @@ struct RootView: View {
         TabView {
             HomepageView()
                 .tabItem {
-                    Label("Homepage", systemImage: "house")
+                    Label("TabBar.Homepage.Label", systemImage: "house")
                 }
             CreateListingView()
                 .tabItem {
-                    Label("Nuovo annuncio", systemImage: "plus.square")
+                    Label("TabBar.CreateListing.Label", systemImage: "plus.square")
                 }
             Color.white
                 .tabItem {
-                    Label("Chat", systemImage: "bubble.left.and.bubble.right")
+                    Label("TabBar.Chat.Label", systemImage: "bubble.left.and.bubble.right")
                 }
             ProfileView()
                 .tabItem {
-                    Label("Profilo", systemImage: "person.circle")
+                    Label("TabBar.Profile.Label", systemImage: "person.circle")
                 }
         }
     }

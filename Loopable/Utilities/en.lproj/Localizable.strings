@@ -10,6 +10,12 @@
 "Shared.GoBack" = "Go back";
 "Shared.Next" = "Next";
 
+// MARK: Root View
+"TabBar.Homepage.Label" = "Homepage";
+"TabBar.CreateListing.Label" = "Create listing";
+"TabBar.Chat.Label" = "Chat";
+"TabBar.Profile.Label" = "Profile";
+
 // MARK: Homepage
 "Homepage.Greeting" = "Hello";
 "Homepage.SearchFieldPlaceholder" = "Search an item";
@@ -30,20 +36,27 @@
 "ProductListing.Prices.SevenDays" = "7 days";
 
 // MARK: Create Listing
-"CreateListingView.NavigationTitle" = "Create Listing";
-"CreateListingView.Title" = "Title";
-"CreateListingView.Description" = "Description";
-"CreateListingView.Location" = "Area of interest";
-"CreateListingView.Price" = "Price";
-"CreateListingView.Price.Placeholder" = "Price per day";
-"CreateListingView.Photos" = "Photos";
-"CreateListingView.Photos.Placeholder" = "Select at least two photos";
-"CreateListingView.Category" = "Category";
-"CreateListingView.Category.Placeholder" = "Select a category";
-"CreateListingView.PurchaseYear" = "Year of purchase";
-"CreateListingView.Condition" = "Condition";
-"CreateListingView.Condition.Placeholder" = "Select a condition";
-"CreateListingView.Available" = "Available";
-"CreateListingView.Available.Placeholder" = "Available from";
-"CreateListingView.PhoneNumber" = "Phone number";
-"CreateListingView.Publish" = "Publish listing";
+"CreateListing.NavigationTitle" = "Create Listing";
+"CreateListing.Title" = "Title";
+"CreateListing.Description" = "Description";
+"CreateListing.Location" = "Area of interest";
+"CreateListing.Price" = "Price";
+"CreateListing.Price.Placeholder" = "Price per day";
+"CreateListing.Photos" = "Photos";
+"CreateListing.Photos.Placeholder" = "Select at least two photos";
+"CreateListing.Category" = "Category";
+"CreateListing.Category.Placeholder" = "Select a category";
+"CreateListing.PurchaseYear" = "Year of purchase";
+"CreateListing.Condition" = "Condition";
+"CreateListing.Condition.Placeholder" = "Select a condition";
+"CreateListing.Available" = "Available";
+"CreateListing.Available.Placeholder" = "Available from";
+"CreateListing.PhoneNumber" = "Phone number";
+"CreateListing.Publish" = "Publish listing";
+
+// MARK: Profile
+"Profile.ListingNumber %@" = "%@ Public listing";
+"Profile.Favorites" = "Favorites";
+"Profile.Favorites.EmptyListPlaceholder" = "You have no favorites to display";
+"Profile.YourListings" = "Your listings";
+"Profile.YourListings.EmptyListPlaceholder" = "You haven't published any listings";
