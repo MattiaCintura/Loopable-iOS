@@ -12,6 +12,10 @@
 		3E467B1329FB079900568544 /* CreateListingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E467B1229FB079900568544 /* CreateListingView.swift */; };
 		3E467B1529FC2BE100568544 /* FormStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E467B1429FC2BE100568544 /* FormStepper.swift */; };
 		3E467B1729FD593D00568544 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E467B1629FD593D00568544 /* ProfileView.swift */; };
+		3E50F5EF2A05985B009E7C1E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3E50F5EE2A05985B009E7C1E /* GoogleService-Info.plist */; };
+		3E50F5F22A0599A3009E7C1E /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 3E50F5F12A0599A3009E7C1E /* FirebaseAnalytics */; };
+		3E50F5F42A0599A3009E7C1E /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 3E50F5F32A0599A3009E7C1E /* FirebaseAnalyticsSwift */; };
+		3E50F5F62A0599D2009E7C1E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E50F5F52A0599D2009E7C1E /* AppDelegate.swift */; };
 		3EB03DCC29D85EC00076DBDB /* Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB03DCB29D85EC00076DBDB /* Extentions.swift */; };
 		3EB03DCE29D86D040076DBDB /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB03DCD29D86D040076DBDB /* Enums.swift */; };
 		3EB03DD129D89D9B0076DBDB /* SearchResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB03DD029D89D9B0076DBDB /* SearchResultView.swift */; };
@@ -30,6 +34,8 @@
 		3E467B1229FB079900568544 /* CreateListingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateListingView.swift; sourceTree = "<group>"; };
 		3E467B1429FC2BE100568544 /* FormStepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormStepper.swift; sourceTree = "<group>"; };
 		3E467B1629FD593D00568544 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		3E50F5EE2A05985B009E7C1E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		3E50F5F52A0599D2009E7C1E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3EB03DCB29D85EC00076DBDB /* Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extentions.swift; sourceTree = "<group>"; };
 		3EB03DCD29D86D040076DBDB /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		3EB03DD029D89D9B0076DBDB /* SearchResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultView.swift; sourceTree = "<group>"; };
@@ -49,6 +55,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E50F5F42A0599A3009E7C1E /* FirebaseAnalyticsSwift in Frameworks */,
+				3E50F5F22A0599A3009E7C1E /* FirebaseAnalytics in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,6 +107,8 @@
 		3EEC83D229D7096E003320E5 /* Loopable */ = {
 			isa = PBXGroup;
 			children = (
+				3E50F5EE2A05985B009E7C1E /* GoogleService-Info.plist */,
+				3E50F5F52A0599D2009E7C1E /* AppDelegate.swift */,
 				3EEC83D329D7096E003320E5 /* LoopableApp.swift */,
 				3EEC83E129D70C3A003320E5 /* Core */,
 				3EEC83E229D70CB8003320E5 /* Utilities */,
@@ -190,6 +200,8 @@
 			);
 			name = Loopable;
 			packageProductDependencies = (
+				3E50F5F12A0599A3009E7C1E /* FirebaseAnalytics */,
+				3E50F5F32A0599A3009E7C1E /* FirebaseAnalyticsSwift */,
 			);
 			productName = Loopable;
 			productReference = 3EEC83D029D7096E003320E5 /* Loopable.app */;
@@ -221,6 +233,7 @@
 			);
 			mainGroup = 3EEC83C729D7096D003320E5;
 			packageReferences = (
+				3E50F5F02A0599A3009E7C1E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 3EEC83D129D7096E003320E5 /* Products */;
 			projectDirPath = "";
@@ -238,6 +251,7 @@
 			files = (
 				3EEC83DB29D7096E003320E5 /* Preview Assets.xcassets in Resources */,
 				3EEC83EC29D70E83003320E5 /* Localizable.strings in Resources */,
+				3E50F5EF2A05985B009E7C1E /* GoogleService-Info.plist in Resources */,
 				3E1E2C4629D98380004D171E /* Launch Screen.storyboard in Resources */,
 				3EEC83D829D7096E003320E5 /* Assets.xcassets in Resources */,
 			);
@@ -250,6 +264,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E50F5F62A0599D2009E7C1E /* AppDelegate.swift in Sources */,
 				3E467B1129FAF1E600568544 /* ProgressWidget.swift in Sources */,
 				3E467B1529FC2BE100568544 /* FormStepper.swift in Sources */,
 				3EB03DCC29D85EC00076DBDB /* Extentions.swift in Sources */,
@@ -489,6 +504,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3E50F5F02A0599A3009E7C1E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.9.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3E50F5F12A0599A3009E7C1E /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3E50F5F02A0599A3009E7C1E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		3E50F5F32A0599A3009E7C1E /* FirebaseAnalyticsSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3E50F5F02A0599A3009E7C1E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3EEC83C829D7096D003320E5 /* Project object */;
 }
