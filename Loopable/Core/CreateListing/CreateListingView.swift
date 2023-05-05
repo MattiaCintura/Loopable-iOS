@@ -30,7 +30,7 @@ struct CreateListingView: View {
                         .padding(.bottom)
                 }
             }
-            .navigationTitle("Crea Annuncio")
+            .navigationTitle("CreateListingView.NavigationTitle")
             .navigationBarTitleDesign(.darkGrey, rounded: true)
         }
     }
@@ -48,7 +48,7 @@ extension CreateListingView {
             VStack(alignment: .leading) {
                 HStack(spacing: 5) {
                     Image(systemName: "character.cursor.ibeam")
-                    Text("Titolo")
+                    Text("CreateListingView.Title")
                 }
                 .font(.system(.headline, design: .rounded))
                 .foregroundColor(.darkGrey)
@@ -59,7 +59,7 @@ extension CreateListingView {
                         .frame(height: 50)
                         .foregroundColor(.white)
                         .shadow(color: .darkGrey.opacity(0.25), radius: 10)
-                    TextField("Titolo", text: .constant(""))
+                    TextField("CreateListingView.Title", text: .constant(""))
                         .padding(.horizontal)
                         .font(.system(.body, design: .rounded))
                 }
@@ -68,7 +68,7 @@ extension CreateListingView {
             VStack(alignment: .leading) {
                 HStack(spacing: 5) {
                     Image(systemName: "text.justify.leading")
-                    Text("Descrizione")
+                    Text("CreateListingView.Description")
                 }
                 .font(.system(.headline, design: .rounded))
                 .foregroundColor(.darkGrey)
@@ -79,7 +79,7 @@ extension CreateListingView {
                         .frame(height: 150)
                         .foregroundColor(.white)
                         .shadow(color: .darkGrey.opacity(0.25), radius: 10)
-                    TextField("Descrizione", text: .constant(""), axis: .vertical)
+                    TextField("CreateListingView.Description", text: .constant(""), axis: .vertical)
                         .lineLimit(6, reservesSpace: true)
                         .padding(.horizontal)
                         .font(.system(.body, design: .rounded))
@@ -89,7 +89,7 @@ extension CreateListingView {
             VStack(alignment: .leading) {
                 HStack(spacing: 5) {
                     Image(systemName: "location.circle.fill")
-                    Text("Provincia di interesse")
+                    Text("CreateListingView.Location")
                 }
                 .font(.system(.headline, design: .rounded))
                 .foregroundColor(.darkGrey)
@@ -100,7 +100,7 @@ extension CreateListingView {
                         .frame(height: 50)
                         .foregroundColor(.white)
                         .shadow(color: .darkGrey.opacity(0.25), radius: 10)
-                    TextField("Provincia di interesse", text: .constant(""))
+                    TextField("CreateListingView.Location", text: .constant(""))
                         .padding(.horizontal)
                         .font(.system(.body, design: .rounded))
                 }
@@ -109,7 +109,7 @@ extension CreateListingView {
             VStack(alignment: .leading) {
                 HStack(spacing: 5) {
                     Image(systemName: "eurosign.circle.fill")
-                    Text("Prezzo")
+                    Text("CreateListingView.Price")
                 }
                 .font(.system(.headline, design: .rounded))
                 .foregroundColor(.darkGrey)
@@ -125,7 +125,7 @@ extension CreateListingView {
                             .padding(.trailing)
                             .foregroundColor(.darkGrey)
                     }
-                    TextField("Prezzo per giornata", value: .constant(""), formatter: NumberFormatter())
+                    TextField("CreateListingView.Price.Placeholder", value: .constant(""), formatter: NumberFormatter())
                         .keyboardType(.numberPad)
                         .padding(.horizontal)
                         .font(.system(.body, design: .rounded))
@@ -134,13 +134,13 @@ extension CreateListingView {
             }
         }
     }
-    
+
     private var SecondStep: some View {
         VStack(spacing: 20) {
             VStack(alignment: .leading) {
                 HStack(spacing: 5) {
                     Image(systemName: "photo.on.rectangle.angled")
-                    Text("Foto")
+                    Text("CreateListingView.Photos")
                 }
                 .font(.system(.headline, design: .rounded))
                 .foregroundColor(.darkGrey)
@@ -156,7 +156,7 @@ extension CreateListingView {
                             .padding(.trailing)
                             .foregroundColor(.darkGrey)
                     }
-                    Text("Scegli almeno due foto")
+                    Text("CreateListingView.Photos.Placeholder")
                         .padding(.horizontal)
                         .font(.system(.body, design: .rounded))
                         .foregroundColor(.gray.opacity(0.5))
@@ -166,7 +166,7 @@ extension CreateListingView {
             VStack(alignment: .leading) {
                 HStack(spacing: 5) {
                     Image(systemName: "tag")
-                    Text("Categoria")
+                    Text("CreateListingView.Category")
                 }
                 .font(.system(.headline, design: .rounded))
                 .foregroundColor(.darkGrey)
@@ -182,7 +182,7 @@ extension CreateListingView {
                             .padding(.trailing)
                             .foregroundColor(.darkGrey)
                     }
-                    Text("Scegli una categoria")
+                    Text("CreateListingView.Category.Placeholder")
                         .padding(.horizontal)
                         .font(.system(.body, design: .rounded))
                         .foregroundColor(.gray.opacity(0.5))
@@ -192,7 +192,7 @@ extension CreateListingView {
             VStack(alignment: .leading) {
                 HStack(spacing: 5) {
                     Image(systemName: "calendar")
-                    Text("Anno di acquisto")
+                    Text("CreateListingView.PurchaseYear")
                 }
                 .font(.system(.headline, design: .rounded))
                 .foregroundColor(.darkGrey)
@@ -203,7 +203,7 @@ extension CreateListingView {
                         .frame(height: 50)
                         .foregroundColor(.white)
                         .shadow(color: .darkGrey.opacity(0.25), radius: 10)
-                    TextField("Anno di acquisto", value: .constant(""), formatter: NumberFormatter())
+                    TextField("CreateListingView.PurchaseYear", value: .constant(""), formatter: NumberFormatter())
                         .keyboardType(.numberPad)
                         .padding(.horizontal)
                         .font(.system(.body, design: .rounded))
@@ -213,7 +213,7 @@ extension CreateListingView {
             VStack(alignment: .leading) {
                 HStack(spacing: 5) {
                     Image(systemName: "sparkles")
-                    Text("Condizioni")
+                    Text("CreateListingView.Condition")
                 }
                 .font(.system(.headline, design: .rounded))
                 .foregroundColor(.darkGrey)
@@ -229,7 +229,7 @@ extension CreateListingView {
                             .padding(.trailing)
                             .foregroundColor(.darkGrey)
                     }
-                    Text("Scegli condizioni")
+                    Text("CreateListingView.Condition.Placeholder")
                         .padding(.horizontal)
                         .font(.system(.body, design: .rounded))
                         .foregroundColor(.gray.opacity(0.5))
@@ -244,7 +244,7 @@ extension CreateListingView {
             VStack(alignment: .leading) {
                 HStack(spacing: 5) {
                     Image(systemName: "calendar")
-                    Text("Disponibilità")
+                    Text("CreateListingView.Available")
                 }
                 .font(.system(.headline, design: .rounded))
                 .foregroundColor(.darkGrey)
@@ -256,7 +256,7 @@ extension CreateListingView {
                         .foregroundColor(.white)
                         .shadow(color: .darkGrey.opacity(0.25), radius: 10)
     
-                    DatePicker("Disponibile dal giorno", selection: .constant(Date()), displayedComponents: [.date])
+                    DatePicker("CreateListingView.Available.Placeholder", selection: .constant(Date()), displayedComponents: [.date])
                         .padding(.horizontal)
                         .foregroundColor(.gray.opacity(0.5))
                 }
@@ -265,7 +265,7 @@ extension CreateListingView {
             VStack(alignment: .leading) {
                 HStack(spacing: 5) {
                     Image(systemName: "phone")
-                    Text("Numero di telefono")
+                    Text("CreateListingView.PhoneNumber")
                 }
                 .font(.system(.headline, design: .rounded))
                 .foregroundColor(.darkGrey)
@@ -276,7 +276,7 @@ extension CreateListingView {
                         .frame(height: 50)
                         .foregroundColor(.white)
                         .shadow(color: .darkGrey.opacity(0.25), radius: 10)
-                    TextField("Numero di telefono", value: .constant(""), formatter: NumberFormatter())
+                    TextField("CreateListingView.PhoneNumber", value: .constant(""), formatter: NumberFormatter())
                         .keyboardType(.numberPad)
                         .padding(.horizontal)
                         .font(.system(.body, design: .rounded))
@@ -292,16 +292,18 @@ extension CreateListingView {
                 Button {
                     progress -= 1
                 } label: {
-                    Text("Torna indietro")
+                    Text("Shared.GoBack")
                         .font(.system(.footnote, design: .rounded))
                         .underline()
                         .foregroundColor(.lightGrey)
                 }
             }
             Button {
-                progress += 1
+                if progress < 2 {
+                    progress += 1
+                }
             } label: {
-                Text(progress == 2 ? "Pubblica annuncio" : "Avanti")
+                Text(progress == 2 ? "CreateListingView.Publish" : "Shared.Next")
                     .frame(width: UIScreen.main.bounds.width - 30, height: 55)
                     .font(.system(.headline, design: .rounded))
                     .foregroundColor(.white)

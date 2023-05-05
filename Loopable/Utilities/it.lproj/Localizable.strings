@@ -7,6 +7,8 @@
 */
 // MARK: Shared
 "Shared.Back" = "Indietro";
+"Shared.GoBack" = "Torna indierto";
+"Shared.Next" = "Avanti";
 
 // MARK: Homepage
 "Homepage.Greeting" = "Ciao";
@@ -26,3 +28,23 @@
 "ProductListing.Prices.OneDay" = "Giornaliero";
 "ProductListing.Prices.ThreeDays" = "3 giorni";
 "ProductListing.Prices.SevenDays" = "7 giorni";
+
+// MARK: Create Listing
+"CreateListingView.NavigationTitle" = "Crea Annuncio";
+"CreateListingView.Title" = "Titolo";
+"CreateListingView.Description" = "Descrizione";
+"CreateListingView.Location" = "Provincia di interesse";
+"CreateListingView.Price" = "Prezzo";
+"CreateListingView.Price.Placeholder" = "Prezzo per giornata";
+"CreateListingView.Photos" = "Foto";
+"CreateListingView.Photos.Placeholder" = "Scegli almeno due foto";
+"CreateListingView.Category" = "Categoria";
+"CreateListingView.Category.Placeholder" = "Scegli una categoria";
+"CreateListingView.PurchaseYear" = "Anno di acquisto";
+"CreateListingView.Condition" = "Condizioni";
+"CreateListingView.Condition.Placeholder" = "Scegli condizioni";
+"CreateListingView.Available" = "Disponibilità";
+"CreateListingView.Available.Placeholder" = "Disponibile dal giorno";
+"CreateListingView.PhoneNumber" = "Numero di telefono";
+"CreateListingView.Publish" = "Pubblica annuncio";
+

@@ -7,6 +7,8 @@
 */
 // MARK: Shared
 "Shared.Back" = "Back";
+"Shared.GoBack" = "Go back";
+"Shared.Next" = "Next";
 
 // MARK: Homepage
 "Homepage.Greeting" = "Hello";
@@ -26,3 +28,22 @@
 "ProductListing.Prices.OneDay" = "Daily";
 "ProductListing.Prices.ThreeDays" = "3 days";
 "ProductListing.Prices.SevenDays" = "7 days";
+
+// MARK: Create Listing
+"CreateListingView.NavigationTitle" = "Create Listing";
+"CreateListingView.Title" = "Title";
+"CreateListingView.Description" = "Description";
+"CreateListingView.Location" = "Area of interest";
+"CreateListingView.Price" = "Price";
+"CreateListingView.Price.Placeholder" = "Price per day";
+"CreateListingView.Photos" = "Photos";
+"CreateListingView.Photos.Placeholder" = "Select at least two photos";
+"CreateListingView.Category" = "Category";
+"CreateListingView.Category.Placeholder" = "Select a category";
+"CreateListingView.PurchaseYear" = "Year of purchase";
+"CreateListingView.Condition" = "Condition";
+"CreateListingView.Condition.Placeholder" = "Select a condition";
+"CreateListingView.Available" = "Available";
+"CreateListingView.Available.Placeholder" = "Available from";
+"CreateListingView.PhoneNumber" = "Phone number";
+"CreateListingView.Publish" = "Publish listing";
