@@ -30,7 +30,7 @@ struct CreateListingView: View {
                         .padding(.bottom)
                 }
             }
-            .navigationTitle("CreateListingView.NavigationTitle")
+            .navigationTitle("CreateListing.NavigationTitle")
             .navigationBarTitleDesign(.darkGrey, rounded: true)
         }
     }
@@ -48,7 +48,7 @@ extension CreateListingView {
             VStack(alignment: .leading) {
                 HStack(spacing: 5) {
                     Image(systemName: "character.cursor.ibeam")
-                    Text("CreateListingView.Title")
+                    Text("CreateListing.Title")
                 }
                 .font(.system(.headline, design: .rounded))
                 .foregroundColor(.darkGrey)
@@ -59,7 +59,7 @@ extension CreateListingView {
                         .frame(height: 50)
                         .foregroundColor(.white)
                         .shadow(color: .darkGrey.opacity(0.25), radius: 10)
-                    TextField("CreateListingView.Title", text: .constant(""))
+                    TextField("CreateListing.Title", text: .constant(""))
                         .padding(.horizontal)
                         .font(.system(.body, design: .rounded))
                 }
@@ -68,7 +68,7 @@ extension CreateListingView {
             VStack(alignment: .leading) {
                 HStack(spacing: 5) {
                     Image(systemName: "text.justify.leading")
-                    Text("CreateListingView.Description")
+                    Text("CreateListing.Description")
                 }
                 .font(.system(.headline, design: .rounded))
                 .foregroundColor(.darkGrey)
@@ -79,7 +79,7 @@ extension CreateListingView {
                         .frame(height: 150)
                         .foregroundColor(.white)
                         .shadow(color: .darkGrey.opacity(0.25), radius: 10)
-                    TextField("CreateListingView.Description", text: .constant(""), axis: .vertical)
+                    TextField("CreateListing.Description", text: .constant(""), axis: .vertical)
                         .lineLimit(6, reservesSpace: true)
                         .padding(.horizontal)
                         .font(.system(.body, design: .rounded))
@@ -89,7 +89,7 @@ extension CreateListingView {
             VStack(alignment: .leading) {
                 HStack(spacing: 5) {
                     Image(systemName: "location.circle.fill")
-                    Text("CreateListingView.Location")
+                    Text("CreateListing.Location")
                 }
                 .font(.system(.headline, design: .rounded))
                 .foregroundColor(.darkGrey)
@@ -100,7 +100,7 @@ extension CreateListingView {
                         .frame(height: 50)
                         .foregroundColor(.white)
                         .shadow(color: .darkGrey.opacity(0.25), radius: 10)
-                    TextField("CreateListingView.Location", text: .constant(""))
+                    TextField("CreateListing.Location", text: .constant(""))
                         .padding(.horizontal)
                         .font(.system(.body, design: .rounded))
                 }
@@ -109,7 +109,7 @@ extension CreateListingView {
             VStack(alignment: .leading) {
                 HStack(spacing: 5) {
                     Image(systemName: "eurosign.circle.fill")
-                    Text("CreateListingView.Price")
+                    Text("CreateListing.Price")
                 }
                 .font(.system(.headline, design: .rounded))
                 .foregroundColor(.darkGrey)
@@ -125,7 +125,7 @@ extension CreateListingView {
                             .padding(.trailing)
                             .foregroundColor(.darkGrey)
                     }
-                    TextField("CreateListingView.Price.Placeholder", value: .constant(""), formatter: NumberFormatter())
+                    TextField("CreateListing.Price.Placeholder", value: .constant(""), formatter: NumberFormatter())
                         .keyboardType(.numberPad)
                         .padding(.horizontal)
                         .font(.system(.body, design: .rounded))
@@ -140,7 +140,7 @@ extension CreateListingView {
             VStack(alignment: .leading) {
                 HStack(spacing: 5) {
                     Image(systemName: "photo.on.rectangle.angled")
-                    Text("CreateListingView.Photos")
+                    Text("CreateListing.Photos")
                 }
                 .font(.system(.headline, design: .rounded))
                 .foregroundColor(.darkGrey)
@@ -156,7 +156,7 @@ extension CreateListingView {
                             .padding(.trailing)
                             .foregroundColor(.darkGrey)
                     }
-                    Text("CreateListingView.Photos.Placeholder")
+                    Text("CreateListing.Photos.Placeholder")
                         .padding(.horizontal)
                         .font(.system(.body, design: .rounded))
                         .foregroundColor(.gray.opacity(0.5))
@@ -166,7 +166,7 @@ extension CreateListingView {
             VStack(alignment: .leading) {
                 HStack(spacing: 5) {
                     Image(systemName: "tag")
-                    Text("CreateListingView.Category")
+                    Text("CreateListing.Category")
                 }
                 .font(.system(.headline, design: .rounded))
                 .foregroundColor(.darkGrey)
@@ -182,7 +182,7 @@ extension CreateListingView {
                             .padding(.trailing)
                             .foregroundColor(.darkGrey)
                     }
-                    Text("CreateListingView.Category.Placeholder")
+                    Text("CreateListing.Category.Placeholder")
                         .padding(.horizontal)
                         .font(.system(.body, design: .rounded))
                         .foregroundColor(.gray.opacity(0.5))
@@ -192,7 +192,7 @@ extension CreateListingView {
             VStack(alignment: .leading) {
                 HStack(spacing: 5) {
                     Image(systemName: "calendar")
-                    Text("CreateListingView.PurchaseYear")
+                    Text("CreateListing.PurchaseYear")
                 }
                 .font(.system(.headline, design: .rounded))
                 .foregroundColor(.darkGrey)
@@ -203,7 +203,7 @@ extension CreateListingView {
                         .frame(height: 50)
                         .foregroundColor(.white)
                         .shadow(color: .darkGrey.opacity(0.25), radius: 10)
-                    TextField("CreateListingView.PurchaseYear", value: .constant(""), formatter: NumberFormatter())
+                    TextField("CreateListing.PurchaseYear", value: .constant(""), formatter: NumberFormatter())
                         .keyboardType(.numberPad)
                         .padding(.horizontal)
                         .font(.system(.body, design: .rounded))
@@ -213,7 +213,7 @@ extension CreateListingView {
             VStack(alignment: .leading) {
                 HStack(spacing: 5) {
                     Image(systemName: "sparkles")
-                    Text("CreateListingView.Condition")
+                    Text("CreateListing.Condition")
                 }
                 .font(.system(.headline, design: .rounded))
                 .foregroundColor(.darkGrey)
@@ -229,7 +229,7 @@ extension CreateListingView {
                             .padding(.trailing)
                             .foregroundColor(.darkGrey)
                     }
-                    Text("CreateListingView.Condition.Placeholder")
+                    Text("CreateListing.Condition.Placeholder")
                         .padding(.horizontal)
                         .font(.system(.body, design: .rounded))
                         .foregroundColor(.gray.opacity(0.5))
@@ -244,7 +244,7 @@ extension CreateListingView {
             VStack(alignment: .leading) {
                 HStack(spacing: 5) {
                     Image(systemName: "calendar")
-                    Text("CreateListingView.Available")
+                    Text("CreateListing.Available")
                 }
                 .font(.system(.headline, design: .rounded))
                 .foregroundColor(.darkGrey)
@@ -256,7 +256,7 @@ extension CreateListingView {
                         .foregroundColor(.white)
                         .shadow(color: .darkGrey.opacity(0.25), radius: 10)
     
-                    DatePicker("CreateListingView.Available.Placeholder", selection: .constant(Date()), displayedComponents: [.date])
+                    DatePicker("CreateListing.Available.Placeholder", selection: .constant(Date()), displayedComponents: [.date])
                         .padding(.horizontal)
                         .foregroundColor(.gray.opacity(0.5))
                 }
@@ -265,7 +265,7 @@ extension CreateListingView {
             VStack(alignment: .leading) {
                 HStack(spacing: 5) {
                     Image(systemName: "phone")
-                    Text("CreateListingView.PhoneNumber")
+                    Text("CreateListing.PhoneNumber")
                 }
                 .font(.system(.headline, design: .rounded))
                 .foregroundColor(.darkGrey)
@@ -276,7 +276,7 @@ extension CreateListingView {
                         .frame(height: 50)
                         .foregroundColor(.white)
                         .shadow(color: .darkGrey.opacity(0.25), radius: 10)
-                    TextField("CreateListingView.PhoneNumber", value: .constant(""), formatter: NumberFormatter())
+                    TextField("CreateListing.PhoneNumber", value: .constant(""), formatter: NumberFormatter())
                         .keyboardType(.numberPad)
                         .padding(.horizontal)
                         .font(.system(.body, design: .rounded))
@@ -303,7 +303,7 @@ extension CreateListingView {
                     progress += 1
                 }
             } label: {
-                Text(progress == 2 ? "CreateListingView.Publish" : "Shared.Next")
+                Text(progress == 2 ? "CreateListing.Publish" : "Shared.Next")
                     .frame(width: UIScreen.main.bounds.width - 30, height: 55)
                     .font(.system(.headline, design: .rounded))
                     .foregroundColor(.white)
