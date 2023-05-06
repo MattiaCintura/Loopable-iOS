@@ -12,6 +12,11 @@
 "Shared.Close" = "Close";
 "Shared.ReportProblem" = "Report a problem";
 
+// MARK: Authentication
+"Authentication.Title" = "Join the loop";
+"Authentication.Subtitle" = "Rent what you need, lend what you have";
+"Authentication.SignInWithEmail" = "Sign in with email";
+
 // MARK: Root View
 "TabBar.Homepage.Label" = "Homepage";
 "TabBar.CreateListing.Label" = "Create listing";
