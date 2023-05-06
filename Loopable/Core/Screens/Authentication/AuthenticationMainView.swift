@@ -50,7 +50,8 @@ extension AuthenticationMainView {
     private var Buttons: some View {
         VStack {
             NavigationLink {
-                EmptyView()
+                SignInWithEmailView()
+                    .navigationBarTitleDisplayMode(.large)
             } label: {
                 Label("Authentication.SignInWithEmail", systemImage: "envelope")
                     .frame(width: UIScreen.main.bounds.width - 30, height: 50)

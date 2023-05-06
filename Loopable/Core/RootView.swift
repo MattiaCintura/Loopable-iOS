@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct RootView: View {
-    
-    @State private var showAuthenticationView = true
+    @State private var showAuthenticationView = false
+
     var body: some View {
         TabView {
             HomepageView()
@@ -28,6 +28,10 @@ struct RootView: View {
                 .tabItem {
                     Label("TabBar.Profile.Label", systemImage: "person.circle")
                 }
+        }
+        .onAppear {
+            let currentUser = try? AuthenticationManager.shared.getAuthenticatedUser()
+            self.showAuthenticationView = currentUser == nil
         }
         .fullScreenCover(isPresented: $showAuthenticationView) {
             AuthenticationMainView()
