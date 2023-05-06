@@ -9,6 +9,8 @@
 "Shared.Back" = "Indietro";
 "Shared.GoBack" = "Torna indierto";
 "Shared.Next" = "Avanti";
+"Shared.Close" = "Chiudi";
+"Shared.ReportProblem" = "Segnala un problema";
 
 // MARK: Root View
 "TabBar.Homepage.Label" = "Homepage";
@@ -25,6 +27,17 @@
 "Homepage.Categories.Other" = "Altro";
 "Homepage.NearYou" = "Vicino a te";
 "Homepage.Highlight" = "In evidenza";
+
+// MARK: Progress Widget
+"ProgressWidget.Handover" = "Consegna - ";
+"ProgressWidget.Tomorrow" = "Domani";
+"ProgressWidget.ConfirmHandover" = "Conferma consegna";
+"ProgressWidget.Today" = "Oggi";
+"ProgressWidget.Rented" = "Noleggiato - ";
+"ProgressWidget.Contact %@" = "Contatta %@";
+"ProgressWidget.Handback" = "Ritira - ";
+"ProgressWidget.ConfirmHandback" = "Conferma ritiro";
+"ProgressWidget.Done" = "Finito!";
 
 // MARK: Search Result
 "SearchResult.SearchFieldPlaceholder" = "Cerca un articolo";

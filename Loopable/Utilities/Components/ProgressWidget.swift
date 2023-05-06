@@ -52,14 +52,14 @@ extension ProgressWidget {
     private var FirstStep: some View {
         VStack(alignment: .leading, spacing: 25) {
             Group {
-                Text("Consegna - ")
+                Text("ProgressWidget.Handover")
                     .foregroundColor(.darkGrey) +
                 Text("Casco da sci")
                     .foregroundColor(.accentColor)
             }
             .font(.system(.title, design: .rounded, weight: .bold))
             HStack(spacing: 10) {
-                Label("Domani", systemImage: "clock")
+                Label("ProgressWidget.Tomorrow", systemImage: "clock")
                 Label("User123", systemImage: "person")
             }
             .font(.system(.footnote, design: .rounded, weight: .medium))
@@ -79,7 +79,7 @@ extension ProgressWidget {
     private var SecondStep: some View {
         VStack(alignment: .leading, spacing: 18) {
             Group {
-                Text("Consegna - ")
+                Text("ProgressWidget.Handover")
                     .foregroundColor(.darkGrey) +
                 Text("Casco da sci")
                     .foregroundColor(.accentColor)
@@ -89,13 +89,13 @@ extension ProgressWidget {
                 Button {
                     
                 } label: {
-                    Label("Conferma consegna", systemImage: "checkmark.circle")
+                    Label("ProgressWidget.ConfirmHandover", systemImage: "checkmark.circle")
                 }
                 .buttonBorderShape(.capsule)
                 .buttonStyle(.borderedProminent)
                 .foregroundColor(.white)
                 
-                Label("Oggi", systemImage: "clock")
+                Label("ProgressWidget.Today", systemImage: "clock")
                 Label("User123", systemImage: "person")
             }
             .font(.system(.footnote, design: .rounded, weight: .medium))
@@ -122,7 +122,7 @@ extension ProgressWidget {
     private var ThirdStep: some View {
         VStack(alignment: .leading, spacing: 18) {
             Group {
-                Text("Noleggiato - ")
+                Text("ProgressWidget.Rented")
                     .foregroundColor(.darkGrey) +
                 Text("Casco da sci")
                     .foregroundColor(.accentColor)
@@ -132,7 +132,7 @@ extension ProgressWidget {
                 Button {
                     
                 } label: {
-                    Label("Contatta User123", systemImage: "bubble.left.and.bubble.right")
+                    Label("ProgressWidget.Contact \("User123")", systemImage: "bubble.left.and.bubble.right")
                 }
                 .buttonBorderShape(.capsule)
                 .buttonStyle(.borderedProminent)
@@ -157,7 +157,7 @@ extension ProgressWidget {
     private var ForthStep: some View {
         VStack(alignment: .leading, spacing: 18) {
             Group {
-                Text("Ritira - ")
+                Text("ProgressWidget.Handback")
                     .foregroundColor(.darkGrey) +
                 Text("Casco da sci")
                     .foregroundColor(.accentColor)
@@ -167,7 +167,7 @@ extension ProgressWidget {
                 Button {
                     
                 } label: {
-                    Label("Conferma ritiro", systemImage: "checkmark.circle")
+                    Label("ProgressWidget.ConfirmHandback", systemImage: "checkmark.circle")
                 }
                 .buttonBorderShape(.capsule)
                 .buttonStyle(.borderedProminent)
@@ -200,11 +200,11 @@ extension ProgressWidget {
     
     private var FifthStep: some View {
         VStack(alignment: .leading, spacing: 18) {
-            Text("Finito!")
+            Text("ProgressWidget.Done")
                 .font(.system(.title, design: .rounded, weight: .bold))
                 .foregroundColor(.darkGrey)
             HStack(spacing: 10) {
-                Button("Chiudi") {
+                Button("Shared.Close") {
                     withAnimation {
                         showProgressWidget = false
                     }
@@ -215,7 +215,7 @@ extension ProgressWidget {
                 Button {
                     progress = 0
                 } label: {
-                    Label("Segnala un problema", systemImage: "exclamationmark.bubble")
+                    Label("Shared.ReportProblem", systemImage: "exclamationmark.bubble")
                 }
                 .buttonBorderShape(.capsule)
                 .buttonStyle(.borderedProminent)

@@ -9,6 +9,8 @@
 "Shared.Back" = "Back";
 "Shared.GoBack" = "Go back";
 "Shared.Next" = "Next";
+"Shared.Close" = "Close";
+"Shared.ReportProblem" = "Report a problem";
 
 // MARK: Root View
 "TabBar.Homepage.Label" = "Homepage";
@@ -25,6 +27,17 @@
 "Homepage.Categories.Other" = "Other";
 "Homepage.NearYou" = "Near you";
 "Homepage.Highlight" = "Highlight";
+
+// MARK: Progress Widget
+"ProgressWidget.Handover" = "Handover - ";
+"ProgressWidget.Tomorrow" = "Tomorrow";
+"ProgressWidget.ConfirmHandover" = "Confirm Handover";
+"ProgressWidget.Today" = "Today";
+"ProgressWidget.Rented" = "Rented - ";
+"ProgressWidget.Contact %@" = "Contact %@";
+"ProgressWidget.Handback" = "Handback - ";
+"ProgressWidget.ConfirmHandback" = "Confirm handback";
+"ProgressWidget.Done" = "Done!";
 
 // MARK: Search Result
 "SearchResult.SearchFieldPlaceholder" = "Search an item";
