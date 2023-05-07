@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct AuthenticationMainView: View {
+    @Binding var showAuthenticationView: Bool
     var body: some View {
         NavigationStack {
             VStack {
@@ -24,7 +25,7 @@ struct AuthenticationMainView: View {
 
 struct AuthenticationMainView_Previews: PreviewProvider {
     static var previews: some View {
-        AuthenticationMainView()
+        AuthenticationMainView(showAuthenticationView: .constant(false))
     }
 }
 
@@ -50,7 +51,7 @@ extension AuthenticationMainView {
     private var Buttons: some View {
         VStack {
             NavigationLink {
-                SignInWithEmailView()
+                SignInWithEmailView(showAuthenticationView: $showAuthenticationView)
                     .navigationBarTitleDisplayMode(.large)
             } label: {
                 Label("Authentication.SignInWithEmail", systemImage: "envelope")

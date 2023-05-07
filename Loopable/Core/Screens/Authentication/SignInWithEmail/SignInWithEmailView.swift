@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct SignInWithEmailView: View {
+    @Binding var showAuthenticationView: Bool
     @StateObject private var vm = SignInWithEmailViewModel()
     
     var body: some View {
@@ -36,7 +37,14 @@ struct SignInWithEmailView: View {
                 }
                 
                 Button("Accedi") {
-                    vm.signIn()
+                    Task {
+                        do {
+                            try await vm.signIn()
+                            showAuthenticationView = false
+                        } catch {
+                            print("\(error)")
+                        }
+                    }
                 }
                 .frame(width: UIScreen.main.bounds.width - 30, height: 55)
                 .font(.system(.headline, design: .rounded))
@@ -56,7 +64,7 @@ struct SignInWithEmailView: View {
 struct SignInWithEmailView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
-            SignInWithEmailView()
+            SignInWithEmailView(showAuthenticationView: .constant(false))
         }
     }
 }

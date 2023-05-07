@@ -34,7 +34,7 @@ struct RootView: View {
             self.showAuthenticationView = currentUser == nil
         }
         .fullScreenCover(isPresented: $showAuthenticationView) {
-            AuthenticationMainView()
+            AuthenticationMainView(showAuthenticationView: $showAuthenticationView)
         }
     }
 }
