@@ -8,21 +8,42 @@
 import SwiftUI
 
 struct ProfileView: View {
+    @StateObject private var vm = ProfileViewModel()
+    @Binding var showAuthenticationView: Bool
+
     var body: some View {
-        ScrollView {
-            ProfileInfo
-            Divider()
-                .foregroundColor(.darkGrey)
-            UserFavorites
-            UserListing
+        NavigationStack {
+            ScrollView {
+                ProfileInfo
+                Divider()
+                    .foregroundColor(.darkGrey)
+                UserFavorites
+                UserListing
+            }
+            .padding(.horizontal)
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button("Logout") {
+                        do {
+                            try vm.logout()
+                            showAuthenticationView = true
+                        } catch {
+                            print("\(error)")
+                        }
+                    }
+                }
+            }
         }
-        .padding([.horizontal, .top], 30)
+        .onAppear {
+            vm.getUserInfo()
+        }
     }
 }
 
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileView()
+        ProfileView(showAuthenticationView: .constant(false))
     }
 }
 
@@ -30,20 +51,12 @@ extension ProfileView {
     private var ProfileInfo: some View {
         HStack {
             VStack(alignment: .leading, spacing: 10) {
-                Text("Utente")
+                Text(vm.username ?? "Utente")
                     .font(.system(.title, design: .rounded, weight: .bold))
                     .foregroundColor(.darkGrey)
 
-                HStack(spacing: 0) {
-                    Image(systemName: "star.fill")
-                    Image(systemName: "star.fill")
-                    Image(systemName: "star.fill")
-                    Image(systemName: "star.fill")
-                    Image(systemName: "star.leadinghalf.filled")
-                    Text("(4.5)")
-                }
-                .font(.system(.caption, design: .rounded))
-                .foregroundColor(.yellow)
+                StarRating(rating: 4.6)
+                    .font(.system(.caption, design: .rounded))
                 
                 Text("Profile.ListingNumber \("3")")
                     .font(.system(.subheadline, design: .rounded))
@@ -55,7 +68,7 @@ extension ProfileView {
                 Circle()
                     .frame(width: 80)
                     .foregroundColor(.lightGrey)
-                Text("U")
+                Text(String(vm.username?.first ?? "U"))
                     .font(.system(.largeTitle, design: .rounded))
             }
         }

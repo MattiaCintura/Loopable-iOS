@@ -24,7 +24,7 @@ struct RootView: View {
                 .tabItem {
                     Label("TabBar.Chat.Label", systemImage: "bubble.left.and.bubble.right")
                 }
-            ProfileView()
+            ProfileView(showAuthenticationView: $showAuthenticationView)
                 .tabItem {
                     Label("TabBar.Profile.Label", systemImage: "person.circle")
                 }
