@@ -21,6 +21,7 @@ struct SignInWithEmailView: View {
                         .foregroundColor(Color(UIColor.systemBackground))
                         .shadow(color: .darkGrey.opacity(0.25), radius: 10)
                     TextField("Authentication.RequiredEmail", text: $vm.email)
+                        .textInputAutocapitalization(.never)
                         .keyboardType(.emailAddress)
                         .padding(.horizontal)
                         .font(.system(.body, design: .rounded))
@@ -38,17 +39,20 @@ struct SignInWithEmailView: View {
                             SecureField("Authentication.RequiredPassword", text: $vm.password)
                         }
                     }
+                    .textInputAutocapitalization(.never)
                     .keyboardType(.default)
                     .padding(.horizontal)
                     .font(.system(.body, design: .rounded))
                     
-                    Button {
-                        isPasswordVisible.toggle()
-                    } label: {
-                        Image(systemName: isPasswordVisible ? "eye.slash" : "eye")
-                            .padding(.trailing)
-                            .foregroundColor(.darkGrey)
-                            .animation(.some(.easeInOut), value: isPasswordVisible)
+                    if !vm.password.isEmpty {
+                        Button {
+                            isPasswordVisible.toggle()
+                        } label: {
+                            Image(systemName: isPasswordVisible ? "eye.slash" : "eye")
+                                .padding(.trailing)
+                                .foregroundColor(.darkGrey)
+                                .animation(.some(.easeInOut), value: isPasswordVisible)
+                        }
                     }
                 }
                 
