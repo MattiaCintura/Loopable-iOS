@@ -10,6 +10,7 @@ import SwiftUI
 struct SignInWithEmailView: View {
     @Binding var showAuthenticationView: Bool
     @StateObject private var vm = SignInWithEmailViewModel()
+    @State private var isPasswordVisible = false
     
     var body: some View {
         VStack {
@@ -19,24 +20,39 @@ struct SignInWithEmailView: View {
                         .frame(height: 50)
                         .foregroundColor(Color(UIColor.systemBackground))
                         .shadow(color: .darkGrey.opacity(0.25), radius: 10)
-                    TextField("Email*", text: $vm.email)
+                    TextField("Authentication.RequiredEmail", text: $vm.email)
                         .keyboardType(.emailAddress)
                         .padding(.horizontal)
                         .font(.system(.body, design: .rounded))
                 }
                 
-                ZStack {
+                ZStack(alignment: .trailing) {
                     RoundedRectangle(cornerRadius: 15)
                         .frame(height: 50)
                         .foregroundColor(Color(UIColor.systemBackground))
                         .shadow(color: .darkGrey.opacity(0.25), radius: 10)
-                    SecureField("Password*", text: $vm.password)
-                        .keyboardType(.default)
-                        .padding(.horizontal)
-                        .font(.system(.body, design: .rounded))
+                    Group {
+                        if isPasswordVisible {
+                            TextField("Authentication.RequiredPassword", text: $vm.password)
+                        } else {
+                            SecureField("Authentication.RequiredPassword", text: $vm.password)
+                        }
+                    }
+                    .keyboardType(.default)
+                    .padding(.horizontal)
+                    .font(.system(.body, design: .rounded))
+                    
+                    Button {
+                        isPasswordVisible.toggle()
+                    } label: {
+                        Image(systemName: isPasswordVisible ? "eye.slash" : "eye")
+                            .padding(.trailing)
+                            .foregroundColor(.darkGrey)
+                            .animation(.some(.easeInOut), value: isPasswordVisible)
+                    }
                 }
                 
-                Button("Accedi") {
+                Button("Authentication.Login") {
                     Task {
                         do {
                             try await vm.signUp()
@@ -66,7 +82,7 @@ struct SignInWithEmailView: View {
             .padding(.top)
             Spacer()
         }
-        .navigationTitle("Accedi con email")
+        .navigationTitle("Authentication.SignInWithEmail")
         .navigationBarTitleDesign(.darkGrey, rounded: true)
     }
 }

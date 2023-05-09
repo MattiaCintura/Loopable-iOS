@@ -16,6 +16,9 @@
 "Authentication.Title" = "Entra nel loop";
 "Authentication.Subtitle" = "Affittate ciò che ti serve, presta ciò che hai";
 "Authentication.SignInWithEmail" = "Accedi con email";
+"Authentication.RequiredEmail" = "Email*";
+"Authentication.RequiredPassword" = "Password*";
+"Authentication.Login" = "Accedi";
 
 // MARK: Root View
 "TabBar.Homepage.Label" = "Homepage";
