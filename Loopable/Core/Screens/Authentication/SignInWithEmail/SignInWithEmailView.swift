@@ -17,7 +17,7 @@ struct SignInWithEmailView: View {
                 ZStack {
                     RoundedRectangle(cornerRadius: 15)
                         .frame(height: 50)
-                        .foregroundColor(.white)
+                        .foregroundColor(Color(UIColor.systemBackground))
                         .shadow(color: .darkGrey.opacity(0.25), radius: 10)
                     TextField("Email*", text: $vm.email)
                         .keyboardType(.emailAddress)
@@ -28,7 +28,7 @@ struct SignInWithEmailView: View {
                 ZStack {
                     RoundedRectangle(cornerRadius: 15)
                         .frame(height: 50)
-                        .foregroundColor(.white)
+                        .foregroundColor(Color(UIColor.systemBackground))
                         .shadow(color: .darkGrey.opacity(0.25), radius: 10)
                     SecureField("Password*", text: $vm.password)
                         .keyboardType(.default)
@@ -39,8 +39,17 @@ struct SignInWithEmailView: View {
                 Button("Accedi") {
                     Task {
                         do {
+                            try await vm.signUp()
+                            showAuthenticationView = false
+                            return
+                        } catch {
+                            print("\(error)")
+                        }
+                        
+                        do {
                             try await vm.signIn()
                             showAuthenticationView = false
+                            return
                         } catch {
                             print("\(error)")
                         }

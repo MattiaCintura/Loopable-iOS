@@ -57,7 +57,7 @@ extension CreateListingView {
                 ZStack {
                     RoundedRectangle(cornerRadius: 15)
                         .frame(height: 50)
-                        .foregroundColor(.white)
+                        .foregroundColor(Color(UIColor.systemBackground))
                         .shadow(color: .darkGrey.opacity(0.25), radius: 10)
                     TextField("CreateListing.Title", text: .constant(""))
                         .padding(.horizontal)
@@ -77,7 +77,7 @@ extension CreateListingView {
                 ZStack {
                     RoundedRectangle(cornerRadius: 15)
                         .frame(height: 150)
-                        .foregroundColor(.white)
+                        .foregroundColor(Color(UIColor.systemBackground))
                         .shadow(color: .darkGrey.opacity(0.25), radius: 10)
                     TextField("CreateListing.Description", text: .constant(""), axis: .vertical)
                         .lineLimit(6, reservesSpace: true)
@@ -98,7 +98,7 @@ extension CreateListingView {
                 ZStack {
                     RoundedRectangle(cornerRadius: 15)
                         .frame(height: 50)
-                        .foregroundColor(.white)
+                        .foregroundColor(Color(UIColor.systemBackground))
                         .shadow(color: .darkGrey.opacity(0.25), radius: 10)
                     TextField("CreateListing.Location", text: .constant(""))
                         .padding(.horizontal)
@@ -119,7 +119,7 @@ extension CreateListingView {
                     ZStack(alignment: .trailing) {
                         RoundedRectangle(cornerRadius: 15)
                             .frame(width: 210, height: 50)
-                            .foregroundColor(.white)
+                            .foregroundColor(Color(UIColor.systemBackground))
                             .shadow(color: .darkGrey.opacity(0.25), radius: 10)
                         Image(systemName: "eurosign")
                             .padding(.trailing)
@@ -150,7 +150,7 @@ extension CreateListingView {
                     ZStack(alignment: .trailing) {
                         RoundedRectangle(cornerRadius: 15)
                             .frame(height: 50)
-                            .foregroundColor(.white)
+                            .foregroundColor(Color(UIColor.systemBackground))
                             .shadow(color: .darkGrey.opacity(0.25), radius: 10)
                         Image(systemName: "plus.circle.fill")
                             .padding(.trailing)
@@ -176,7 +176,7 @@ extension CreateListingView {
                     ZStack(alignment: .trailing) {
                         RoundedRectangle(cornerRadius: 15)
                             .frame(height: 50)
-                            .foregroundColor(.white)
+                            .foregroundColor(Color(UIColor.systemBackground))
                             .shadow(color: .darkGrey.opacity(0.25), radius: 10)
                         Image(systemName: "chevron.up.chevron.down")
                             .padding(.trailing)
@@ -201,7 +201,7 @@ extension CreateListingView {
                 ZStack(alignment: .leading) {
                     RoundedRectangle(cornerRadius: 15)
                         .frame(height: 50)
-                        .foregroundColor(.white)
+                        .foregroundColor(Color(UIColor.systemBackground))
                         .shadow(color: .darkGrey.opacity(0.25), radius: 10)
                     TextField("CreateListing.PurchaseYear", value: .constant(""), formatter: NumberFormatter())
                         .keyboardType(.numberPad)
@@ -223,7 +223,7 @@ extension CreateListingView {
                     ZStack(alignment: .trailing) {
                         RoundedRectangle(cornerRadius: 15)
                             .frame(height: 50)
-                            .foregroundColor(.white)
+                            .foregroundColor(Color(UIColor.systemBackground))
                             .shadow(color: .darkGrey.opacity(0.25), radius: 10)
                         Image(systemName: "chevron.up.chevron.down")
                             .padding(.trailing)
@@ -253,7 +253,7 @@ extension CreateListingView {
                 ZStack(alignment: .leading) {
                     RoundedRectangle(cornerRadius: 15)
                         .frame(height: 50)
-                        .foregroundColor(.white)
+                        .foregroundColor(Color(UIColor.systemBackground))
                         .shadow(color: .darkGrey.opacity(0.25), radius: 10)
     
                     DatePicker("CreateListing.Available.Placeholder", selection: .constant(Date()), displayedComponents: [.date])
@@ -274,7 +274,7 @@ extension CreateListingView {
                 ZStack(alignment: .leading) {
                     RoundedRectangle(cornerRadius: 15)
                         .frame(height: 50)
-                        .foregroundColor(.white)
+                        .foregroundColor(Color(UIColor.systemBackground))
                         .shadow(color: .darkGrey.opacity(0.25), radius: 10)
                     TextField("CreateListing.PhoneNumber", value: .constant(""), formatter: NumberFormatter())
                         .keyboardType(.numberPad)
