@@ -17,6 +17,10 @@ final class SignInWithEmailViewModel: ObservableObject {
             return
         }
         
+        guard Functionalities.validateEmailAddress(email: email) else {
+            return
+        }
+        
         try await AuthenticationManager.shared.createUser(email: email, password: password)
     }
     

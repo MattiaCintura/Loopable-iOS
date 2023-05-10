@@ -8,20 +8,6 @@
 import Foundation
 import FirebaseAuth
 
-typealias UserFirebase = User
-
-struct AuthDataResultModel {
-    let uid: String
-    let email: String?
-    let photoUrl: String?
-    
-    init(user: UserFirebase) {
-        self.uid = user.uid
-        self.email = user.email
-        self.photoUrl = user.photoURL?.absoluteString
-    }
-}
-
 final class AuthenticationManager {
     // TODO: Use dependency injection
     static let shared = AuthenticationManager()
@@ -46,6 +32,10 @@ final class AuthenticationManager {
     func signInUser(email: String, password: String) async throws -> AuthDataResultModel {
         let authDataResult = try await Auth.auth().signIn(withEmail: email, password: password)
         return AuthDataResultModel(user: authDataResult.user)
+    }
+    
+    func resetUserPassword(email: String) async throws {
+        try await Auth.auth().sendPasswordReset(withEmail: email)
     }
     
     func signOut() throws {

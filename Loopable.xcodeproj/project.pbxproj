@@ -27,6 +27,10 @@
 		3EB03DD629D953450076DBDB /* ProductListingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB03DD529D953450076DBDB /* ProductListingView.swift */; };
 		3EDBEF9F2A09563B005CA7EC /* StarRating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EDBEF9E2A09563B005CA7EC /* StarRating.swift */; };
 		3EDBEFA12A095F60005CA7EC /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EDBEFA02A095F60005CA7EC /* ProfileViewModel.swift */; };
+		3EE1824E2A0B929F00A03907 /* AuthenticationModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE1824D2A0B929F00A03907 /* AuthenticationModels.swift */; };
+		3EE182502A0BAB5200A03907 /* Functionalities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE1824F2A0BAB5200A03907 /* Functionalities.swift */; };
+		3EE182702A0BB2C200A03907 /* ResetPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE1826F2A0BB2C200A03907 /* ResetPasswordView.swift */; };
+		3EE182722A0BB2D300A03907 /* ResetPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE182712A0BB2D300A03907 /* ResetPasswordViewModel.swift */; };
 		3EEC83D429D7096E003320E5 /* LoopableApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EEC83D329D7096E003320E5 /* LoopableApp.swift */; };
 		3EEC83D629D7096E003320E5 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EEC83D529D7096E003320E5 /* RootView.swift */; };
 		3EEC83D829D7096E003320E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3EEC83D729D7096E003320E5 /* Assets.xcassets */; };
@@ -53,6 +57,10 @@
 		3EB03DD529D953450076DBDB /* ProductListingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListingView.swift; sourceTree = "<group>"; };
 		3EDBEF9E2A09563B005CA7EC /* StarRating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarRating.swift; sourceTree = "<group>"; };
 		3EDBEFA02A095F60005CA7EC /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		3EE1824D2A0B929F00A03907 /* AuthenticationModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationModels.swift; sourceTree = "<group>"; };
+		3EE1824F2A0BAB5200A03907 /* Functionalities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functionalities.swift; sourceTree = "<group>"; };
+		3EE1826F2A0BB2C200A03907 /* ResetPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordView.swift; sourceTree = "<group>"; };
+		3EE182712A0BB2D300A03907 /* ResetPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewModel.swift; sourceTree = "<group>"; };
 		3EEC83D029D7096E003320E5 /* Loopable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Loopable.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EEC83D329D7096E003320E5 /* LoopableApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoopableApp.swift; sourceTree = "<group>"; };
 		3EEC83D529D7096E003320E5 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
@@ -130,6 +138,8 @@
 			children = (
 				3E50F6002A066C44009E7C1E /* SignInWithEmailView.swift */,
 				3E50F6022A066C52009E7C1E /* SignInWithEmailViewModel.swift */,
+				3EE1826F2A0BB2C200A03907 /* ResetPasswordView.swift */,
+				3EE182712A0BB2D300A03907 /* ResetPasswordViewModel.swift */,
 			);
 			path = SignInWithEmail;
 			sourceTree = "<group>";
@@ -148,6 +158,14 @@
 				3EB03DD529D953450076DBDB /* ProductListingView.swift */,
 			);
 			path = ProductListing;
+			sourceTree = "<group>";
+		};
+		3EE1824C2A0B926400A03907 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3EE1824D2A0B929F00A03907 /* AuthenticationModels.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		3EEC83C729D7096D003320E5 = {
@@ -193,6 +211,7 @@
 			isa = PBXGroup;
 			children = (
 				3EEC83D529D7096E003320E5 /* RootView.swift */,
+				3EE1824C2A0B926400A03907 /* Models */,
 				3E50F5F72A064FAC009E7C1E /* Managers */,
 				3E50F5F82A06500A009E7C1E /* Screens */,
 			);
@@ -204,6 +223,7 @@
 			children = (
 				3E467B0F29FAF18600568544 /* Components */,
 				3EEC83EE29D70E83003320E5 /* Localizable.strings */,
+				3EE1824F2A0BAB5200A03907 /* Functionalities.swift */,
 				3EB03DCB29D85EC00076DBDB /* Extentions.swift */,
 				3EB03DCD29D86D040076DBDB /* Enums.swift */,
 				3E1E2C4529D98380004D171E /* Launch Screen.storyboard */,
@@ -275,7 +295,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1420;
+				LastSwiftUpdateCheck = 1430;
 				LastUpgradeCheck = 1420;
 				TargetAttributes = {
 					3EEC83CF29D7096E003320E5 = {
@@ -328,18 +348,22 @@
 				3E50F5F62A0599D2009E7C1E /* AppDelegate.swift in Sources */,
 				3E50F6052A06958F009E7C1E /* AuthenticationManager.swift in Sources */,
 				3EDBEF9F2A09563B005CA7EC /* StarRating.swift in Sources */,
+				3EE182702A0BB2C200A03907 /* ResetPasswordView.swift in Sources */,
 				3E467B1129FAF1E600568544 /* ProgressWidget.swift in Sources */,
+				3EE182722A0BB2D300A03907 /* ResetPasswordViewModel.swift in Sources */,
 				3E50F5FE2A06528F009E7C1E /* AuthenticationMainView.swift in Sources */,
 				3E50F6032A066C52009E7C1E /* SignInWithEmailViewModel.swift in Sources */,
 				3E467B1529FC2BE100568544 /* FormStepper.swift in Sources */,
 				3EB03DCC29D85EC00076DBDB /* Extentions.swift in Sources */,
 				3E467B1329FB079900568544 /* CreateListingView.swift in Sources */,
+				3EE182502A0BAB5200A03907 /* Functionalities.swift in Sources */,
 				3EB03DD129D89D9B0076DBDB /* SearchResultView.swift in Sources */,
 				3EEC83E929D70DC6003320E5 /* HomepageView.swift in Sources */,
 				3EB03DCE29D86D040076DBDB /* Enums.swift in Sources */,
 				3EDBEFA12A095F60005CA7EC /* ProfileViewModel.swift in Sources */,
 				3EB03DD629D953450076DBDB /* ProductListingView.swift in Sources */,
 				3EEC83D629D7096E003320E5 /* RootView.swift in Sources */,
+				3EE1824E2A0B929F00A03907 /* AuthenticationModels.swift in Sources */,
 				3E50F6012A066C44009E7C1E /* SignInWithEmailView.swift in Sources */,
 				3E467B1729FD593D00568544 /* ProfileView.swift in Sources */,
 				3EEC83D429D7096E003320E5 /* LoopableApp.swift in Sources */,

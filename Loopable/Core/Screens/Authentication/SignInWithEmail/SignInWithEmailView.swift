@@ -15,66 +15,22 @@ struct SignInWithEmailView: View {
     
     var body: some View {
         VStack {
-            VStack(alignment: .leading, spacing: 30) {
-                ZStack {
-                    RoundedRectangle(cornerRadius: 15)
-                        .frame(height: 50)
-                        .foregroundColor(Color(UIColor.systemBackground))
-                        .shadow(color: .darkGrey.opacity(0.25), radius: 10)
-                    TextField("Authentication.RequiredEmail", text: $vm.email)
-                        .textInputAutocapitalization(.never)
-                        .keyboardType(.emailAddress)
-                        .padding(.horizontal)
-                        .font(.system(.body, design: .rounded))
+            VStack(alignment: .leading) {
+                VStack(alignment: .leading) {
+                    EmailField
                 }
+                .padding(.bottom)
                 
-                ZStack(alignment: .trailing) {
-                    RoundedRectangle(cornerRadius: 15)
-                        .frame(height: 50)
-                        .foregroundColor(Color(UIColor.systemBackground))
-                        .shadow(color: .darkGrey.opacity(0.25), radius: 10)
-                    Group {
-                        if isPasswordVisible {
-                            TextField("Authentication.RequiredPassword", text: $vm.password)
-                        } else {
-                            SecureField("Authentication.RequiredPassword", text: $vm.password)
-                        }
-                    }
-                    .textInputAutocapitalization(.never)
-                    .keyboardType(.default)
-                    .padding(.horizontal)
-                    .font(.system(.body, design: .rounded))
-                    
-                    if !vm.password.isEmpty {
-                        Button {
-                            isPasswordVisible.toggle()
-                        } label: {
-                            Image(systemName: isPasswordVisible ? "eye.slash" : "eye")
-                                .padding(.trailing)
-                                .foregroundColor(.darkGrey)
-                                .animation(.some(.easeInOut), value: isPasswordVisible)
-                        }
-                    }
+                VStack(alignment: .leading) {
+                    PasswordField
                 }
+                .padding(.bottom)
                 
-                Button {
-                    loginAction()
-                } label: {
-                    Group {
-                        if isLoading {
-                            ProgressView()
-                                .foregroundColor(.white)
-                        } else {
-                            Text("Authentication.Login")
-                        }
-                    }
-                    .frame(width: UIScreen.main.bounds.width - 30, height: 55)
-                    .font(.system(.headline, design: .rounded))
-                    .foregroundColor(Color(UIColor.systemBackground))
-                    .background(Color.accentColor)
-                    .cornerRadius(10)
+                
+                VStack(alignment: .trailing) {
+                    ResetPasswordButton
+                    LoginButton
                 }
-                .disabled(vm.email.isEmpty || vm.password.isEmpty)
             }
             .padding(.horizontal)
             .padding(.top)
@@ -94,6 +50,84 @@ struct SignInWithEmailView_Previews: PreviewProvider {
 }
 
 extension SignInWithEmailView {
+    private var EmailField: some View {
+        ZStack {
+            RoundedRectangle(cornerRadius: 15)
+                .frame(height: 50)
+                .foregroundColor(Color(UIColor.systemBackground))
+                .shadow(color: .darkGrey.opacity(0.25), radius: 10)
+            TextField("Authentication.RequiredEmail", text: $vm.email)
+                .textInputAutocapitalization(.never)
+                .keyboardType(.emailAddress)
+                .padding(.horizontal)
+                .font(.system(.body, design: .rounded))
+        }
+    }
+    
+    private var PasswordField: some View {
+        ZStack(alignment: .trailing) {
+            RoundedRectangle(cornerRadius: 15)
+                .frame(height: 50)
+                .foregroundColor(Color(UIColor.systemBackground))
+                .shadow(color: .darkGrey.opacity(0.25), radius: 10)
+            Group {
+                if isPasswordVisible {
+                    TextField("Authentication.RequiredPassword", text: $vm.password)
+                } else {
+                    SecureField("Authentication.RequiredPassword", text: $vm.password)
+                }
+            }
+            .textInputAutocapitalization(.never)
+            .keyboardType(.default)
+            .padding(.horizontal)
+            .font(.system(.body, design: .rounded))
+            
+            if !vm.password.isEmpty {
+                Button {
+                    isPasswordVisible.toggle()
+                } label: {
+                    Image(systemName: isPasswordVisible ? "eye.slash" : "eye")
+                        .padding(.trailing)
+                        .foregroundColor(.darkGrey)
+                        .animation(.some(.easeInOut), value: isPasswordVisible)
+                }
+            }
+        }
+    }
+    
+    private var ResetPasswordButton: some View {
+        NavigationLink {
+            ResetPasswordView()
+        } label: {
+            Text("Authentication.ForgotPassword")
+                .font(.system(.footnote, design: .rounded))
+                .foregroundColor(.accentColor)
+                .underline()
+                .padding(.trailing, 5)
+        }
+    }
+    
+    private var LoginButton: some View {
+        Button {
+            loginAction()
+        } label: {
+            Group {
+                if isLoading {
+                    ProgressView()
+                        .foregroundColor(.white)
+                } else {
+                    Text("Authentication.Login")
+                }
+            }
+            .frame(width: UIScreen.main.bounds.width - 30, height: 55)
+            .font(.system(.headline, design: .rounded))
+            .foregroundColor(Color(UIColor.systemBackground))
+            .background(Color.accentColor)
+            .cornerRadius(10)
+        }
+        .disabled(vm.email.isEmpty || vm.password.isEmpty)
+    }
+
     private func loginAction() {
         Task {
             isLoading = true
@@ -115,5 +149,12 @@ extension SignInWithEmailView {
             isLoading = false
         }
 
+    }
+    
+    public func FieldValidationError(error message: LocalizedStringKey) -> some View {
+        Text(message)
+            .font(.system(.footnote, design: .rounded))
+            .foregroundColor(.red)
+            .padding(.horizontal, 5)
     }
 }

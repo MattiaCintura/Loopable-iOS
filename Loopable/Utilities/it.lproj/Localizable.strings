@@ -11,6 +11,7 @@
 "Shared.Next" = "Avanti";
 "Shared.Close" = "Chiudi";
 "Shared.ReportProblem" = "Segnala un problema";
+"Shared.OK" = "OK";
 
 // MARK: Authentication
 "Authentication.Title" = "Entra nel loop";
@@ -19,6 +20,10 @@
 "Authentication.RequiredEmail" = "Email*";
 "Authentication.RequiredPassword" = "Password*";
 "Authentication.Login" = "Accedi";
+"Authentication.ForgotPassword" = "Hai dimenticato la password?";
+"Authentication.ResetPassword.Title" = "Reimposta password";
+"Authentication.ResetPassword.Description" = "Inserisci l'indirizzo email che hai usato per registrarti e ti invieremo un link per il reset della password all'indirizzo fornito";
+"Authentication.ResetPassword.Alert" = "Controlla la tua casella mail";
 
 // MARK: Root View
 "TabBar.Homepage.Label" = "Homepage";

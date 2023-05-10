@@ -11,6 +11,7 @@
 "Shared.Next" = "Next";
 "Shared.Close" = "Close";
 "Shared.ReportProblem" = "Report a problem";
+"Shared.OK" = "OK";
 
 // MARK: Authentication
 "Authentication.Title" = "Join the loop";
@@ -19,6 +20,11 @@
 "Authentication.RequiredEmail" = "Email*";
 "Authentication.RequiredPassword" = "Password*";
 "Authentication.Login" = "Login";
+"Authentication.ForgotPassword" = "Forgot your password?";
+"Authentication.ResetPassword.Title" = "Reset password";
+"Authentication.ResetPassword.Description" = "Enter the email address you used to register and we will send you a password reset link to the address provided";
+"Authentication.ResetPassword.Alert" = "Check your inbox";
+
 
 // MARK: Root View
 "TabBar.Homepage.Label" = "Homepage";
