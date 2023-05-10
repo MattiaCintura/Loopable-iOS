@@ -11,6 +11,7 @@ struct SignInWithEmailView: View {
     @Binding var showAuthenticationView: Bool
     @StateObject private var vm = SignInWithEmailViewModel()
     @State private var isPasswordVisible = false
+    @State private var isLoading = false
     
     var body: some View {
         VStack {
@@ -56,30 +57,23 @@ struct SignInWithEmailView: View {
                     }
                 }
                 
-                Button("Authentication.Login") {
-                    Task {
-                        do {
-                            try await vm.signUp()
-                            showAuthenticationView = false
-                            return
-                        } catch {
-                            print("\(error)")
-                        }
-                        
-                        do {
-                            try await vm.signIn()
-                            showAuthenticationView = false
-                            return
-                        } catch {
-                            print("\(error)")
+                Button {
+                    loginAction()
+                } label: {
+                    Group {
+                        if isLoading {
+                            ProgressView()
+                                .foregroundColor(.white)
+                        } else {
+                            Text("Authentication.Login")
                         }
                     }
+                    .frame(width: UIScreen.main.bounds.width - 30, height: 55)
+                    .font(.system(.headline, design: .rounded))
+                    .foregroundColor(Color(UIColor.systemBackground))
+                    .background(Color.accentColor)
+                    .cornerRadius(10)
                 }
-                .frame(width: UIScreen.main.bounds.width - 30, height: 55)
-                .font(.system(.headline, design: .rounded))
-                .foregroundColor(Color(UIColor.systemBackground))
-                .background(Color.accentColor)
-                .cornerRadius(10)
                 .disabled(vm.email.isEmpty || vm.password.isEmpty)
             }
             .padding(.horizontal)
@@ -96,5 +90,30 @@ struct SignInWithEmailView_Previews: PreviewProvider {
         NavigationStack {
             SignInWithEmailView(showAuthenticationView: .constant(false))
         }
+    }
+}
+
+extension SignInWithEmailView {
+    private func loginAction() {
+        Task {
+            isLoading = true
+            do {
+                try await vm.signUp()
+                showAuthenticationView = false
+                return
+            } catch {
+                print("\(error)")
+            }
+            
+            do {
+                try await vm.signIn()
+                showAuthenticationView = false
+                return
+            } catch {
+                print("\(error)")
+            }
+            isLoading = false
+        }
+
     }
 }
