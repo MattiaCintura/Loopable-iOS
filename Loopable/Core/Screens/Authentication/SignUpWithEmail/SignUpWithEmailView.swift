@@ -1,18 +1,17 @@
 //
-//  SignInWithEmailView.swift
+//  SignUpWithEmailView.swift
 //  Loopable
 //
-//  Created by Mattia Cintura on 06/05/23.
+//  Created by Mattia Cintura on 11/05/23.
 //
 
 import SwiftUI
 
-struct SignInWithEmailView: View {
+struct SignUpWithEmailView: View {
     @Binding var showAuthenticationView: Bool
-    @StateObject private var vm = SignInWithEmailViewModel()
-    @State private var isPasswordVisible = false
+    @StateObject private var vm = SignUpWithEmailViewModel()
     @State private var isLoading = false
-    
+
     var body: some View {
         VStack {
             VStack(alignment: .leading) {
@@ -24,33 +23,36 @@ struct SignInWithEmailView: View {
                 VStack(alignment: .leading) {
                     PasswordField
                 }
+                .padding(.bottom, 22)
+                
+                VStack(alignment: .leading) {
+                    ConfirmPasswordField
+                }
                 .padding(.bottom)
                 
-                
-                VStack(alignment: .trailing) {
-                    ResetPasswordButton
-                    LoginButton
+                VStack {
+                    RegisterButton
                 }
             }
             .padding(.horizontal)
             .padding(.top)
             Spacer()
         }
-        .navigationTitle("Authentication.SignInWithEmail")
+        .navigationTitle("Authentication.SignUpWithEmail")
         .navigationBarTitleDesign(.darkGrey, rounded: true)
         .alert(vm.errorMessage, isPresented: $vm.hasError) {}
     }
 }
 
-struct SignInWithEmailView_Previews: PreviewProvider {
+struct SignUpWithEmailView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
-            SignInWithEmailView(showAuthenticationView: .constant(false))
+            SignUpWithEmailView(showAuthenticationView: .constant(false))
         }
     }
 }
 
-extension SignInWithEmailView {
+extension SignUpWithEmailView {
     private var EmailField: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 15)
@@ -71,53 +73,46 @@ extension SignInWithEmailView {
                 .frame(height: 50)
                 .foregroundColor(Color(UIColor.systemBackground))
                 .shadow(color: .darkGrey.opacity(0.25), radius: 10)
-            Group {
-                if isPasswordVisible {
-                    TextField("Authentication.RequiredPassword", text: $vm.password)
-                } else {
-                    SecureField("Authentication.RequiredPassword", text: $vm.password)
-                }
-            }
-            .textInputAutocapitalization(.never)
-            .keyboardType(.default)
-            .padding(.horizontal)
-            .font(.system(.body, design: .rounded))
+
+            SecureField("Authentication.RequiredPassword", text: $vm.password)
+                .textInputAutocapitalization(.never)
+                .keyboardType(.default)
+                .padding(.horizontal)
+                .font(.system(.body, design: .rounded))
+        }
+    }
+    
+    private var ConfirmPasswordField: some View {
+        ZStack(alignment: .trailing) {
+            RoundedRectangle(cornerRadius: 15)
+                .frame(height: 50)
+                .foregroundColor(Color(UIColor.systemBackground))
+                .shadow(color: .darkGrey.opacity(0.25), radius: 10)
+
+            SecureField("Authentication.RequiredConfirmPassword", text: $vm.confirmPassword)
+                .textInputAutocapitalization(.never)
+                .keyboardType(.default)
+                .padding(.horizontal)
+                .font(.system(.body, design: .rounded))
             
-            if !vm.password.isEmpty {
-                Button {
-                    isPasswordVisible.toggle()
-                } label: {
-                    Image(systemName: isPasswordVisible ? "eye.slash" : "eye")
-                        .padding(.trailing)
-                        .foregroundColor(.darkGrey)
-                        .animation(.some(.easeInOut), value: isPasswordVisible)
-                }
+            if !vm.confirmPassword.isEmpty {
+                Image(systemName: vm.password == vm.confirmPassword ? "checkmark.circle.fill" : "xmark.circle.fill")
+                    .padding(.trailing)
+                    .foregroundColor(vm.password == vm.confirmPassword ? .green : .red)
             }
         }
     }
     
-    private var ResetPasswordButton: some View {
-        NavigationLink {
-            ResetPasswordView()
-        } label: {
-            Text("Authentication.ForgotPassword")
-                .font(.system(.footnote, design: .rounded))
-                .foregroundColor(.accentColor)
-                .underline()
-                .padding(.trailing, 5)
-        }
-    }
-    
-    private var LoginButton: some View {
+    private var RegisterButton: some View {
         Button {
-            loginAction()
+            registerAction()
         } label: {
             Group {
                 if isLoading {
                     ProgressView()
                         .foregroundColor(.white)
                 } else {
-                    Text("Authentication.Login")
+                    Text("Authentication.Register")
                 }
             }
             .frame(width: UIScreen.main.bounds.width - 30, height: 55)
@@ -126,14 +121,19 @@ extension SignInWithEmailView {
             .background(Color.accentColor)
             .cornerRadius(10)
         }
-        .disabled(vm.email.isEmpty || vm.password.isEmpty)
+        .disabled(
+            vm.email.isEmpty ||
+            vm.password.isEmpty ||
+            vm.confirmPassword.isEmpty ||
+            vm.password != vm.confirmPassword
+        )
     }
 
-    private func loginAction() {
+    private func registerAction() {
         Task {
             isLoading = true
             do {
-                try await vm.signIn()
+                try await vm.signUp()
                 showAuthenticationView = false
             } catch {
                 vm.handleFirebaseError(error as NSError)

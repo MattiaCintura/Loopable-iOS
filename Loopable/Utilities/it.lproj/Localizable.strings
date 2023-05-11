@@ -17,6 +17,7 @@
 "Authentication.Title" = "Entra nel loop";
 "Authentication.Subtitle" = "Affittate ciò che ti serve, presta ciò che hai";
 "Authentication.SignInWithEmail" = "Accedi con email";
+"Authentication.SignUpWithEmail" = "Registrati con email";
 "Authentication.RequiredEmail" = "Email*";
 "Authentication.RequiredPassword" = "Password*";
 "Authentication.Login" = "Accedi";
@@ -24,6 +25,14 @@
 "Authentication.ResetPassword.Title" = "Reimposta password";
 "Authentication.ResetPassword.Description" = "Inserisci l'indirizzo email che hai usato per registrarti e ti invieremo un link per il reset della password all'indirizzo fornito";
 "Authentication.ResetPassword.Alert" = "Controlla la tua casella mail";
+"Authentication.RequiredConfirmPassword" = "Conferma password*";
+"Authentication.Register" = "Registrati";
+
+"Authentication.Error.WrongPassword" = "Password errata, inserisci la password corretta";
+"Authentication.Error.WeakPassword" = "Password debole, inserisci una password più complessa";
+"Authentication.Error.UserNotFound" = "Utente non trovato";
+"Authentication.Error.EmailAlreadyInUse" = "La mail che hai inserito è già registrata";
+"Authentication.Error.Generic" = "Errore di accesso, riprovare più tardi";
 
 // MARK: Root View
 "TabBar.Homepage.Label" = "Homepage";

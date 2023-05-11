@@ -17,6 +17,7 @@
 "Authentication.Title" = "Join the loop";
 "Authentication.Subtitle" = "Rent what you need, lend what you have";
 "Authentication.SignInWithEmail" = "Sign in with email";
+"Authentication.SignUpWithEmail" = "Sign up with email";
 "Authentication.RequiredEmail" = "Email*";
 "Authentication.RequiredPassword" = "Password*";
 "Authentication.Login" = "Login";
@@ -24,6 +25,14 @@
 "Authentication.ResetPassword.Title" = "Reset password";
 "Authentication.ResetPassword.Description" = "Enter the email address you used to register and we will send you a password reset link to the address provided";
 "Authentication.ResetPassword.Alert" = "Check your inbox";
+"Authentication.RequiredConfirmPassword" = "Conferma password*";
+"Authentication.Register" = "Registrati";
+
+"Authentication.Error.WrongPassword" = "Wrong password, provide correct password";
+"Authentication.Error.WeakPassword" = "Weak password, provvide a stronger password";
+"Authentication.Error.UserNotFound" = "User not found";
+"Authentication.Error.EmailAlreadyInUse" = "The email you provided is already connected to another account";
+"Authentication.Error.Generic" = "Login error, try again later";
 
 
 // MARK: Root View

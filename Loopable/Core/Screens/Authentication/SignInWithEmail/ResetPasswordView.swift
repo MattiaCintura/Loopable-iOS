@@ -37,7 +37,7 @@ struct ResetPasswordView: View {
         .navigationTitle("Authentication.ResetPassword.Title")
         .navigationBarTitleDesign(.darkGrey, rounded: true)
         .alert("Authentication.ResetPassword.Alert", isPresented: $showSuccessAlert) {
-            Button("Authentication.OK") {
+            Button("Shared.OK") {
                 // Go back to previous view
                 self.presentationMode.wrappedValue.dismiss()
             }

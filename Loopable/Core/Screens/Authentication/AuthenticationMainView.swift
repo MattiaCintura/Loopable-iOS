@@ -41,7 +41,7 @@ extension AuthenticationMainView {
                     .font(.system(.largeTitle, design: .rounded, weight: .bold))
 
                 Text("Authentication.Subtitle")
-                    .font(.system(.footnote, design: .rounded))
+                    .font(.system(.callout, design: .rounded))
             }
             .foregroundColor(.darkGrey)
         }
@@ -60,6 +60,17 @@ extension AuthenticationMainView {
                     .foregroundColor(.darkGrey)
                     .background(Color.darkGrey25)
                     .cornerRadius(10)
+            }
+            .padding(.bottom, 10)
+            
+            NavigationLink {
+                SignUpWithEmailView(showAuthenticationView: $showAuthenticationView)
+                    .navigationBarTitleDisplayMode(.large)
+            } label: {
+                Text("Authentication.SignUpWithEmail")
+                    .font(.system(.footnote, design: .rounded))
+                    .foregroundColor(.darkGrey)
+                    .underline()
             }
         }
     }

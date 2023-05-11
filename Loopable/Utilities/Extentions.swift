@@ -26,7 +26,6 @@ internal extension UIFont {
     }
 }
 
-
 extension View {
     /// Sets the text color and rounded design for a navigation bar title.
     /// - Parameter color: Color the title should be
@@ -47,5 +46,11 @@ extension View {
         UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: uiColor]
         
         return self
+    }
+}
+
+extension String {
+    var localized: String {
+        return NSLocalizedString(self, comment: "")
     }
 }

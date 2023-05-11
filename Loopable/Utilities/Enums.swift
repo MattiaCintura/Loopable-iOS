@@ -6,3 +6,13 @@
 //
 
 import Foundation
+
+// MARK: Error Enums
+enum AuthenticationError: Error {
+    case requiredEmail
+    case requiredPassword
+    case requiredEmailAndPassword
+    case invalidEmail
+    case weakPassword
+    case confirmPassword
+}

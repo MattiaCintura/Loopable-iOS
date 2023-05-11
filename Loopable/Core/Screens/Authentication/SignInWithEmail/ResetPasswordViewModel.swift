@@ -13,11 +13,11 @@ final class ResetPasswordViewModel: ObservableObject {
     
     func resetPassword() async throws {
         guard !email.isEmpty else {
-            return
+            throw AuthenticationError.requiredEmail
         }
         
         guard Functionalities.validateEmailAddress(email: email) else {
-            return
+            throw AuthenticationError.invalidEmail
         }
 
         try await AuthenticationManager.shared.resetUserPassword(email: email)
