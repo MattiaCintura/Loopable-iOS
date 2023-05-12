@@ -18,6 +18,8 @@ final class SignInWithEmailViewModel: ObservableObject {
 
     func signIn() async throws {
         guard !email.isEmpty, !password.isEmpty else {
+            errorMessage = "Authentication.Error.EmailAndPasswordRequired".localized
+            hasError = true
             throw AuthenticationError.requiredEmailAndPassword
         }
         
@@ -25,12 +27,19 @@ final class SignInWithEmailViewModel: ObservableObject {
     }
 
     func handleFirebaseError(_ error: NSError) {
-        if error.code == AuthErrorCode.wrongPassword.rawValue {
+        switch error.code {
+        case AuthErrorCode.wrongPassword.rawValue:
             errorMessage = "Authentication.Error.WrongPassword".localized
             hasError = true
-        } else if error.code == AuthErrorCode.userNotFound.rawValue {
+            break
+        case AuthErrorCode.userNotFound.rawValue:
             errorMessage = "Authentication.Error.UserNotFound".localized
             hasError = true
+            break
+        default:
+            errorMessage = "Authentication.Error.Generic".localized
+            hasError = true
+            break
         }
     }
 }

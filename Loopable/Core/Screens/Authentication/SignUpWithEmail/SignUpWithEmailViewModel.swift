@@ -18,15 +18,21 @@ final class SignUpWithEmailViewModel: ObservableObject {
     @Published var errorMessage: String = ""
     
     func signUp() async throws {
-        guard !email.isEmpty, !password.isEmpty else {
+        guard !email.isEmpty, !password.isEmpty, !confirmPassword.isEmpty else {
+            errorMessage = "Authentication.Error.EmailAndPasswordRequired".localized
+            hasError = true
             throw AuthenticationError.requiredEmailAndPassword
         }
         
         guard Functionalities.validateEmailAddress(email: email) else {
+            errorMessage = "Authentication.Error.EmailBadFormat".localized
+            hasError = true
             throw AuthenticationError.invalidEmail
         }
         
         guard password == confirmPassword else {
+            errorMessage = "Authentication.Error.PasswordAndConfirmPassword".localized
+            hasError = true
             throw AuthenticationError.confirmPassword
         }
         
@@ -34,12 +40,19 @@ final class SignUpWithEmailViewModel: ObservableObject {
     }
     
     func handleFirebaseError(_ error: NSError) {
-        if error.code == AuthErrorCode.emailAlreadyInUse.rawValue {
+        switch error.code {
+        case AuthErrorCode.emailAlreadyInUse.rawValue:
             errorMessage = "Authentication.Error.EmailAlreadyInUse".localized
             hasError = true
-        } else if error.code == AuthErrorCode.weakPassword.rawValue {
+            break
+        case AuthErrorCode.weakPassword.rawValue:
             errorMessage = "Authentication.Error.WeakPassword".localized
             hasError = true
+            break
+        default:
+            errorMessage = "Authentication.Error.Generic".localized
+            hasError = true
+            break
         }
     }
 }

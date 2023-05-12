@@ -31,7 +31,10 @@
 "Authentication.Error.WrongPassword" = "Password errata, inserisci la password corretta";
 "Authentication.Error.WeakPassword" = "Password debole, inserisci una password più complessa";
 "Authentication.Error.UserNotFound" = "Utente non trovato";
-"Authentication.Error.EmailAlreadyInUse" = "La mail che hai inserito è già registrata";
+"Authentication.Error.EmailAlreadyInUse" = "L'email che hai inserito è già registrata";
+"Authentication.Error.EmailAndPasswordRequired" = "Email e password sono obbligatorie";
+"Authentication.Error.EmailBadFormat" = "Inserisci una email valida";
+"Authentication.Error.PasswordAndConfirmPassword" = "La password e la password di conferma devono essere uguali";
 "Authentication.Error.Generic" = "Errore di accesso, riprovare più tardi";
 
 // MARK: Root View

@@ -32,6 +32,9 @@
 "Authentication.Error.WeakPassword" = "Weak password, provvide a stronger password";
 "Authentication.Error.UserNotFound" = "User not found";
 "Authentication.Error.EmailAlreadyInUse" = "The email you provided is already connected to another account";
+"Authentication.Error.EmailAndPasswordRequired" = "Email and password are required";
+"Authentication.Error.EmailBadFormat" = "Provide a valid email address";
+"Authentication.Error.PasswordAndConfirmPassword" = "Password and confirm password must be the same";
 "Authentication.Error.Generic" = "Login error, try again later";
 
 
