@@ -34,9 +34,9 @@
 "Authentication.Error.EmailAlreadyInUse" = "The email you provided is already connected to another account";
 "Authentication.Error.EmailAndPasswordRequired" = "Email and password are required";
 "Authentication.Error.EmailBadFormat" = "Provide a valid email address";
+"Authentication.Error.RequiredEmail" = "The email is required";
 "Authentication.Error.PasswordAndConfirmPassword" = "Password and confirm password must be the same";
 "Authentication.Error.Generic" = "Login error, try again later";
-
 
 // MARK: Root View
 "TabBar.Homepage.Label" = "Homepage";

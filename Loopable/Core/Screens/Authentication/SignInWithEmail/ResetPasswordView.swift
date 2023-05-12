@@ -42,6 +42,7 @@ struct ResetPasswordView: View {
                 self.presentationMode.wrappedValue.dismiss()
             }
         }
+        .alert(vm.errorMessage, isPresented: $vm.hasError) {}
     }
 }
 
