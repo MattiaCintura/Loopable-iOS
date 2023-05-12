@@ -9,6 +9,10 @@ import Foundation
 
 class Functionalities {
     static func validateEmailAddress(email: String) -> Bool {
+        guard !email.isEmpty else {
+            return false
+        }
+
         let emailRegex = "[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
         let emailPredicate = NSPredicate(format: "SELF MATCHES %@", emailRegex)
         return emailPredicate.evaluate(with: email)
