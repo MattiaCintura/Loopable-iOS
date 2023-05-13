@@ -32,8 +32,16 @@ final class ResetPasswordViewModel: ObservableObject {
     }
     
     func handleFirebaseError(_ error: NSError) {
-        #warning("Handle reset password error cases")
-        print(error.code)
+        switch error.code {
+        case AuthErrorCode.userNotFound.rawValue:
+            errorMessage = "Authentication.Error.UserNotFound".localized
+            hasError = true
+            break
+        default:
+            errorMessage = "Authentication.Error.Generic".localized
+            hasError = true
+            break
+        }
     }
 
 }

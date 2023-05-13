@@ -97,7 +97,7 @@ extension ResetPasswordView {
                 try await vm.resetPassword()
                 showSuccessAlert = true
             } catch {
-                print("\(error)")
+                vm.handleFirebaseError(error as NSError)
             }
             isLoading = false
         }
