@@ -50,6 +50,8 @@ extension AuthenticationMainView {
     
     private var Buttons: some View {
         VStack {
+            SignInWithAppleView(showAuthenticationView: $showAuthenticationView)
+    
             NavigationLink {
                 SignInWithEmailView(showAuthenticationView: $showAuthenticationView)
                     .navigationBarTitleDisplayMode(.large)

@@ -7,6 +7,11 @@
 
 import Foundation
 
+enum AuthProviderOprion: String {
+    case password = "password"
+    case apple = "apple.com"
+}
+
 // MARK: Error Enums
 enum AuthenticationError: Error {
     case requiredEmail
@@ -15,4 +20,5 @@ enum AuthenticationError: Error {
     case invalidEmail
     case weakPassword
     case confirmPassword
+    case unableToSignInWithApple
 }

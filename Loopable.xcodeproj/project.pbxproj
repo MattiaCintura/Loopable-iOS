@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E18C5692A0FF7B10046509E /* SignInWithAppleViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E18C5682A0FF7B10046509E /* SignInWithAppleViewRepresentable.swift */; };
+		3E18C56B2A0FFC470046509E /* SignInWithAppleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E18C56A2A0FFC470046509E /* SignInWithAppleView.swift */; };
+		3E18C56E2A1004CB0046509E /* SignInWithAppleHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E18C56D2A1004CB0046509E /* SignInWithAppleHelper.swift */; };
+		3E18C5702A1019EC0046509E /* SignInWithAppleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E18C56F2A1019EC0046509E /* SignInWithAppleViewModel.swift */; };
 		3E1E2C4629D98380004D171E /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E1E2C4529D98380004D171E /* Launch Screen.storyboard */; };
 		3E467B1129FAF1E600568544 /* ProgressWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E467B1029FAF1E600568544 /* ProgressWidget.swift */; };
 		3E467B1329FB079900568544 /* CreateListingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E467B1229FB079900568544 /* CreateListingView.swift */; };
@@ -58,6 +62,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3E18C5642A0FF51A0046509E /* Loopable.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Loopable.entitlements; sourceTree = "<group>"; };
+		3E18C5682A0FF7B10046509E /* SignInWithAppleViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithAppleViewRepresentable.swift; sourceTree = "<group>"; };
+		3E18C56A2A0FFC470046509E /* SignInWithAppleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithAppleView.swift; sourceTree = "<group>"; };
+		3E18C56D2A1004CB0046509E /* SignInWithAppleHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithAppleHelper.swift; sourceTree = "<group>"; };
+		3E18C56F2A1019EC0046509E /* SignInWithAppleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithAppleViewModel.swift; sourceTree = "<group>"; };
 		3E1E2C4529D98380004D171E /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		3E467B1029FAF1E600568544 /* ProgressWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressWidget.swift; sourceTree = "<group>"; };
 		3E467B1229FB079900568544 /* CreateListingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateListingView.swift; sourceTree = "<group>"; };
@@ -119,6 +128,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3E18C5652A0FF7190046509E /* SignInWithApple */ = {
+			isa = PBXGroup;
+			children = (
+				3E18C5682A0FF7B10046509E /* SignInWithAppleViewRepresentable.swift */,
+				3E18C56A2A0FFC470046509E /* SignInWithAppleView.swift */,
+				3E18C56F2A1019EC0046509E /* SignInWithAppleViewModel.swift */,
+			);
+			path = SignInWithApple;
+			sourceTree = "<group>";
+		};
+		3E18C56C2A1004A00046509E /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				3E18C56D2A1004CB0046509E /* SignInWithAppleHelper.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		3E467B0F29FAF18600568544 /* Components */ = {
 			isa = PBXGroup;
 			children = (
@@ -157,6 +184,7 @@
 				3E50F5FD2A06528F009E7C1E /* AuthenticationMainView.swift */,
 				3EE182732A0D7D6300A03907 /* SignUpWithEmail */,
 				3E50F5FF2A066C1B009E7C1E /* SignInWithEmail */,
+				3E18C5652A0FF7190046509E /* SignInWithApple */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -244,6 +272,7 @@
 		3EEC83D229D7096E003320E5 /* Loopable */ = {
 			isa = PBXGroup;
 			children = (
+				3E18C5642A0FF51A0046509E /* Loopable.entitlements */,
 				3E50F5EE2A05985B009E7C1E /* GoogleService-Info.plist */,
 				3E50F5F52A0599D2009E7C1E /* AppDelegate.swift */,
 				3EEC83D329D7096E003320E5 /* LoopableApp.swift */,
@@ -277,6 +306,7 @@
 		3EEC83E229D70CB8003320E5 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				3E18C56C2A1004A00046509E /* Helpers */,
 				3E467B0F29FAF18600568544 /* Components */,
 				3EEC83EE29D70E83003320E5 /* Localizable.strings */,
 				3EE1824F2A0BAB5200A03907 /* Functionalities.swift */,
@@ -454,8 +484,10 @@
 				3EE182722A0BB2D300A03907 /* ResetPasswordViewModel.swift in Sources */,
 				3E50F5FE2A06528F009E7C1E /* AuthenticationMainView.swift in Sources */,
 				3E50F6032A066C52009E7C1E /* SignInWithEmailViewModel.swift in Sources */,
+				3E18C56E2A1004CB0046509E /* SignInWithAppleHelper.swift in Sources */,
 				3EE182752A0D7D8F00A03907 /* SignUpWithEmailView.swift in Sources */,
 				3E467B1529FC2BE100568544 /* FormStepper.swift in Sources */,
+				3E18C5702A1019EC0046509E /* SignInWithAppleViewModel.swift in Sources */,
 				3EB03DCC29D85EC00076DBDB /* Extentions.swift in Sources */,
 				3E467B1329FB079900568544 /* CreateListingView.swift in Sources */,
 				3EE182502A0BAB5200A03907 /* Functionalities.swift in Sources */,
@@ -465,6 +497,8 @@
 				3EB03DCE29D86D040076DBDB /* Enums.swift in Sources */,
 				3EDBEFA12A095F60005CA7EC /* ProfileViewModel.swift in Sources */,
 				3EB03DD629D953450076DBDB /* ProductListingView.swift in Sources */,
+				3E18C56B2A0FFC470046509E /* SignInWithAppleView.swift in Sources */,
+				3E18C5692A0FF7B10046509E /* SignInWithAppleViewRepresentable.swift in Sources */,
 				3EEC83D629D7096E003320E5 /* RootView.swift in Sources */,
 				3EE1824E2A0B929F00A03907 /* AuthenticationModels.swift in Sources */,
 				3E50F6012A066C44009E7C1E /* SignInWithEmailView.swift in Sources */,
@@ -508,9 +542,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mattiacintura.Loopable-Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Loopable.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Loopable";
 			};
 			name = Debug;
@@ -527,9 +564,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mattiacintura.Loopable-Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Loopable.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Loopable";
 			};
 			name = Release;
@@ -656,6 +696,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
+				CODE_SIGN_ENTITLEMENTS = Loopable/Loopable.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "";
@@ -692,6 +733,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
+				CODE_SIGN_ENTITLEMENTS = Loopable/Loopable.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "";

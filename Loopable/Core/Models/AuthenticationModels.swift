@@ -21,3 +21,8 @@ struct AuthDataResultModel {
         self.photoUrl = user.photoURL?.absoluteString
     }
 }
+
+struct SignInWithAppleResult {
+    let token: String
+    let nonce: String
+}

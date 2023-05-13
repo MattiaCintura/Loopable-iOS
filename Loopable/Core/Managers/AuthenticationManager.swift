@@ -33,6 +33,17 @@ final class AuthenticationManager {
         let authDataResult = try await Auth.auth().signIn(withEmail: email, password: password)
         return AuthDataResultModel(user: authDataResult.user)
     }
+
+    @discardableResult
+    func signInWithApple(tokens: SignInWithAppleResult) async throws -> AuthDataResultModel {
+        let credential = OAuthProvider.credential(withProviderID: AuthProviderOprion.apple.rawValue, idToken: tokens.token, rawNonce: tokens.nonce)
+        return try await signInWithCredential(credential: credential)
+    }
+    
+    private func signInWithCredential(credential: AuthCredential) async throws -> AuthDataResultModel {
+        let authDataResult = try await Auth.auth().signIn(with: credential)
+        return AuthDataResultModel(user: authDataResult.user)
+    }
     
     func resetUserPassword(email: String) async throws {
         try await Auth.auth().sendPasswordReset(withEmail: email)
