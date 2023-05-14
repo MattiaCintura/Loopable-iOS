@@ -35,7 +35,7 @@ final class AuthenticationManager {
     }
 
     @discardableResult
-    func signInWithApple(tokens: SignInWithAppleResult) async throws -> AuthDataResultModel {
+    func signInWithApple(tokens: SignInWithAppleResultModel) async throws -> AuthDataResultModel {
         let credential = OAuthProvider.credential(withProviderID: AuthProviderOprion.apple.rawValue, idToken: tokens.token, rawNonce: tokens.nonce)
         return try await signInWithCredential(credential: credential)
     }

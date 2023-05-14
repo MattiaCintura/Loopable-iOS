@@ -22,7 +22,7 @@ struct AuthDataResultModel {
     }
 }
 
-struct SignInWithAppleResult {
+struct SignInWithAppleResultModel {
     let token: String
     let nonce: String
 }

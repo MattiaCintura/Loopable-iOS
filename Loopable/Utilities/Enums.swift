@@ -7,6 +7,10 @@
 
 import Foundation
 
+enum FirestoreCollection: String {
+    case users
+}
+
 enum AuthProviderOprion: String {
     case password = "password"
     case apple = "apple.com"
