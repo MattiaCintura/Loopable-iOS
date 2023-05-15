@@ -9,16 +9,15 @@ import Foundation
 
 class ProfileViewModel: ObservableObject {
     @Published private(set) var username: String?
+    @Published private(set) var isProfileComplite: Bool = false
     
-    func getUserInfo() {
-        guard
-            let currentUser = try? AuthenticationManager.shared.getAuthenticatedUser(),
-            let email = currentUser.email
-        else {
+    func getUserInfo() async throws {
+        guard let currentUser = try? AuthenticationManager.shared.getAuthenticatedUser() else {
             return
         }
         
-        self.username = email.components(separatedBy: "@")[0].capitalized
+        let userData = try await UserManager.shared.getUserById(userId: currentUser.uid)
+        self.isProfileComplite = userData.firstName != nil
     }
     
     func logout() throws {

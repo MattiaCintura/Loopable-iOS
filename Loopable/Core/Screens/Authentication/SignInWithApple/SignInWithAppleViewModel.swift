@@ -13,6 +13,8 @@ final class SignInWithAppleViewModel: ObservableObject {
     func signInWithApple() async throws {
         let helper = SignInWithAppleHelper()
         let tokens = try await helper.signInWithAppleFlow()
-        try await AuthenticationManager.shared.signInWithApple(tokens: tokens)
+        let authDataResult = try await AuthenticationManager.shared.signInWithApple(tokens: tokens)
+        let user = UserModel(auth: authDataResult)
+        try await UserManager.shared.addUserToCollection(user: user)
     }
 }

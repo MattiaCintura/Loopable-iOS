@@ -36,7 +36,9 @@ final class SignUpWithEmailViewModel: ObservableObject {
             throw AuthenticationError.confirmPassword
         }
         
-        try await AuthenticationManager.shared.createUser(email: email, password: password)
+        let authDataResult = try await AuthenticationManager.shared.createUser(email: email, password: password)
+        let user = UserModel(auth: authDataResult)
+        try await UserManager.shared.addUserToCollection(user: user)
     }
     
     func handleFirebaseError(_ error: NSError) {
