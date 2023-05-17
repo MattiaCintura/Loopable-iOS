@@ -15,7 +15,9 @@ struct ProfileView: View {
         NavigationStack {
             ScrollView {
                 ProfileInfo
-                CompleteProfile
+                if !vm.isProfileComplite {
+                    CompleteProfile                    
+                }
                 Divider()
                     .foregroundColor(.darkGrey)
                 UserFavorites

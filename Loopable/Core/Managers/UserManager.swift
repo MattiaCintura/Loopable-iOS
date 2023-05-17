@@ -28,4 +28,8 @@ final class UserManager {
     func addUserToCollection(user: UserModel) async throws {
         try userDocument(userId: user.id).setData(from: user, merge: false)
     }
+    
+    func updateUser(user: UserModel) async throws {
+        try userDocument(userId: user.id).setData(from: user, merge: true)
+    }
 }

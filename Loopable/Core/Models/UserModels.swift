@@ -10,11 +10,12 @@ import Foundation
 struct UserModel: Codable {
     let id: String
     let email: String?
-    let firstName: String?
-    let lastName: String?
-    let photoUrl: String?
+    var firstName: String?
+    var lastName: String?
+    var province: ProvinceOfItaly?
+    var photoUrl: String?
     let createdAt: Date?
-    let updatedAt: Date?
+    var updatedAt: Date?
     
     init(auth: AuthDataResultModel) {
         self.id = auth.uid
@@ -22,6 +23,7 @@ struct UserModel: Codable {
         self.firstName = nil
         self.lastName = nil
         self.photoUrl = nil
+        self.province = nil
         self.createdAt = Date()
         self.updatedAt = Date()
     }
@@ -33,6 +35,7 @@ struct UserModel: Codable {
         self.firstName = try container.decodeIfPresent(String.self, forKey: .firstName)
         self.lastName = try container.decodeIfPresent(String.self, forKey: .lastName)
         self.photoUrl = try container.decodeIfPresent(String.self, forKey: .photoUrl)
+        self.province = try container.decodeIfPresent(ProvinceOfItaly.self, forKey: .province)
         self.createdAt = try container.decodeIfPresent(Date.self, forKey: .createdAt)
         self.updatedAt = try container.decodeIfPresent(Date.self, forKey: .updatedAt)
     }
@@ -43,6 +46,7 @@ struct UserModel: Codable {
         firstName: String? = nil,
         lastName: String? = nil,
         photoUrl: String? = nil,
+        province: ProvinceOfItaly? = nil,
         createdAt: Date? = nil,
         updatedAt: Date? = nil
     ) {
@@ -50,6 +54,7 @@ struct UserModel: Codable {
         self.email = email
         self.firstName = firstName
         self.lastName = lastName
+        self.province = province
         self.photoUrl = photoUrl
         self.createdAt = createdAt
         self.updatedAt = updatedAt
@@ -59,6 +64,7 @@ struct UserModel: Codable {
         case id = "id"
         case email = "email"
         case firstName = "first_name"
+        case province = "province"
         case lastName = "last_name"
         case photoUrl = "photo_url"
         case createdAt = "created_at"
@@ -72,6 +78,7 @@ struct UserModel: Codable {
         try container.encodeIfPresent(self.firstName, forKey: .firstName)
         try container.encodeIfPresent(self.lastName, forKey: .lastName)
         try container.encodeIfPresent(self.photoUrl, forKey: .photoUrl)
+        try container.encodeIfPresent(self.province?.rawValue, forKey: .province)
         try container.encodeIfPresent(self.createdAt, forKey: .createdAt)
         try container.encodeIfPresent(self.updatedAt, forKey: .updatedAt)
     }

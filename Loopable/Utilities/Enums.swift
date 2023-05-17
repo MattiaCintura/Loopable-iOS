@@ -19,117 +19,117 @@ enum AuthProviderOprion: String {
 }
 
 // MARK: User
-enum ProvinceOfItaly: String {
-    case agrigento
-    case alessandria
-    case ancona
-    case aosta
-    case arezzo
-    case ascoliPiceno
-    case asti
-    case avellino
-    case Bari
-    case BarlettaAndriaTrani
-    case Belluno
-    case Benevento
-    case Bergamo
-    case Biella
-    case Bologna
-    case Bolzano
-    case Brescia
-    case Brindisi
-    case cagliari
-    case caltanissetta
-    case campobasso
-    case carboniaIglesias
-    case caserta
-    case catania
-    case catanzaro
-    case chieti
-    case como
-    case cosenza
-    case cremona
-    case crotone
-    case cuneo
-    case enna
-    case fermo
-    case ferrara
-    case firenze
-    case foggia
-    case forlìCesena
-    case frosinone
-    case genova
-    case gorizia
-    case grosseto
-    case imperia
-    case isernia
-    case laSpezia
-    case lAquila
-    case latina
-    case lecce
-    case lecco
-    case livorno
-    case lodi
-    case lucca
-    case macerata
-    case mantova
-    case massaCarrara
-    case matera
-    case messina
-    case milano
-    case MedioCampidano
-    case modena
-    case monzaBrianza
-    case napoli
-    case novara
-    case nuoro
-    case ogliastra
-    case olbiaTempio
-    case oristano
-    case padova
-    case palermo
-    case parma
-    case pavia
-    case perugia
-    case pesaroUrbino
-    case pescara
-    case piacenza
-    case pisa
-    case pistoia
-    case pordenone
-    case potenza
-    case prato
-    case ragusa
-    case ravenna
-    case reggioCalabria
-    case reggioEmilia
-    case rieti
-    case rimini
-    case roma
-    case rovigo
-    case salerno
-    case sassari
-    case savona
-    case siena
-    case siracusa
-    case sondrio
-    case taranto
-    case teramo
-    case terni
-    case torino
-    case trapani
-    case trento
-    case treviso
-    case trieste
-    case udine
-    case varese
-    case venezia
-    case verbanoCusioOssola
-    case vercelli
-    case verona
-    case viboValentia
-    case vicenza
-    case viterbo
+enum ProvinceOfItaly: String, CaseIterable, Codable {
+    case agrigento = "Agrigento"
+    case alessandria = "Alessandria"
+    case ancona = "Ancona"
+    case aosta = "Aosta"
+    case arezzo = "Arezzo"
+    case ascoliPiceno = "Ascoli Piceno"
+    case asti = "Asti"
+    case avellino = "Avellino"
+    case bari = "Bari"
+    case barlettaAndriaTrani = "Barletta Andria Trani"
+    case belluno = "Belluno"
+    case benevento = "Benevento"
+    case bergamo = "Bergamo"
+    case biella = "Biella"
+    case bologna = "Bologna"
+    case bolzano = "Bolzano"
+    case brescia = "Brescia"
+    case brindisi = "Brindisi"
+    case cagliari = "Cagliari"
+    case caltanissetta = "Caltanissetta"
+    case campobasso = "Campobasso"
+    case carboniaIglesias = "Carbonia Iglesias"
+    case caserta = "Caserta"
+    case catania = "Catania"
+    case catanzaro = "Catanzaro"
+    case chieti = "Chieti"
+    case como = "Como"
+    case cosenza = "Cosenza"
+    case cremona = "Cremona"
+    case crotone = "Crotone"
+    case cuneo = "Cuneo"
+    case enna = "Enna"
+    case fermo = "Fermo"
+    case ferrara = "Ferrara"
+    case firenze = "Firenze"
+    case foggia = "Foggia"
+    case forlìCesena = "Forlì Cesena"
+    case frosinone = "Frosinone"
+    case genova = "Genova"
+    case gorizia = "Gorizia"
+    case grosseto = "Grosseto"
+    case imperia = "Imperia"
+    case isernia = "Isernia"
+    case laSpezia = "La Spezia"
+    case lAquila = "L'Aquila"
+    case latina = "Latina"
+    case lecce = "Lecce"
+    case lecco = "Lecco"
+    case livorno = "Livorno"
+    case lodi = "Lodi"
+    case lucca = "Lucca"
+    case macerata = "Macerata"
+    case mantova = "Mantova"
+    case massaCarrara = "Massa Carrara"
+    case matera = "Matera"
+    case messina = "Messina"
+    case milano = "Milano"
+    case medioCampidano = "Medio Campidano"
+    case modena = "Modena"
+    case monzaBrianza = "Monza Brianza"
+    case napoli = "Napoli"
+    case novara = "Novara"
+    case nuoro = "Nuoro"
+    case ogliastra = "Ogliastra"
+    case olbiaTempio = "Olbia Tempio"
+    case oristano = "Oristano"
+    case padova = "Padova"
+    case palermo = "Palermo"
+    case parma = "Parma"
+    case pavia = "Pavia"
+    case perugia = "Perugia"
+    case pesaroUrbino = "Pesaro Urbino"
+    case pescara = "Pescara"
+    case piacenza = "Piacenza"
+    case pisa = "Pisa"
+    case pistoia = "Pistoia"
+    case pordenone = "Pordenone"
+    case potenza = "Potenza"
+    case prato = "Prato"
+    case ragusa = "Ragusa"
+    case ravenna = "Ravenna"
+    case reggioCalabria = "Reggio Calabria"
+    case reggioEmilia = "Reggio Emilia"
+    case rieti = "Rieti"
+    case rimini = "Rimini"
+    case roma = "Roma"
+    case rovigo = "Rovigo"
+    case salerno = "Salerno"
+    case sassari = "Sassari"
+    case savona = "Savona"
+    case siena = "Siena"
+    case siracusa = "Siracusa"
+    case sondrio = "Sondrio"
+    case taranto = "Taranto"
+    case teramo = "Teramo"
+    case terni = "Terni"
+    case torino = "Torino"
+    case trapani = "Trapani"
+    case trento = "Trento"
+    case treviso = "Treviso"
+    case trieste = "Trieste"
+    case udine = "Udine"
+    case varese = "Varese"
+    case venezia = "Venezia"
+    case verbanoCusioOssola = "Verbano Cusio Ossola"
+    case vercelli = "Vercelli"
+    case verona = "Verona"
+    case viboValentia = "Vibo Valentia"
+    case vicenza = "Vicenza"
+    case viterbo = "Viterbo"
 }
 
 // MARK: Error

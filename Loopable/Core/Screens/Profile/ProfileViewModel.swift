@@ -7,9 +7,10 @@
 
 import Foundation
 
+@MainActor
 class ProfileViewModel: ObservableObject {
     @Published private(set) var username: String?
-    @Published private(set) var isProfileComplite: Bool = false
+    @Published private(set) var isProfileComplite: Bool = true
     
     func getUserInfo() async throws {
         guard let currentUser = try? AuthenticationManager.shared.getAuthenticatedUser() else {
@@ -17,7 +18,13 @@ class ProfileViewModel: ObservableObject {
         }
         
         let userData = try await UserManager.shared.getUserById(userId: currentUser.uid)
+        
         self.isProfileComplite = userData.firstName != nil
+        
+        if let firstName = userData.firstName,
+           let lastName = userData.lastName {
+            self.username = "\(firstName) \(lastName)"
+        }
     }
     
     func logout() throws {
