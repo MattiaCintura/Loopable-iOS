@@ -10,6 +10,7 @@ import SwiftUI
 struct CompleteProfileView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @StateObject private var vm = CompleteProfileViewModel()
+    @State private var isLoading = false
 
     var body: some View {
         VStack(spacing: 20) {
@@ -123,12 +124,19 @@ extension CompleteProfileView {
         Button {
             updateProfileAction()
         } label: {
-            Text("Profile.CompleteProfile.UpdateProfile")
-                .frame(width: UIScreen.main.bounds.width - 30, height: 55)
-                .font(.system(.headline, design: .rounded))
-                .foregroundColor(.white)
-                .background(Color.accentColor)
-                .cornerRadius(10)
+            Group {
+                if isLoading {
+                    ProgressView()
+                        .foregroundColor(.white)
+                } else {
+                    Text("Profile.CompleteProfile.UpdateProfile")
+                }
+            }
+            .frame(width: UIScreen.main.bounds.width - 30, height: 55)
+            .font(.system(.headline, design: .rounded))
+            .foregroundColor(.white)
+            .background(Color.accentColor)
+            .cornerRadius(10)
         }
         .disabled(vm.firstName.isEmpty || vm.lastName.isEmpty)
 
@@ -136,12 +144,14 @@ extension CompleteProfileView {
     
     private func updateProfileAction() {
         Task {
+            isLoading = true
             do {
                 try await vm.completeProfile()
                 self.presentationMode.wrappedValue.dismiss()
             } catch {
                 print(error.localizedDescription)
             }
+            isLoading = false
         }
     }
 }
