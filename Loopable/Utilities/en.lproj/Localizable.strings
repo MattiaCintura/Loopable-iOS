@@ -12,6 +12,7 @@
 "Shared.Close" = "Close";
 "Shared.ReportProblem" = "Report a problem";
 "Shared.OK" = "OK";
+"Shared.Logout" = "Logout";
 
 // MARK: Authentication
 "Authentication.Title" = "Join the loop";
@@ -94,8 +95,17 @@
 "CreateListing.Publish" = "Publish listing";
 
 // MARK: Profile
+"Profile.ProfileConfiguration" = "Profile configuration";
+"Profile.OneStepLeft" = "One Step Left";
+"Profile.CompleteProfile" = "Complete your Loopable profile";
 "Profile.ListingNumber %@" = "%@ Public listing";
 "Profile.Favorites" = "Favorites";
 "Profile.Favorites.EmptyListPlaceholder" = "You have no favorites to display";
 "Profile.YourListings" = "Your listings";
 "Profile.YourListings.EmptyListPlaceholder" = "You haven't published any listings";
+"Profile.CompleteProfile.Title" = "Complete profile";
+"Profile.CompleteProfile.FirstName" = "First Name";
+"Profile.CompleteProfile.LastName" = "Last Name";
+"Profile.CompleteProfile.Province" = "Province of residence";
+"Profile.CompleteProfile.Province.Placeholder" = "Select province";
+"Profile.CompleteProfile.UpdateProfile" = "Update profile";

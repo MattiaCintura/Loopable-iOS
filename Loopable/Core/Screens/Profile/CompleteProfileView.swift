@@ -21,7 +21,7 @@ struct CompleteProfileView: View {
                 .padding(.bottom)
         }
         .padding(.top)
-        .navigationTitle("Completa profilo")
+        .navigationTitle("Profile.CompleteProfile.Title")
         .navigationBarTitleDesign(.darkGrey, rounded: true)
     }
 }
@@ -39,7 +39,7 @@ extension CompleteProfileView {
         VStack(alignment: .leading) {
             HStack(spacing: 5) {
                 Image(systemName: "person")
-                Text("Nome")
+                Text("Profile.CompleteProfile.FirstName")
             }
             .font(.system(.headline, design: .rounded))
             .foregroundColor(.darkGrey)
@@ -50,7 +50,7 @@ extension CompleteProfileView {
                     .frame(height: 50)
                     .foregroundColor(Color(UIColor.systemBackground))
                     .shadow(color: .darkGrey.opacity(0.25), radius: 10)
-                TextField("Nome", text: $vm.firstName)
+                TextField("Profile.CompleteProfile.FirstName", text: $vm.firstName)
                     .padding(.horizontal)
                     .font(.system(.body, design: .rounded))
             }
@@ -63,7 +63,7 @@ extension CompleteProfileView {
         VStack(alignment: .leading) {
             HStack(spacing: 5) {
                 Image(systemName: "person")
-                Text("Cognome")
+                Text("Profile.CompleteProfile.LastName")
             }
             .font(.system(.headline, design: .rounded))
             .foregroundColor(.darkGrey)
@@ -74,7 +74,7 @@ extension CompleteProfileView {
                     .frame(height: 50)
                     .foregroundColor(Color(UIColor.systemBackground))
                     .shadow(color: .darkGrey.opacity(0.25), radius: 10)
-                TextField("Cognome", text: $vm.lastName)
+                TextField("Profile.CompleteProfile.LastName", text: $vm.lastName)
                     .padding(.horizontal)
                     .font(.system(.body, design: .rounded))
             }
@@ -87,7 +87,7 @@ extension CompleteProfileView {
         VStack(alignment: .leading) {
             HStack(spacing: 5) {
                 Image(systemName: "location.circle.fill")
-                Text("Provincia di residenza")
+                Text("Profile.CompleteProfile.Province")
             }
             .font(.system(.headline, design: .rounded))
             .foregroundColor(.darkGrey)
@@ -110,7 +110,7 @@ extension CompleteProfileView {
                     }
                     .tint(.darkGrey)
                 }
-                Text("Scegli provincia")
+                Text("Profile.CompleteProfile.Province.Placeholder")
                     .padding(.horizontal)
                     .font(.system(.body, design: .rounded))
                     .foregroundColor(.gray.opacity(0.5))
@@ -123,7 +123,7 @@ extension CompleteProfileView {
         Button {
             updateProfileAction()
         } label: {
-            Text("Aggiorna profilo")
+            Text("Profile.CompleteProfile.UpdateProfile")
                 .frame(width: UIScreen.main.bounds.width - 30, height: 55)
                 .font(.system(.headline, design: .rounded))
                 .foregroundColor(.white)

@@ -10,12 +10,13 @@ import SwiftUI
 struct ProfileView: View {
     @StateObject private var vm = ProfileViewModel()
     @Binding var showAuthenticationView: Bool
+    @State private var isProfileComplite = true
 
     var body: some View {
         NavigationStack {
             ScrollView {
                 ProfileInfo
-                if !vm.isProfileComplite {
+                if !isProfileComplite {
                     CompleteProfile                    
                 }
                 Divider()
@@ -27,7 +28,7 @@ struct ProfileView: View {
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    Button("Logout") {
+                    Button("Shared.Logout") {
                         do {
                             try vm.logout()
                             showAuthenticationView = true
@@ -40,7 +41,12 @@ struct ProfileView: View {
         }
         .onAppear {
             Task {
-                try await vm.getUserInfo()
+                do {
+                    try await vm.getUserInfo()
+                    isProfileComplite = vm.username != nil
+                } catch {
+                    print(error)
+                }
             }
         }
     }
@@ -60,7 +66,7 @@ extension ProfileView {
                     .font(.system(.title, design: .rounded, weight: .bold))
                     .foregroundColor(.darkGrey)
                 
-                if vm.isProfileComplite {
+                if isProfileComplite {
                     StarRating(rating: 4.6)
                         .font(.system(.caption, design: .rounded))
                     
@@ -85,7 +91,7 @@ extension ProfileView {
     
     private var CompleteProfile: some View {
         VStack(alignment: .leading) {
-            Text("Configurazione del profilo")
+            Text("Profile.ProfileConfiguration")
                 .font(.system(.title3, design: .rounded, weight: .bold))
                 .foregroundColor(.darkGrey)
 
@@ -98,9 +104,17 @@ extension ProfileView {
                         .foregroundColor(Color.accentColor.opacity(0.10))
 
                     VStack(alignment: .leading, spacing: 15) {
-                        Text("Ancora un passaggio")
-                            .font(.system(.headline, design: .rounded))
-                            .foregroundColor(.darkGrey)
+                        HStack {
+                            Text("Profile.OneStepLeft")
+                                .font(.system(.headline, design: .rounded))
+                                .foregroundColor(.darkGrey)
+                            
+                            Spacer()
+                            
+                            Image(systemName: "arrow.right")
+                                .foregroundColor(.darkGrey50)
+                        }
+                        .frame(width: 320)
 
                         ZStack(alignment: .leading) {
                             Capsule()
@@ -111,7 +125,7 @@ extension ProfileView {
                                 .foregroundColor(.accentColor)
                         }
                         
-                        Text("Completa il tuo profilo per usare Loopable")
+                        Text("Profile.CompleteProfile")
                             .font(.system(.subheadline, design: .rounded))
                             .foregroundColor(.darkGrey)
                     }

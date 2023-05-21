@@ -12,6 +12,7 @@
 "Shared.Close" = "Chiudi";
 "Shared.ReportProblem" = "Segnala un problema";
 "Shared.OK" = "OK";
+"Shared.Logout" = "Esci";
 
 // MARK: Authentication
 "Authentication.Title" = "Entra nel loop";
@@ -94,8 +95,17 @@
 "CreateListing.Publish" = "Pubblica annuncio";
 
 // MARK: Profile
+"Profile.ProfileConfiguration" = "Configurazione del profilo";
+"Profile.OneStepLeft" = "Ancora un passaggio";
+"Profile.CompleteProfile" = "Completa il tuo profilo per usare Loopable";
 "Profile.ListingNumber %@" = "%@ Annunci pubblicati";
 "Profile.Favorites" = "Preferiti";
 "Profile.Favorites.EmptyListPlaceholder" = "Non hai annunci preferiti al momento";
 "Profile.YourListings" = "I tuoi annunci";
 "Profile.YourListings.EmptyListPlaceholder" = "Non hai annunci pubblicati al momento";
+"Profile.CompleteProfile.Title" = "Completa profilo";
+"Profile.CompleteProfile.FirstName" = "Nome";
+"Profile.CompleteProfile.LastName" = "Cognome";
+"Profile.CompleteProfile.Province" = "Provincia di residenza";
+"Profile.CompleteProfile.Province.Placeholder" = "Scegli provincia";
+"Profile.CompleteProfile.UpdateProfile" = "Aggiorna profilo";
