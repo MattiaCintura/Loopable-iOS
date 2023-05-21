@@ -14,6 +14,7 @@ struct UserModel: Codable {
     var lastName: String?
     var province: ProvinceOfItaly?
     var photoUrl: String?
+    var isComplete: Bool?
     let createdAt: Date?
     var updatedAt: Date?
     
@@ -24,6 +25,7 @@ struct UserModel: Codable {
         self.lastName = nil
         self.photoUrl = nil
         self.province = nil
+        self.isComplete = false
         self.createdAt = Date()
         self.updatedAt = Date()
     }
@@ -36,6 +38,7 @@ struct UserModel: Codable {
         self.lastName = try container.decodeIfPresent(String.self, forKey: .lastName)
         self.photoUrl = try container.decodeIfPresent(String.self, forKey: .photoUrl)
         self.province = try container.decodeIfPresent(ProvinceOfItaly.self, forKey: .province)
+        self.isComplete = try container.decodeIfPresent(Bool.self, forKey: .isComplete)
         self.createdAt = try container.decodeIfPresent(Date.self, forKey: .createdAt)
         self.updatedAt = try container.decodeIfPresent(Date.self, forKey: .updatedAt)
     }
@@ -47,6 +50,7 @@ struct UserModel: Codable {
         lastName: String? = nil,
         photoUrl: String? = nil,
         province: ProvinceOfItaly? = nil,
+        isComplete: Bool? = nil,
         createdAt: Date? = nil,
         updatedAt: Date? = nil
     ) {
@@ -56,6 +60,7 @@ struct UserModel: Codable {
         self.lastName = lastName
         self.province = province
         self.photoUrl = photoUrl
+        self.isComplete = isComplete
         self.createdAt = createdAt
         self.updatedAt = updatedAt
     }
@@ -67,6 +72,7 @@ struct UserModel: Codable {
         case province = "province"
         case lastName = "last_name"
         case photoUrl = "photo_url"
+        case isComplete = "is_complete"
         case createdAt = "created_at"
         case updatedAt = "updated_at"
     }
@@ -79,6 +85,7 @@ struct UserModel: Codable {
         try container.encodeIfPresent(self.lastName, forKey: .lastName)
         try container.encodeIfPresent(self.photoUrl, forKey: .photoUrl)
         try container.encodeIfPresent(self.province?.rawValue, forKey: .province)
+        try container.encodeIfPresent(self.isComplete, forKey: .isComplete)
         try container.encodeIfPresent(self.createdAt, forKey: .createdAt)
         try container.encodeIfPresent(self.updatedAt, forKey: .updatedAt)
     }

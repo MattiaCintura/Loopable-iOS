@@ -10,13 +10,12 @@ import SwiftUI
 struct ProfileView: View {
     @StateObject private var vm = ProfileViewModel()
     @Binding var showAuthenticationView: Bool
-    @State private var isProfileComplite = true
 
     var body: some View {
         NavigationStack {
             ScrollView {
                 ProfileInfo
-                if !isProfileComplite {
+                if !vm.isComplete {
                     CompleteProfile                    
                 }
                 Divider()
@@ -43,7 +42,6 @@ struct ProfileView: View {
             Task {
                 do {
                     try await vm.getUserInfo()
-                    isProfileComplite = vm.username != nil
                 } catch {
                     print(error)
                 }
@@ -66,7 +64,7 @@ extension ProfileView {
                     .font(.system(.title, design: .rounded, weight: .bold))
                     .foregroundColor(.darkGrey)
                 
-                if isProfileComplite {
+                if vm.isComplete {
                     StarRating(rating: 4.6)
                         .font(.system(.caption, design: .rounded))
                     

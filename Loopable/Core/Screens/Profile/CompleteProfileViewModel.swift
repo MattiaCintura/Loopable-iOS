@@ -23,6 +23,8 @@ final class CompleteProfileViewModel: ObservableObject {
         currentUserProfile.firstName = firstName
         currentUserProfile.lastName = lastName
         currentUserProfile.province = province
+        currentUserProfile.isComplete = true
+        currentUserProfile.updatedAt = Date()
         
         try await UserManager.shared.updateUser(user: currentUserProfile)
     }
