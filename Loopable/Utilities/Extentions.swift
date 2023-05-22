@@ -47,6 +47,12 @@ extension View {
         
         return self
     }
+    
+    /// Adds a redaction to this view hierarchy based on a condition.
+    @ViewBuilder
+    func redacted(if condition: @autoclosure () -> Bool) -> some View {
+        redacted(reason: condition() ? .placeholder : [])
+    }
 }
 
 extension String {

@@ -60,10 +60,11 @@ extension ProfileView {
     private var ProfileInfo: some View {
         HStack {
             VStack(alignment: .leading, spacing: 10) {
-                Text(vm.username ?? "Utente")
+                Text(vm.username ?? "Username")
                     .font(.system(.title, design: .rounded, weight: .bold))
                     .foregroundColor(.darkGrey)
-                
+                    .redacted(if: vm.username == nil)
+
                 if vm.isComplete {
                     StarRating(rating: 4.6)
                         .font(.system(.caption, design: .rounded))
@@ -83,6 +84,7 @@ extension ProfileView {
                 Text(String(vm.username?.first ?? "U"))
                     .font(.system(.largeTitle, design: .rounded, weight: .bold))
                     .foregroundColor(.darkGrey)
+                    .redacted(if: vm.username == nil)
             }
         }
     }
