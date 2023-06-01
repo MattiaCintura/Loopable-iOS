@@ -7,11 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E0C152A2A1BEBC300BB5B26 /* CreateListingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0C15292A1BEBC300BB5B26 /* CreateListingViewModel.swift */; };
 		3E18C5692A0FF7B10046509E /* SignInWithAppleViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E18C5682A0FF7B10046509E /* SignInWithAppleViewRepresentable.swift */; };
 		3E18C56B2A0FFC470046509E /* SignInWithAppleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E18C56A2A0FFC470046509E /* SignInWithAppleView.swift */; };
 		3E18C56E2A1004CB0046509E /* SignInWithAppleHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E18C56D2A1004CB0046509E /* SignInWithAppleHelper.swift */; };
 		3E18C5702A1019EC0046509E /* SignInWithAppleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E18C56F2A1019EC0046509E /* SignInWithAppleViewModel.swift */; };
 		3E1E2C4629D98380004D171E /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E1E2C4529D98380004D171E /* Launch Screen.storyboard */; };
+		3E20CA3B2A28E1E300EF8307 /* ListingModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E20CA3A2A28E1E300EF8307 /* ListingModels.swift */; };
 		3E467B1129FAF1E600568544 /* ProgressWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E467B1029FAF1E600568544 /* ProgressWidget.swift */; };
 		3E467B1329FB079900568544 /* CreateListingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E467B1229FB079900568544 /* CreateListingView.swift */; };
 		3E467B1529FC2BE100568544 /* FormStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E467B1429FC2BE100568544 /* FormStepper.swift */; };
@@ -67,12 +69,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3E0C15292A1BEBC300BB5B26 /* CreateListingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateListingViewModel.swift; sourceTree = "<group>"; };
 		3E18C5642A0FF51A0046509E /* Loopable.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Loopable.entitlements; sourceTree = "<group>"; };
 		3E18C5682A0FF7B10046509E /* SignInWithAppleViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithAppleViewRepresentable.swift; sourceTree = "<group>"; };
 		3E18C56A2A0FFC470046509E /* SignInWithAppleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithAppleView.swift; sourceTree = "<group>"; };
 		3E18C56D2A1004CB0046509E /* SignInWithAppleHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithAppleHelper.swift; sourceTree = "<group>"; };
 		3E18C56F2A1019EC0046509E /* SignInWithAppleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithAppleViewModel.swift; sourceTree = "<group>"; };
 		3E1E2C4529D98380004D171E /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		3E20CA3A2A28E1E300EF8307 /* ListingModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingModels.swift; sourceTree = "<group>"; };
 		3E467B1029FAF1E600568544 /* ProgressWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressWidget.swift; sourceTree = "<group>"; };
 		3E467B1229FB079900568544 /* CreateListingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateListingView.swift; sourceTree = "<group>"; };
 		3E467B1429FC2BE100568544 /* FormStepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormStepper.swift; sourceTree = "<group>"; };
@@ -248,6 +252,7 @@
 			children = (
 				3EE1824D2A0B929F00A03907 /* AuthenticationModels.swift */,
 				3EC5F9E42A11728200D5CEE1 /* UserModels.swift */,
+				3E20CA3A2A28E1E300EF8307 /* ListingModels.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -358,6 +363,7 @@
 			isa = PBXGroup;
 			children = (
 				3E467B1229FB079900568544 /* CreateListingView.swift */,
+				3E0C15292A1BEBC300BB5B26 /* CreateListingViewModel.swift */,
 			);
 			path = CreateListing;
 			sourceTree = "<group>";
@@ -494,7 +500,9 @@
 				3E50F6052A06958F009E7C1E /* AuthenticationManager.swift in Sources */,
 				3EDBEF9F2A09563B005CA7EC /* StarRating.swift in Sources */,
 				3EE182702A0BB2C200A03907 /* ResetPasswordView.swift in Sources */,
+				3E20CA3B2A28E1E300EF8307 /* ListingModels.swift in Sources */,
 				3E467B1129FAF1E600568544 /* ProgressWidget.swift in Sources */,
+				3E0C152A2A1BEBC300BB5B26 /* CreateListingViewModel.swift in Sources */,
 				3EE182722A0BB2D300A03907 /* ResetPasswordViewModel.swift in Sources */,
 				3E50F5FE2A06528F009E7C1E /* AuthenticationMainView.swift in Sources */,
 				3EC5F9E32A115BC200D5CEE1 /* UserManager.swift in Sources */,

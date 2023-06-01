@@ -10,6 +10,7 @@ import SwiftUI
 struct CompleteProfileView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @StateObject private var vm = CompleteProfileViewModel()
+    @Binding var didNavigateBack: Bool
     @State private var isLoading = false
 
     var body: some View {
@@ -30,7 +31,7 @@ struct CompleteProfileView: View {
 struct CompleteProfileView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
-            CompleteProfileView()
+            CompleteProfileView(didNavigateBack: .constant(false))
         }
     }
 }
@@ -147,6 +148,7 @@ extension CompleteProfileView {
             isLoading = true
             do {
                 try await vm.completeProfile()
+                self.didNavigateBack = true
                 self.presentationMode.wrappedValue.dismiss()
             } catch {
                 print(error.localizedDescription)

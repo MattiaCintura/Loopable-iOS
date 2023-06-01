@@ -10,6 +10,7 @@ import SwiftUI
 struct ProfileView: View {
     @StateObject private var vm = ProfileViewModel()
     @Binding var showAuthenticationView: Bool
+    @State var didNavigateBack: Bool = false
 
     var body: some View {
         NavigationStack {
@@ -39,6 +40,15 @@ struct ProfileView: View {
             }
         }
         .onAppear {
+            Task {
+                do {
+                    try await vm.getUserInfo()
+                } catch {
+                    print(error)
+                }
+            }
+        }
+        .onChange(of: didNavigateBack) { _ in
             Task {
                 do {
                     try await vm.getUserInfo()
@@ -81,7 +91,7 @@ extension ProfileView {
                 Circle()
                     .frame(width: 80)
                     .foregroundColor(.lightGrey)
-                Text(String(vm.username?.first ?? "U"))
+                Text(String(vm.username?.first?.uppercased() ?? "U"))
                     .font(.system(.largeTitle, design: .rounded, weight: .bold))
                     .foregroundColor(.darkGrey)
                     .redacted(if: vm.username == nil)
@@ -96,7 +106,7 @@ extension ProfileView {
                 .foregroundColor(.darkGrey)
 
             NavigationLink {
-                CompleteProfileView()
+                CompleteProfileView(didNavigateBack: $didNavigateBack)
             } label: {
                 ZStack {
                     RoundedRectangle(cornerRadius: 20)
