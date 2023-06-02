@@ -14,6 +14,7 @@
 		3E18C5702A1019EC0046509E /* SignInWithAppleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E18C56F2A1019EC0046509E /* SignInWithAppleViewModel.swift */; };
 		3E1E2C4629D98380004D171E /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E1E2C4529D98380004D171E /* Launch Screen.storyboard */; };
 		3E20CA3B2A28E1E300EF8307 /* ListingModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E20CA3A2A28E1E300EF8307 /* ListingModels.swift */; };
+		3E20CA3F2A2904CA00EF8307 /* ListingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E20CA3E2A2904CA00EF8307 /* ListingManager.swift */; };
 		3E467B1129FAF1E600568544 /* ProgressWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E467B1029FAF1E600568544 /* ProgressWidget.swift */; };
 		3E467B1329FB079900568544 /* CreateListingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E467B1229FB079900568544 /* CreateListingView.swift */; };
 		3E467B1529FC2BE100568544 /* FormStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E467B1429FC2BE100568544 /* FormStepper.swift */; };
@@ -77,6 +78,7 @@
 		3E18C56F2A1019EC0046509E /* SignInWithAppleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithAppleViewModel.swift; sourceTree = "<group>"; };
 		3E1E2C4529D98380004D171E /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		3E20CA3A2A28E1E300EF8307 /* ListingModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingModels.swift; sourceTree = "<group>"; };
+		3E20CA3E2A2904CA00EF8307 /* ListingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingManager.swift; sourceTree = "<group>"; };
 		3E467B1029FAF1E600568544 /* ProgressWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressWidget.swift; sourceTree = "<group>"; };
 		3E467B1229FB079900568544 /* CreateListingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateListingView.swift; sourceTree = "<group>"; };
 		3E467B1429FC2BE100568544 /* FormStepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormStepper.swift; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 			children = (
 				3E50F6042A06958F009E7C1E /* AuthenticationManager.swift */,
 				3EC5F9E22A115BC200D5CEE1 /* UserManager.swift */,
+				3E20CA3E2A2904CA00EF8307 /* ListingManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -508,6 +511,7 @@
 				3EC5F9E32A115BC200D5CEE1 /* UserManager.swift in Sources */,
 				3E50F6032A066C52009E7C1E /* SignInWithEmailViewModel.swift in Sources */,
 				3E18C56E2A1004CB0046509E /* SignInWithAppleHelper.swift in Sources */,
+				3E20CA3F2A2904CA00EF8307 /* ListingManager.swift in Sources */,
 				3EE182752A0D7D8F00A03907 /* SignUpWithEmailView.swift in Sources */,
 				3E467B1529FC2BE100568544 /* FormStepper.swift in Sources */,
 				3E18C5702A1019EC0046509E /* SignInWithAppleViewModel.swift in Sources */,

@@ -10,15 +10,10 @@ import Foundation
 // MARK: Firebase utilities
 enum FirestoreCollection: String {
     case users
+    case productListing = "product_listing"
 }
 
-// MARK: Authentication
-enum AuthProviderOprion: String {
-    case password = "password"
-    case apple = "apple.com"
-}
-
-// MARK: User
+// MARK: Shared
 enum ProvinceOfItaly: String, CaseIterable, Codable {
     case agrigento = "Agrigento"
     case alessandria = "Alessandria"
@@ -130,6 +125,27 @@ enum ProvinceOfItaly: String, CaseIterable, Codable {
     case viboValentia = "Vibo Valentia"
     case vicenza = "Vicenza"
     case viterbo = "Viterbo"
+}
+
+// MARK: Authentication
+enum AuthProviderOprion: String {
+    case password = "password"
+    case apple = "apple.com"
+}
+
+// MARK: Product Listing
+enum ProductCategory: String, CaseIterable, Codable {
+    case outdoorActivities
+    case doItYourself
+    case technology
+    case other
+}
+
+enum ProductCondition: String, CaseIterable, Codable {
+    case new
+    case excellent
+    case good
+    case damaged
 }
 
 // MARK: Error
