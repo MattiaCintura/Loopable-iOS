@@ -6,8 +6,10 @@
 //
 
 import SwiftUI
+import PhotosUI
 
 struct CreateListingView: View {
+    @StateObject private var vm = CreateListingViewModel()
     @State private var progress: Int = 0
     
     var body: some View {
@@ -45,47 +47,11 @@ struct CreateListingView_Previews: PreviewProvider {
 extension CreateListingView {
     private var FisrtStep: some View {
         VStack(spacing: 20) {
-            VStack(alignment: .leading) {
-                HStack(spacing: 5) {
-                    Image(systemName: "character.cursor.ibeam")
-                    Text("CreateListing.Title")
-                }
-                .font(.system(.headline, design: .rounded))
-                .foregroundColor(.darkGrey)
-                .padding(.leading)
-                
-                ZStack {
-                    RoundedRectangle(cornerRadius: 15)
-                        .frame(height: 50)
-                        .foregroundColor(Color(UIColor.systemBackground))
-                        .shadow(color: .darkGrey.opacity(0.25), radius: 10)
-                    TextField("CreateListing.Title", text: .constant(""))
-                        .padding(.horizontal)
-                        .font(.system(.body, design: .rounded))
-                }
-                .padding(.horizontal)
-            }
-            VStack(alignment: .leading) {
-                HStack(spacing: 5) {
-                    Image(systemName: "text.justify.leading")
-                    Text("CreateListing.Description")
-                }
-                .font(.system(.headline, design: .rounded))
-                .foregroundColor(.darkGrey)
-                .padding(.leading)
-                
-                ZStack {
-                    RoundedRectangle(cornerRadius: 15)
-                        .frame(height: 150)
-                        .foregroundColor(Color(UIColor.systemBackground))
-                        .shadow(color: .darkGrey.opacity(0.25), radius: 10)
-                    TextField("CreateListing.Description", text: .constant(""), axis: .vertical)
-                        .lineLimit(6, reservesSpace: true)
-                        .padding(.horizontal)
-                        .font(.system(.body, design: .rounded))
-                }
-                .padding(.horizontal)
-            }
+            // Title
+            DefaultTextField("CreateListing.Title", systemName: "character.cursor.ibeam", value: $vm.title)
+            // Description
+            DefaultLargeTextField("CreateListing.Description", systemName: "text.justify.leading", limit: 6, value: $vm.description)
+            // Area of interest
             VStack(alignment: .leading) {
                 HStack(spacing: 5) {
                     Image(systemName: "location.circle.fill")
@@ -106,6 +72,7 @@ extension CreateListingView {
                 }
                 .padding(.horizontal)
             }
+            // Price
             VStack(alignment: .leading) {
                 HStack(spacing: 5) {
                     Image(systemName: "eurosign.circle.fill")
@@ -137,6 +104,7 @@ extension CreateListingView {
 
     private var SecondStep: some View {
         VStack(spacing: 20) {
+            // Photos
             VStack(alignment: .leading) {
                 HStack(spacing: 5) {
                     Image(systemName: "photo.on.rectangle.angled")
@@ -146,23 +114,57 @@ extension CreateListingView {
                 .foregroundColor(.darkGrey)
                 .padding(.leading)
                 
-                ZStack(alignment: .leading) {
-                    ZStack(alignment: .trailing) {
-                        RoundedRectangle(cornerRadius: 15)
-                            .frame(height: 50)
-                            .foregroundColor(Color(UIColor.systemBackground))
-                            .shadow(color: .darkGrey.opacity(0.25), radius: 10)
-                        Image(systemName: "plus.circle.fill")
-                            .padding(.trailing)
-                            .foregroundColor(.darkGrey)
+                ZStack(alignment: .top) {
+                    RoundedRectangle(cornerRadius: 15)
+                        .frame(height: vm.images.isEmpty ? 50 : 150)
+                        .foregroundColor(Color(UIColor.systemBackground))
+                        .shadow(color: .darkGrey.opacity(0.25), radius: 10)
+
+                    VStack {
+                        HStack {
+                            Text("CreateListing.Photos.Placeholder")
+                                .padding(.horizontal)
+                                .font(.system(.body, design: .rounded))
+                                .foregroundColor(.gray.opacity(0.5))
+
+                            Spacer()
+
+                            PhotosPicker(
+                                selection: $vm.selectedImages,
+                                maxSelectionCount: 1,
+                                photoLibrary: .shared()
+                            ) {
+                                Image(systemName: "plus.circle.fill")
+                                    .padding(.trailing)
+                                    .foregroundColor(.darkGrey)
+                            }
+                            .onChange(of: vm.selectedImages) { _ in
+                                vm.handleImageChange()
+                            }
+                        }
+                        .padding(.top, 15)
+                        
+                        if !vm.images.isEmpty {
+                            Divider()
+                                .padding(.horizontal)
+                            
+                            ScrollView(.horizontal, showsIndicators: false) {
+                                HStack {
+                                    ForEach(vm.images, id: \.self) { image in
+                                        Image(uiImage: image)
+                                            .resizable()
+                                            .scaledToFill()
+                                            .frame(height: 80)
+                                    }
+                                }
+                                .padding(.horizontal)
+                            }
+                        }
                     }
-                    Text("CreateListing.Photos.Placeholder")
-                        .padding(.horizontal)
-                        .font(.system(.body, design: .rounded))
-                        .foregroundColor(.gray.opacity(0.5))
                 }
                 .padding(.horizontal)
             }
+            // Category
             VStack(alignment: .leading) {
                 HStack(spacing: 5) {
                     Image(systemName: "tag")
@@ -189,27 +191,9 @@ extension CreateListingView {
                 }
                 .padding(.horizontal)
             }
-            VStack(alignment: .leading) {
-                HStack(spacing: 5) {
-                    Image(systemName: "calendar")
-                    Text("CreateListing.PurchaseYear")
-                }
-                .font(.system(.headline, design: .rounded))
-                .foregroundColor(.darkGrey)
-                .padding(.leading)
-                
-                ZStack(alignment: .leading) {
-                    RoundedRectangle(cornerRadius: 15)
-                        .frame(height: 50)
-                        .foregroundColor(Color(UIColor.systemBackground))
-                        .shadow(color: .darkGrey.opacity(0.25), radius: 10)
-                    TextField("CreateListing.PurchaseYear", value: .constant(""), formatter: NumberFormatter())
-                        .keyboardType(.numberPad)
-                        .padding(.horizontal)
-                        .font(.system(.body, design: .rounded))
-                }
-                .padding(.horizontal)
-            }
+            // Purchase year
+            DefaultNumberField("CreateListing.PurchaseYear", systemName: "calendar", value: $vm.yearOfPurchase)
+            // Condition
             VStack(alignment: .leading) {
                 HStack(spacing: 5) {
                     Image(systemName: "sparkles")
@@ -241,48 +225,10 @@ extension CreateListingView {
     
     private var ThridStep: some View {
         VStack(spacing: 20) {
-            VStack(alignment: .leading) {
-                HStack(spacing: 5) {
-                    Image(systemName: "calendar")
-                    Text("CreateListing.Available")
-                }
-                .font(.system(.headline, design: .rounded))
-                .foregroundColor(.darkGrey)
-                .padding(.leading)
-                
-                ZStack(alignment: .leading) {
-                    RoundedRectangle(cornerRadius: 15)
-                        .frame(height: 50)
-                        .foregroundColor(Color(UIColor.systemBackground))
-                        .shadow(color: .darkGrey.opacity(0.25), radius: 10)
-    
-                    DatePicker("CreateListing.Available.Placeholder", selection: .constant(Date()), displayedComponents: [.date])
-                        .padding(.horizontal)
-                        .foregroundColor(.gray.opacity(0.5))
-                }
-                .padding(.horizontal)
-            }
-            VStack(alignment: .leading) {
-                HStack(spacing: 5) {
-                    Image(systemName: "phone")
-                    Text("CreateListing.PhoneNumber")
-                }
-                .font(.system(.headline, design: .rounded))
-                .foregroundColor(.darkGrey)
-                .padding(.leading)
-                
-                ZStack(alignment: .leading) {
-                    RoundedRectangle(cornerRadius: 15)
-                        .frame(height: 50)
-                        .foregroundColor(Color(UIColor.systemBackground))
-                        .shadow(color: .darkGrey.opacity(0.25), radius: 10)
-                    TextField("CreateListing.PhoneNumber", value: .constant(""), formatter: NumberFormatter())
-                        .keyboardType(.numberPad)
-                        .padding(.horizontal)
-                        .font(.system(.body, design: .rounded))
-                }
-                .padding(.horizontal)
-            }
+            // Available from
+            DefaultDateField("CreateListing.Available", placeholder: "CreateListing.Available.Placeholder", systemImage: "calendar", value: $vm.availabilityFrom)
+            // Phone number
+            DefaultTextField("CreateListing.PhoneNumber", systemName: "phone", value: $vm.phoneNumber)
         }
     }
     

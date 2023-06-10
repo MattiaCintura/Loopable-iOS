@@ -29,7 +29,7 @@ final class SignInWithAppleHelper: NSObject {
             }
         }
     }
-    
+
     private func signInWithAppleFlow(complition: @escaping (Result<SignInWithAppleResultModel, Error>) -> Void) {
         guard let topViewController = Functionalities.topViewController() else {
             complition(.failure(AuthenticationError.unableToSignInWithApple))

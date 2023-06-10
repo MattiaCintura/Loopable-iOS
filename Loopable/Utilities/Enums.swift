@@ -158,3 +158,8 @@ enum AuthenticationError: Error {
     case confirmPassword
     case unableToSignInWithApple
 }
+
+enum PermissionsError: Error {
+    case photosPermissionDenied
+    case unknownPermissionError
+}

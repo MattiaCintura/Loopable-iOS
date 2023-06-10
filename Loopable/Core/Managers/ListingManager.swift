@@ -15,5 +15,5 @@ final class ListingManager {
     
     private let collection = Firestore.firestore().collection(FirestoreCollection.productListing.rawValue)
     
-    
+    private init() {}
 }
