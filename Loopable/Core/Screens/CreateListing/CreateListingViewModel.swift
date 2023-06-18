@@ -21,7 +21,7 @@ final class CreateListingViewModel: ObservableObject {
     @Published var category: ProductCategory? = nil
     @Published var yearOfPurchase: String = ""
     @Published var condition: ProductCondition? = nil
-    @Published var availabilityFrom: Date = Date()
+    @Published var availabilityFrom: Date = .now
     @Published var phoneNumber: String = ""
     
     @Published var selectedImages: [PhotosPickerItem] = []
@@ -48,6 +48,14 @@ final class CreateListingViewModel: ObservableObject {
                 fatalError("\(failure)")
             }
         }
+    }
+    
+    func removeImage(image: UIImage) {
+        guard let index = images.firstIndex(of: image) else {
+            return
+        }
+        
+        images.remove(at: index)
     }
     
     func photosPermission() -> Void {

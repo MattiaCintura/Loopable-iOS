@@ -22,6 +22,9 @@ struct CreateListingView: View {
                         FisrtStep
                     case 1:
                         SecondStep
+                            .onAppear {
+                                vm.photosPermission()
+                            }
                     case 2:
                         ThridStep
                     default:
@@ -116,7 +119,7 @@ extension CreateListingView {
                 
                 ZStack(alignment: .top) {
                     RoundedRectangle(cornerRadius: 15)
-                        .frame(height: vm.images.isEmpty ? 50 : 150)
+                        .frame(height: vm.images.isEmpty ? 50 : 135)
                         .foregroundColor(Color(UIColor.systemBackground))
                         .shadow(color: .darkGrey.opacity(0.25), radius: 10)
 
@@ -151,10 +154,20 @@ extension CreateListingView {
                             ScrollView(.horizontal, showsIndicators: false) {
                                 HStack {
                                     ForEach(vm.images, id: \.self) { image in
-                                        Image(uiImage: image)
-                                            .resizable()
-                                            .scaledToFill()
-                                            .frame(height: 80)
+                                        ZStack(alignment: .topTrailing) {
+                                            Image(uiImage: image)
+                                                .resizable()
+                                                .scaledToFill()
+                                                .frame(height: 70)
+                                                .cornerRadius(5)
+                                            
+                                            Button {
+                                                vm.removeImage(image: image)
+                                            } label: {
+                                                Image(systemName: "minus.circle.fill")
+                                                    .renderingMode(.original)
+                                            }
+                                        }
                                     }
                                 }
                                 .padding(.horizontal)
