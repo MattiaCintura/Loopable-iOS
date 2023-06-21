@@ -15,7 +15,7 @@ import Photos
 final class CreateListingViewModel: ObservableObject {
     @Published var title: String = ""
     @Published var description: String = ""
-    @Published var areaOfInterest: ProvinceOfItaly? = nil
+    @Published var areaOfInterest: ProvinceOfItaly = .agrigento
     @Published var dailyPrice: String = ""
     @Published var images: [UIImage] = []
     @Published var category: ProductCategory? = nil
@@ -24,33 +24,38 @@ final class CreateListingViewModel: ObservableObject {
     @Published var availabilityFrom: Date = .now
     @Published var phoneNumber: String = ""
     
-    @Published var selectedImages: [PhotosPickerItem] = []
+    @Published var selectedImages: [PhotosPickerItem] = [] {
+        didSet {
+            handleImagesChange(from: selectedImages)
+        }
+    }
     
     @Published var hasError = false
     @Published var errorMessage: String = ""
 
-    func handleImageChange() -> Void {
-        guard let item = selectedImages.first else {
-            return
-        }
-        item.loadTransferable(type: Data.self) { [weak self] result in
-            switch result {
-            case .success(let data):
-                if let data {
-                    DispatchQueue.main.async {
-                        guard let uiImage = UIImage(data: data) else {
-                            return
-                        }
-                        self?.images.append(uiImage)
+    func handleImagesChange(from selections: [PhotosPickerItem]) -> Void {
+        Task {
+            var uiImages: [UIImage] = []
+            for selection in selections {
+                if let data = try? await selection.loadTransferable(type: Data.self) {
+                    if let uiImage = UIImage(data: data) {
+                        uiImages.append(uiImage)
                     }
                 }
-            case .failure(let failure):
-                fatalError("\(failure)")
             }
+            images = uiImages
         }
     }
     
-    func removeImage(image: UIImage) {
+    func disableButton() -> Bool {
+        #if targetEnvironment(simulator)
+        return false
+        #else
+        return title.isEmpty || description.isEmpty || dailyPrice.isEmpty || images.count >= 2 || yearOfPurchase.isEmpty || phoneNumber.isEmpty
+        #endif
+    }
+    
+    func removeImage(image: UIImage) -> Void {
         guard let index = images.firstIndex(of: image) else {
             return
         }
