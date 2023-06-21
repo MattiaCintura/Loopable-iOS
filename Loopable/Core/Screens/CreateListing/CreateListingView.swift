@@ -211,11 +211,10 @@ struct CreateListingView: View {
                         DefaultTextField("CreateListing.PhoneNumber", systemName: "phone", value: $vm.phoneNumber)
                     }
                     Button {
-                        if vm.progress < 2 {
-                            vm.progress += 1
-                        }
+
+                        
                     } label: {
-                        Text(vm.progress == 2 ? "CreateListing.Publish" : "Shared.Next")
+                        Text("CreateListing.Publish")
                             .frame(width: UIScreen.main.bounds.width - 30, height: 55)
                             .font(.system(.headline, design: .rounded))
                             .foregroundColor(.white)
