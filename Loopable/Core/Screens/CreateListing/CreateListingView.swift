@@ -206,7 +206,7 @@ struct CreateListingView: View {
                             .padding(.horizontal)
                         }
                         // Available from
-                        DefaultDateField("CreateListing.Available", placeholder: "CreateListing.Available.Placeholder", systemImage: "calendar", value: $vm.availabilityFrom)
+                        DefaultDateField("CreateListing.Available", placeholder: "CreateListing.Available.Placeholder", systemImage: "calendar", value: $vm.availabilityFrom, range: Date()...)
                         // Phone number
                         DefaultTextField("CreateListing.PhoneNumber", systemName: "phone", value: $vm.phoneNumber)
                     }
@@ -224,6 +224,10 @@ struct CreateListingView: View {
                     .disabled(vm.disableButton())
                 }
             }
+            .background(
+                Color.globalBackground
+                    .ignoresSafeArea()
+            )
             .navigationTitle("CreateListing.NavigationTitle")
             .navigationBarTitleDesign(.darkGrey, rounded: true)
             .onAppear {

@@ -28,8 +28,4 @@ class ProfileViewModel: ObservableObject {
             self.username = userData.email?.components(separatedBy: "@")[0]
         }
     }
-    
-    func logout() throws {
-        try AuthenticationManager.shared.signOut()
-    }
 }

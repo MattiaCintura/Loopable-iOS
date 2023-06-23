@@ -16,13 +16,17 @@ struct HomepageView: View {
             ScrollView {
                 SearchField
                 if showProgressWidget {
-                    ProgressWidget(showProgressWidget: $showProgressWidget)                    
+                    ProgressWidget(showProgressWidget: $showProgressWidget)
                 }
                 Categories
                 NearYou
                 Highlight
                 Spacer()
             }
+            .background(
+                Color.globalBackground
+                    .ignoresSafeArea()
+            )
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .principal) {

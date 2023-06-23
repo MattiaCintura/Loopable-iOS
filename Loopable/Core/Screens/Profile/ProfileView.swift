@@ -9,7 +9,6 @@ import SwiftUI
 
 struct ProfileView: View {
     @StateObject private var vm = ProfileViewModel()
-    @Binding var showAuthenticationView: Bool
     @State var didNavigateBack: Bool = false
 
     var body: some View {
@@ -25,19 +24,11 @@ struct ProfileView: View {
                 UserListing
             }
             .padding(.horizontal)
+            .background(
+                Color.globalBackground
+                    .ignoresSafeArea()
+            )
             .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Button("Shared.Logout") {
-                        do {
-                            try vm.logout()
-                            showAuthenticationView = true
-                        } catch {
-                            print("\(error)")
-                        }
-                    }
-                }
-            }
         }
         .onAppear {
             Task {
@@ -62,7 +53,7 @@ struct ProfileView: View {
 
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileView(showAuthenticationView: .constant(false))
+        ProfileView()
     }
 }
 
@@ -97,6 +88,7 @@ extension ProfileView {
                     .redacted(if: vm.username == nil)
             }
         }
+        .padding(.top, 30)
     }
     
     private var CompleteProfile: some View {
