@@ -43,6 +43,7 @@
 "TabBar.Homepage.Label" = "Homepage";
 "TabBar.CreateListing.Label" = "Create listing";
 "TabBar.Chat.Label" = "Chat";
+"TabBar.Settings.Label" = "Settings";
 "TabBar.Profile.Label" = "Profile";
 
 // MARK: Homepage
@@ -109,3 +110,6 @@
 "Profile.CompleteProfile.Province" = "Province of residence";
 "Profile.CompleteProfile.Province.Placeholder" = "Select province";
 "Profile.CompleteProfile.UpdateProfile" = "Update profile";
+
+// MARK: Settings
+"Settings.NavigationTitle" = "Settings";

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E0011842A45AEB900C307C3 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0011832A45AEB900C307C3 /* SettingsView.swift */; };
+		3E0011862A45AFFE00C307C3 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0011852A45AFFE00C307C3 /* SettingsViewModel.swift */; };
 		3E0C152A2A1BEBC300BB5B26 /* CreateListingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0C15292A1BEBC300BB5B26 /* CreateListingViewModel.swift */; };
 		3E0EA3C02A2A21FD00F4BC89 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 3E0EA3BF2A2A21FD00F4BC89 /* FirebaseStorage */; };
 		3E0EA3C22A2A22F100F4BC89 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0EA3C12A2A22F100F4BC89 /* StorageManager.swift */; };
@@ -78,6 +80,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3E0011832A45AEB900C307C3 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		3E0011852A45AFFE00C307C3 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		3E0C15292A1BEBC300BB5B26 /* CreateListingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateListingViewModel.swift; sourceTree = "<group>"; };
 		3E0EA3C12A2A22F100F4BC89 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		3E11FB582A2B897900EB47D2 /* DefaultImageField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultImageField.swift; sourceTree = "<group>"; };
@@ -161,6 +165,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3E0011822A45AEAC00C307C3 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				3E0011832A45AEB900C307C3 /* SettingsView.swift */,
+				3E0011852A45AFFE00C307C3 /* SettingsViewModel.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 		3E18C5652A0FF7190046509E /* SignInWithApple */ = {
 			isa = PBXGroup;
 			children = (
@@ -215,7 +228,7 @@
 				3EEC83E329D70D0C003320E5 /* Homepage */,
 				3EEC83E729D70D98003320E5 /* CreateListing */,
 				3EEC83E629D70D76003320E5 /* Profile */,
-				3EEC83E529D70D3D003320E5 /* Chat */,
+				3E0011822A45AEAC00C307C3 /* Settings */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -367,13 +380,6 @@
 				3EEC83E829D70DC6003320E5 /* HomepageView.swift */,
 			);
 			path = Homepage;
-			sourceTree = "<group>";
-		};
-		3EEC83E529D70D3D003320E5 /* Chat */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Chat;
 			sourceTree = "<group>";
 		};
 		3EEC83E629D70D76003320E5 /* Profile */ = {
@@ -537,12 +543,14 @@
 				3E0C152A2A1BEBC300BB5B26 /* CreateListingViewModel.swift in Sources */,
 				3EE182722A0BB2D300A03907 /* ResetPasswordViewModel.swift in Sources */,
 				3E50F5FE2A06528F009E7C1E /* AuthenticationMainView.swift in Sources */,
+				3E0011842A45AEB900C307C3 /* SettingsView.swift in Sources */,
 				3EC5F9E32A115BC200D5CEE1 /* UserManager.swift in Sources */,
 				3E50F6032A066C52009E7C1E /* SignInWithEmailViewModel.swift in Sources */,
 				3E18C56E2A1004CB0046509E /* SignInWithAppleHelper.swift in Sources */,
 				3E20CA3F2A2904CA00EF8307 /* ListingManager.swift in Sources */,
 				3EE182752A0D7D8F00A03907 /* SignUpWithEmailView.swift in Sources */,
 				3E467B1529FC2BE100568544 /* FormStepper.swift in Sources */,
+				3E0011862A45AFFE00C307C3 /* SettingsViewModel.swift in Sources */,
 				3E18C5702A1019EC0046509E /* SignInWithAppleViewModel.swift in Sources */,
 				3EB03DCC29D85EC00076DBDB /* Extentions.swift in Sources */,
 				3E467B1329FB079900568544 /* CreateListingView.swift in Sources */,

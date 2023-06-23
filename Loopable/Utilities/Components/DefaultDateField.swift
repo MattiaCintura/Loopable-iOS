@@ -12,12 +12,14 @@ struct DefaultDateField: View {
     var placeholder: LocalizedStringKey
     var systemImage: String
     var value: Binding<Date>
+    var range: PartialRangeFrom<Date>
     
-    init(_ name: LocalizedStringKey, placeholder: LocalizedStringKey, systemImage: String, value: Binding<Date>) {
+    init(_ name: LocalizedStringKey, placeholder: LocalizedStringKey, systemImage: String, value: Binding<Date>, range: PartialRangeFrom<Date>) {
         self.name = name
         self.placeholder = placeholder
         self.systemImage = systemImage
         self.value = value
+        self.range = range
     }
 
     var body: some View {
@@ -36,7 +38,7 @@ struct DefaultDateField: View {
                     .foregroundColor(Color(UIColor.systemBackground))
                     .shadow(color: .darkGrey.opacity(0.25), radius: 10)
 
-                DatePicker(placeholder, selection: .constant(Date()), displayedComponents: [.date])
+                DatePicker(placeholder, selection: value, in: range,displayedComponents: [.date])
                     .padding(.horizontal)
                     .foregroundColor(.gray.opacity(0.5))
             }
@@ -51,7 +53,8 @@ struct DefaultDateField_Previews: PreviewProvider {
             "CreateListing.Available",
             placeholder: "CreateListing.Available.Placeholder",
             systemImage: "calendar",
-            value: .constant(Date())
+            value: .constant(Date()),
+            range: Date()...
         )
         .previewLayout(PreviewLayout.sizeThatFits)
         .padding()

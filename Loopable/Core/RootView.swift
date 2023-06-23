@@ -20,18 +20,20 @@ struct RootView: View {
                 .tabItem {
                     Label("TabBar.CreateListing.Label", systemImage: "plus.square")
                 }
-            Color.white
-                .tabItem {
-                    Label("TabBar.Chat.Label", systemImage: "bubble.left.and.bubble.right")
-                }
-            ProfileView(showAuthenticationView: $showAuthenticationView)
+            ProfileView()
                 .tabItem {
                     Label("TabBar.Profile.Label", systemImage: "person.circle")
                 }
+            SettingsView(showAuthenticationView: $showAuthenticationView)
+                .tabItem {
+                    Label("TabBar.Settings.Label", systemImage: "gearshape")
+                }
         }
         .onAppear {
+            #if !targetEnvironment(simulator)
             let currentUser = try? AuthenticationManager.shared.getAuthenticatedUser()
             self.showAuthenticationView = currentUser == nil
+            #endif
         }
         .fullScreenCover(isPresented: $showAuthenticationView) {
             AuthenticationMainView(showAuthenticationView: $showAuthenticationView)

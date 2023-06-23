@@ -10,6 +10,7 @@ import SwiftUI
 import UIKit
 
 extension Color {
+    static let globalBackground = Color("GlobalBackground")
     static let darkGrey = Color("DarkGrey")
     static let lightGrey = Color("LightGrey")
     static let darkGrey25 = Color("DarkGrey").opacity(0.25)
