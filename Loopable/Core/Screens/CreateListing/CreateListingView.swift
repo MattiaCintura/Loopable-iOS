@@ -212,7 +212,6 @@ struct CreateListingView: View {
                     }
                     Button {
 
-                        
                     } label: {
                         Text("CreateListing.Publish")
                             .frame(width: UIScreen.main.bounds.width - 30, height: 55)
