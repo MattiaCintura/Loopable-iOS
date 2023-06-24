@@ -16,10 +16,6 @@ struct RootView: View {
                 .tabItem {
                     Label("TabBar.Homepage.Label", systemImage: "house")
                 }
-            CreateListingView()
-                .tabItem {
-                    Label("TabBar.CreateListing.Label", systemImage: "plus.square")
-                }
             ProfileView()
                 .tabItem {
                     Label("TabBar.Profile.Label", systemImage: "person.circle")
