@@ -12,7 +12,7 @@ struct RootView: View {
 
     var body: some View {
         TabView {
-            HomepageView()
+            HomepageScreen()
                 .tabItem {
                     Label("TabBar.Homepage.Label", systemImage: "house")
                 }

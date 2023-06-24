@@ -133,6 +133,12 @@ enum AuthProviderOprion: String {
     case apple = "apple.com"
 }
 
+// MARK: Homepage
+enum HomepageState {
+    case normal, loading, result, noData
+}
+
+
 // MARK: Product Listing
 enum ProductCategory: String, CaseIterable, Codable {
     case outdoorActivities

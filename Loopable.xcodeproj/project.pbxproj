@@ -43,6 +43,8 @@
 		3E9660DB2A2A60410070D23A /* DefaultTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9660DA2A2A60410070D23A /* DefaultTextField.swift */; };
 		3E9660DD2A2A64DD0070D23A /* DefaultNumberField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9660DC2A2A64DD0070D23A /* DefaultNumberField.swift */; };
 		3E9660E12A2B80880070D23A /* DefaultDateField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9660E02A2B80880070D23A /* DefaultDateField.swift */; };
+		3EA0D6DD2A479336008218D6 /* HomepageScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA0D6DC2A479336008218D6 /* HomepageScreen.swift */; };
+		3EA0D6DF2A4795B2008218D6 /* SearchLoadingPlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA0D6DE2A4795B2008218D6 /* SearchLoadingPlaceholderView.swift */; };
 		3EB03DCC29D85EC00076DBDB /* Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB03DCB29D85EC00076DBDB /* Extentions.swift */; };
 		3EB03DCE29D86D040076DBDB /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB03DCD29D86D040076DBDB /* Enums.swift */; };
 		3EB03DD129D89D9B0076DBDB /* SearchResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB03DD029D89D9B0076DBDB /* SearchResultView.swift */; };
@@ -112,6 +114,8 @@
 		3E9660DA2A2A60410070D23A /* DefaultTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTextField.swift; sourceTree = "<group>"; };
 		3E9660DC2A2A64DD0070D23A /* DefaultNumberField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultNumberField.swift; sourceTree = "<group>"; };
 		3E9660E02A2B80880070D23A /* DefaultDateField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultDateField.swift; sourceTree = "<group>"; };
+		3EA0D6DC2A479336008218D6 /* HomepageScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomepageScreen.swift; sourceTree = "<group>"; };
+		3EA0D6DE2A4795B2008218D6 /* SearchLoadingPlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchLoadingPlaceholderView.swift; sourceTree = "<group>"; };
 		3EB03DCB29D85EC00076DBDB /* Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extentions.swift; sourceTree = "<group>"; };
 		3EB03DCD29D86D040076DBDB /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		3EB03DD029D89D9B0076DBDB /* SearchResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultView.swift; sourceTree = "<group>"; };
@@ -378,6 +382,8 @@
 			isa = PBXGroup;
 			children = (
 				3EEC83E829D70DC6003320E5 /* HomepageView.swift */,
+				3EA0D6DC2A479336008218D6 /* HomepageScreen.swift */,
+				3EA0D6DE2A4795B2008218D6 /* SearchLoadingPlaceholderView.swift */,
 			);
 			path = Homepage;
 			sourceTree = "<group>";
@@ -548,6 +554,7 @@
 				3E50F6032A066C52009E7C1E /* SignInWithEmailViewModel.swift in Sources */,
 				3E18C56E2A1004CB0046509E /* SignInWithAppleHelper.swift in Sources */,
 				3E20CA3F2A2904CA00EF8307 /* ListingManager.swift in Sources */,
+				3EA0D6DF2A4795B2008218D6 /* SearchLoadingPlaceholderView.swift in Sources */,
 				3EE182752A0D7D8F00A03907 /* SignUpWithEmailView.swift in Sources */,
 				3E467B1529FC2BE100568544 /* FormStepper.swift in Sources */,
 				3E0011862A45AFFE00C307C3 /* SettingsViewModel.swift in Sources */,
@@ -559,6 +566,7 @@
 				3EC5F9E72A1182CD00D5CEE1 /* CompleteProfileView.swift in Sources */,
 				3E9660E12A2B80880070D23A /* DefaultDateField.swift in Sources */,
 				3E9660DD2A2A64DD0070D23A /* DefaultNumberField.swift in Sources */,
+				3EA0D6DD2A479336008218D6 /* HomepageScreen.swift in Sources */,
 				3EC5F9E52A11728200D5CEE1 /* UserModels.swift in Sources */,
 				3EB03DD129D89D9B0076DBDB /* SearchResultView.swift in Sources */,
 				3EEC83E929D70DC6003320E5 /* HomepageView.swift in Sources */,

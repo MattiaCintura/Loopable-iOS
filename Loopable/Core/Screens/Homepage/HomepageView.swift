@@ -8,33 +8,11 @@
 import SwiftUI
 
 struct HomepageView: View {
-    @State private var searchQuery: String = ""
-    @State private var showProgressWidget = true
-
     var body: some View {
-        NavigationStack {
-            ScrollView {
-                SearchField
-                if showProgressWidget {
-                    ProgressWidget(showProgressWidget: $showProgressWidget)
-                }
-                Categories
-                NearYou
-                Highlight
-                Spacer()
-            }
-            .background(
-                Color.globalBackground
-                    .ignoresSafeArea()
-            )
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                ToolbarItem(placement: .principal) {
-                    Image("Loopable_Green_Logo_Full")
-                        .resizable()
-                        .scaledToFit()
-                }
-            }
+        VStack {
+            Categories
+            NearYou
+            Highlight
         }
     }
 }
@@ -46,29 +24,6 @@ struct HomepageView_Previews: PreviewProvider {
 }
 
 extension HomepageView {
-    private var SearchField: some View {
-        ZStack {
-            RoundedRectangle(cornerRadius: 30)
-                .frame(height: 50)
-                .foregroundColor(Color(UIColor.systemBackground))
-                .shadow(color: .darkGrey.opacity(0.25), radius: 4)
-            
-            HStack {
-                NavigationLink {
-                    SearchResultView(searchQuery: searchQuery)
-                } label: {
-                    Image(systemName: "magnifyingglass")
-                        .foregroundColor(.darkGrey)
-                }
-
-                TextField("Homepage.SearchFieldPlaceholder", text: $searchQuery)
-            }
-            .padding()
-        }
-        .padding(.horizontal)
-        .padding(.bottom)
-    }
-    
     private var Categories: some View {
         HStack(spacing: 20) {
             Group {
