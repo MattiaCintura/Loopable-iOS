@@ -45,6 +45,7 @@
 		3E9660E12A2B80880070D23A /* DefaultDateField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9660E02A2B80880070D23A /* DefaultDateField.swift */; };
 		3EA0D6DD2A479336008218D6 /* HomepageScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA0D6DC2A479336008218D6 /* HomepageScreen.swift */; };
 		3EA0D6DF2A4795B2008218D6 /* SearchLoadingPlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA0D6DE2A4795B2008218D6 /* SearchLoadingPlaceholderView.swift */; };
+		3EA0D6E12A47A212008218D6 /* NoDataPlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA0D6E02A47A212008218D6 /* NoDataPlaceholderView.swift */; };
 		3EB03DCC29D85EC00076DBDB /* Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB03DCB29D85EC00076DBDB /* Extentions.swift */; };
 		3EB03DCE29D86D040076DBDB /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB03DCD29D86D040076DBDB /* Enums.swift */; };
 		3EB03DD129D89D9B0076DBDB /* SearchResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB03DD029D89D9B0076DBDB /* SearchResultView.swift */; };
@@ -116,6 +117,7 @@
 		3E9660E02A2B80880070D23A /* DefaultDateField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultDateField.swift; sourceTree = "<group>"; };
 		3EA0D6DC2A479336008218D6 /* HomepageScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomepageScreen.swift; sourceTree = "<group>"; };
 		3EA0D6DE2A4795B2008218D6 /* SearchLoadingPlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchLoadingPlaceholderView.swift; sourceTree = "<group>"; };
+		3EA0D6E02A47A212008218D6 /* NoDataPlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoDataPlaceholderView.swift; sourceTree = "<group>"; };
 		3EB03DCB29D85EC00076DBDB /* Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extentions.swift; sourceTree = "<group>"; };
 		3EB03DCD29D86D040076DBDB /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		3EB03DD029D89D9B0076DBDB /* SearchResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultView.swift; sourceTree = "<group>"; };
@@ -228,7 +230,6 @@
 			children = (
 				3E50F5F92A065028009E7C1E /* Authentication */,
 				3EB03DD229D952E00076DBDB /* ProductListing */,
-				3EB03DCF29D89D630076DBDB /* SearchResult */,
 				3EEC83E329D70D0C003320E5 /* Homepage */,
 				3EEC83E729D70D98003320E5 /* CreateListing */,
 				3EEC83E629D70D76003320E5 /* Profile */,
@@ -273,14 +274,6 @@
 				3E80EB1B2A0ECE7C001B0420 /* SignUpWithEmailViewModel_Tests.swift */,
 			);
 			path = Loopable_Tests;
-			sourceTree = "<group>";
-		};
-		3EB03DCF29D89D630076DBDB /* SearchResult */ = {
-			isa = PBXGroup;
-			children = (
-				3EB03DD029D89D9B0076DBDB /* SearchResultView.swift */,
-			);
-			path = SearchResult;
 			sourceTree = "<group>";
 		};
 		3EB03DD229D952E00076DBDB /* ProductListing */ = {
@@ -381,9 +374,11 @@
 		3EEC83E329D70D0C003320E5 /* Homepage */ = {
 			isa = PBXGroup;
 			children = (
-				3EEC83E829D70DC6003320E5 /* HomepageView.swift */,
 				3EA0D6DC2A479336008218D6 /* HomepageScreen.swift */,
+				3EEC83E829D70DC6003320E5 /* HomepageView.swift */,
 				3EA0D6DE2A4795B2008218D6 /* SearchLoadingPlaceholderView.swift */,
+				3EA0D6E02A47A212008218D6 /* NoDataPlaceholderView.swift */,
+				3EB03DD029D89D9B0076DBDB /* SearchResultView.swift */,
 			);
 			path = Homepage;
 			sourceTree = "<group>";
@@ -572,6 +567,7 @@
 				3EEC83E929D70DC6003320E5 /* HomepageView.swift in Sources */,
 				3EE182772A0D7D9900A03907 /* SignUpWithEmailViewModel.swift in Sources */,
 				3EB03DCE29D86D040076DBDB /* Enums.swift in Sources */,
+				3EA0D6E12A47A212008218D6 /* NoDataPlaceholderView.swift in Sources */,
 				3E11FB592A2B897900EB47D2 /* DefaultImageField.swift in Sources */,
 				3EDBEFA12A095F60005CA7EC /* ProfileViewModel.swift in Sources */,
 				3EB03DD629D953450076DBDB /* ProductListingView.swift in Sources */,
@@ -785,7 +781,6 @@
 				INFOPLIST_FILE = Loopable/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Loopable;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.shopping";
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = test;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -825,7 +820,6 @@
 				INFOPLIST_FILE = Loopable/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Loopable;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.shopping";
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = test;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

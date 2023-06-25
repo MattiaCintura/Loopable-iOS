@@ -47,7 +47,6 @@
 "TabBar.Profile.Label" = "Profilo";
 
 // MARK: Homepage
-"Homepage.Greeting" = "Ciao";
 "Homepage.SearchFieldPlaceholder" = "Cerca un articolo";
 "Homepage.Categories.DIY" = "Fai da te";
 "Homepage.Categories.Outdoor" = "Attività all'aperto";
@@ -55,6 +54,8 @@
 "Homepage.Categories.Other" = "Altro";
 "Homepage.NearYou" = "Vicino a te";
 "Homepage.Highlight" = "In evidenza";
+
+"Homepage.NoData" = "Non ci sono risultati per %@";
 
 // MARK: Progress Widget
 "ProgressWidget.Handover" = "Consegna - ";

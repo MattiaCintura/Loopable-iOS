@@ -44,10 +44,9 @@ struct HomepageScreen: View {
                     }
                     .transition(.opacity)
                 case .noData:
-                    Text("No data")
+                    NoDataPlaceholderView(searchQuery: searchQuery)
                         .transition(.opacity)
                 }
-                Spacer()
             }
             .background(
                 Color.globalBackground

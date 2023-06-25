@@ -11,6 +11,14 @@ import SwiftUI
 struct LoopableApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
 
+    init() {
+        let appearance = UITabBarAppearance()
+        appearance.backgroundEffect = UIBlurEffect(style: .systemUltraThinMaterial)
+                    
+        UITabBar.appearance().standardAppearance = appearance
+        UITabBar.appearance().scrollEdgeAppearance = appearance
+    }
+
     var body: some Scene {
         WindowGroup {
             RootView()
