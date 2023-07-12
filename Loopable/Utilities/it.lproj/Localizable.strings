@@ -5,7 +5,7 @@
   Created by Mattia Cintura on 31/03/23.
   
 */
-// MARK: Shared
+// MARK: - Shared
 "Shared.Back" = "Indietro";
 "Shared.GoBack" = "Torna indierto";
 "Shared.Next" = "Avanti";
@@ -14,7 +14,7 @@
 "Shared.OK" = "OK";
 "Shared.Logout" = "Esci";
 
-// MARK: Authentication
+// MARK: - Authentication
 "Authentication.Title" = "Entra nel loop";
 "Authentication.Subtitle" = "Affittate ciò che ti serve, presta ciò che hai";
 "Authentication.SignInWithEmail" = "Accedi con email";
@@ -39,14 +39,14 @@
 "Authentication.Error.PasswordAndConfirmPassword" = "La password e la password di conferma devono essere uguali";
 "Authentication.Error.Generic" = "Errore di accesso, riprovare più tardi";
 
-// MARK: Root View
+// MARK: - Root View
 "TabBar.Homepage.Label" = "Homepage";
 "TabBar.CreateListing.Label" = "Nuovo annuncio";
 "TabBar.Chat.Label" = "Chat";
 "TabBar.Settings.Label" = "Impostazioni";
 "TabBar.Profile.Label" = "Profilo";
 
-// MARK: Homepage
+// MARK: - Homepage
 "Homepage.SearchFieldPlaceholder" = "Cerca un articolo";
 "Homepage.Categories.DIY" = "Fai da te";
 "Homepage.Categories.Outdoor" = "Attività all'aperto";
@@ -57,7 +57,7 @@
 
 "Homepage.NoData" = "Non ci sono risultati";
 
-// MARK: Progress Widget
+// MARK: - Progress Widget
 "ProgressWidget.Handover" = "Consegna - ";
 "ProgressWidget.Tomorrow" = "Domani";
 "ProgressWidget.ConfirmHandover" = "Conferma consegna";
@@ -68,16 +68,16 @@
 "ProgressWidget.ConfirmHandback" = "Conferma ritiro";
 "ProgressWidget.Done" = "Finito!";
 
-// MARK: Search Result
+// MARK: - Search Result
 "SearchResult.SearchFieldPlaceholder" = "Cerca un articolo";
 "SearchResult.Location %@" = "Provincia %@";
 
-// MARK: Product Listing
+// MARK: - Product Listing
 "ProductListing.Prices.OneDay" = "Giornaliero";
 "ProductListing.Prices.ThreeDays" = "3 giorni";
 "ProductListing.Prices.SevenDays" = "7 giorni";
 
-// MARK: Create Listing
+// MARK: - Create Listing
 "CreateListing.NavigationTitle" = "Crea Annuncio";
 "CreateListing.Title" = "Titolo";
 "CreateListing.Description" = "Descrizione";
@@ -96,7 +96,7 @@
 "CreateListing.PhoneNumber" = "Numero di telefono";
 "CreateListing.Publish" = "Pubblica annuncio";
 
-// MARK: Profile
+// MARK: - Profile
 "Profile.ProfileConfiguration" = "Configurazione del profilo";
 "Profile.OneStepLeft" = "Ancora un passaggio";
 "Profile.CompleteProfile" = "Completa il tuo profilo per usare Loopable";
@@ -112,5 +112,5 @@
 "Profile.CompleteProfile.Province.Placeholder" = "Scegli provincia";
 "Profile.CompleteProfile.UpdateProfile" = "Aggiorna profilo";
 
-// MARK: Settings
+// MARK: - Settings
 "Settings.NavigationTitle" = "Impostazioni";

@@ -5,7 +5,7 @@
   Created by Mattia Cintura on 31/03/23.
   
 */
-// MARK: Shared
+// MARK: - Shared
 "Shared.Back" = "Back";
 "Shared.GoBack" = "Go back";
 "Shared.Next" = "Next";
@@ -14,7 +14,7 @@
 "Shared.OK" = "OK";
 "Shared.Logout" = "Logout";
 
-// MARK: Authentication
+// MARK: - Authentication
 "Authentication.Title" = "Join the loop";
 "Authentication.Subtitle" = "Rent what you need, lend what you have";
 "Authentication.SignInWithEmail" = "Sign in with email";
@@ -39,14 +39,14 @@
 "Authentication.Error.PasswordAndConfirmPassword" = "Password and confirm password must be the same";
 "Authentication.Error.Generic" = "Login error, try again later";
 
-// MARK: Root View
+// MARK: - Root View
 "TabBar.Homepage.Label" = "Homepage";
 "TabBar.CreateListing.Label" = "Create listing";
 "TabBar.Chat.Label" = "Chat";
 "TabBar.Settings.Label" = "Settings";
 "TabBar.Profile.Label" = "Profile";
 
-// MARK: Homepage
+// MARK: - Homepage
 "Homepage.SearchFieldPlaceholder" = "Search an item";
 "Homepage.Categories.DIY" = "Do it yourself";
 "Homepage.Categories.Outdoor" = "Outdoor activities";
@@ -57,7 +57,7 @@
 
 "Homepage.NoData" = "There are no results";
 
-// MARK: Progress Widget
+// MARK: - Progress Widget
 "ProgressWidget.Handover" = "Handover - ";
 "ProgressWidget.Tomorrow" = "Tomorrow";
 "ProgressWidget.ConfirmHandover" = "Confirm Handover";
@@ -68,16 +68,16 @@
 "ProgressWidget.ConfirmHandback" = "Confirm handback";
 "ProgressWidget.Done" = "Done!";
 
-// MARK: Search Result
+// MARK: - Search Result
 "SearchResult.SearchFieldPlaceholder" = "Search an item";
 "SearchResult.Location %@" = "%@ Province";
 
-// MARK: Product Listing
+// MARK: - Product Listing
 "ProductListing.Prices.OneDay" = "Daily";
 "ProductListing.Prices.ThreeDays" = "3 days";
 "ProductListing.Prices.SevenDays" = "7 days";
 
-// MARK: Create Listing
+// MARK: - Create Listing
 "CreateListing.NavigationTitle" = "Create Listing";
 "CreateListing.Title" = "Title";
 "CreateListing.Description" = "Description";
@@ -96,7 +96,7 @@
 "CreateListing.PhoneNumber" = "Phone number";
 "CreateListing.Publish" = "Publish listing";
 
-// MARK: Profile
+// MARK: - Profile
 "Profile.ProfileConfiguration" = "Profile configuration";
 "Profile.OneStepLeft" = "One Step Left";
 "Profile.CompleteProfile" = "Complete your Loopable profile";
@@ -112,5 +112,5 @@
 "Profile.CompleteProfile.Province.Placeholder" = "Select province";
 "Profile.CompleteProfile.UpdateProfile" = "Update profile";
 
-// MARK: Settings
+// MARK: - Settings
 "Settings.NavigationTitle" = "Settings";
