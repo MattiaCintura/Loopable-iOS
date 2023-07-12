@@ -19,6 +19,10 @@ final class AuthenticationManager {
             throw URLError(.badServerResponse)
         }
         
+//        Task {
+//            let test = try await user.getIDToken()
+//        }
+        
         return AuthDataResultModel(user: user)
     }
     

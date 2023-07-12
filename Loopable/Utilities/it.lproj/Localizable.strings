@@ -55,7 +55,7 @@
 "Homepage.NearYou" = "Vicino a te";
 "Homepage.Highlight" = "In evidenza";
 
-"Homepage.NoData" = "Non ci sono risultati per %@";
+"Homepage.NoData" = "Non ci sono risultati";
 
 // MARK: Progress Widget
 "ProgressWidget.Handover" = "Consegna - ";

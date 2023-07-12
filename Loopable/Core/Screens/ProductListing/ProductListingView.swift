@@ -8,61 +8,123 @@
 import SwiftUI
 
 struct ProductListingView: View {
+    var product: Product
     @State private var isPresented = false
 
     var body: some View {
-        NavigationStack {
-            ScrollView {
-                Photos
-                MainInfo
-                Prices
-                Divider()
-                    .padding(.horizontal)
-                MoreInfo
-                ConfirmButton
-            }
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbarBackground(Color.accentColor, for: .navigationBar)
-            .toolbarBackground(.visible, for: .navigationBar)
-            .navigationBarBackButtonHidden(true)
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Image(systemName: "heart")
-                        .foregroundColor(.white)
-                }
-                ToolbarItem(placement: .navigationBarLeading) {
-                    NavigationLink {
-                        SearchResultView(searchQuery: "Casco da sci")
-                    } label: {
-                        Image(systemName: "chevron.backward")
-                            .foregroundColor(.white)
-                    }
-                }
-            }
+        ScrollView {
+            Photos
+            MainInfo
+            Prices
+            Divider()
+                .padding(.horizontal)
+            GeneralInfo
+            Reviews
+            Owner
+            ConfirmButton
         }
+        .navigationBarTitleDisplayMode(.inline)
+        .toolbarBackground(Color.accentColor, for: .navigationBar)
+        .toolbarBackground(.visible, for: .navigationBar)
+        .toolbarColorScheme(.dark, for: .navigationBar)
+        .toolbar(.hidden, for: .tabBar)
+        .background(
+            Color.globalBackground
+                .ignoresSafeArea()
+        )
     }
 }
 
 struct ProductListingView_Previews: PreviewProvider {
     static var previews: some View {
-        ProductListingView()
+        let mock: Product = .init(
+            id: 1,
+            name: "Mountain Bike",
+            description: "Una mountain bike ad alte prestazioni per avventure fuoristrada.",
+            owner: "Avventura Bici",
+            price: 30.0,
+            category: .outdoorActivities,
+            images: ["https://picsum.photos/800", "https://picsum.photos/700"],
+            createdAt: .now,
+            updatedAt: .now
+        )
+        
+        ProductListingView(product: mock)
     }
 }
 
 
 extension ProductListingView {
     private var Photos: some View {
-        HStack {
-            Image("helmet_mock")
-                .resizable()
-                .scaledToFit()
+        TabView {
+            ForEach(product.images, id: \.self) { photoUrl in
+                AsyncImage(url: URL(string: photoUrl)) { image in
+                    image
+                        .resizable()
+                        .scaledToFill()
+                } placeholder: {
+                    ZStack {
+                        Rectangle()
+                            .foregroundColor(.gray)
+                        ProgressView()
+                    }
+                }
+            }
         }
+        .tabViewStyle(PageTabViewStyle(indexDisplayMode: .always))
+        .frame(height: 250)
     }
     
+    private var Prices: some View {
+        HStack(spacing: 10) {
+            ZStack {
+                RoundedRectangle(cornerRadius: 15)
+                    .stroke(Color.darkGrey25, lineWidth: 1)
+                    .foregroundColor(Color(UIColor.systemBackground))
+                VStack(spacing: 10) {
+                    Text("ProductListing.Prices.OneDay")
+                        .font(.system(.footnote, design: .rounded))
+                        .foregroundColor(.darkGrey50)
+                    Text("\(String(format: "%.2f", product.price))€")
+                        .font(.system(.headline, design: .rounded))
+                        .foregroundColor(.accentColor)
+                }
+            }
+            ZStack {
+                RoundedRectangle(cornerRadius: 15)
+                    .stroke(Color.darkGrey25, lineWidth: 1)
+                    .foregroundColor(Color(UIColor.systemBackground))
+                VStack(spacing: 10) {
+                    Text("ProductListing.Prices.ThreeDays")
+                        .font(.system(.footnote, design: .rounded))
+                        .foregroundColor(.darkGrey50)
+                    Text("\(String(format: "%.2f", product.price * 3))€")
+                        .font(.system(.headline, design: .rounded))
+                        .foregroundColor(.accentColor)
+                }
+            }
+            ZStack {
+                RoundedRectangle(cornerRadius: 15)
+                    .stroke(Color.darkGrey25, lineWidth: 1)
+                    .foregroundColor(Color(UIColor.systemBackground))
+                VStack(spacing: 10) {
+                    Text("ProductListing.Prices.SevenDays")
+                        .font(.system(.footnote, design: .rounded))
+                        .foregroundColor(.darkGrey50)
+                    Text("\(String(format: "%.2f", product.price * 7))€")
+                        .font(.system(.headline, design: .rounded))
+                        .foregroundColor(.accentColor)
+                }
+            }
+        }
+        .frame(height: 80)
+        .padding(.horizontal)
+    }
+
     private var MainInfo: some View {
         HStack {
             VStack(alignment: .leading, spacing: 10) {
-                Text("Casco da sci")
+                Text(product.name)
                     .font(.system(.title, design: .rounded, weight: .bold))
                     .foregroundColor(.darkGrey)
                 Label {
@@ -78,53 +140,7 @@ extension ProductListingView {
         .padding(.horizontal)
     }
     
-    private var Prices: some View {
-        HStack(spacing: 10) {
-            ZStack {
-                RoundedRectangle(cornerRadius: 15)
-                    .stroke(Color.darkGrey25, lineWidth: 1)
-                    .foregroundColor(Color(UIColor.systemBackground))
-                VStack(spacing: 10) {
-                    Text("ProductListing.Prices.OneDay")
-                        .font(.system(.footnote, design: .rounded))
-                        .foregroundColor(.darkGrey50)
-                    Text("15€ al giorno")
-                        .font(.system(.headline, design: .rounded))
-                        .foregroundColor(.accentColor)
-                }
-            }
-            ZStack {
-                RoundedRectangle(cornerRadius: 15)
-                    .stroke(Color.darkGrey25, lineWidth: 1)
-                    .foregroundColor(Color(UIColor.systemBackground))
-                VStack(spacing: 10) {
-                    Text("ProductListing.Prices.ThreeDays")
-                        .font(.system(.footnote, design: .rounded))
-                        .foregroundColor(.darkGrey50)
-                    Text("12€ al giorno")
-                        .font(.system(.headline, design: .rounded))
-                        .foregroundColor(.accentColor)
-                }
-            }
-            ZStack {
-                RoundedRectangle(cornerRadius: 15)
-                    .stroke(Color.darkGrey25, lineWidth: 1)
-                    .foregroundColor(Color(UIColor.systemBackground))
-                VStack(spacing: 10) {
-                    Text("ProductListing.Prices.SevenDays")
-                        .font(.system(.footnote, design: .rounded))
-                        .foregroundColor(.darkGrey50)
-                    Text("10€ al giorno")
-                        .font(.system(.headline, design: .rounded))
-                        .foregroundColor(.accentColor)
-                }
-            }
-        }
-        .frame(height: 80)
-        .padding(.horizontal)
-    }
-    
-    private var MoreInfo: some View {
+    private var GeneralInfo: some View {
         VStack(spacing: 10) {
             // Title
             HStack {
@@ -134,24 +150,18 @@ extension ProductListingView {
                 Spacer()
             }
             HStack {
-                Text("Anno di acquisto")
-                    .font(.system(.caption, design: .rounded))
-                    .foregroundColor(.darkGrey50)
-                Spacer()
-                Text("2021")
-                    .font(.system(.caption, design: .rounded))
+                Text(product.description)
+                    .font(.system(.subheadline, design: .rounded))
                     .foregroundColor(.darkGrey)
-            }
-            HStack {
-                Text("Condizioni")
-                    .font(.system(.caption, design: .rounded))
-                    .foregroundColor(.darkGrey50)
                 Spacer()
-                Text("Buone")
-                    .font(.system(.caption, design: .rounded))
-                    .foregroundColor(.darkGrey)
             }
             Divider()
+        }
+        .padding(.horizontal)
+    }
+    
+    private var Reviews: some View {
+        VStack(spacing: 10) {
             // Title
             HStack {
                 Text("Recensioni")
@@ -231,20 +241,20 @@ extension ProductListingView {
                 }
             }
             Divider()
+        }
+        .padding(.horizontal)
+    }
+    
+    private var Owner: some View {
+        VStack(spacing: 20) {
             // Title
             VStack {
-                HStack {
-                    Text("Proprietario")
-                        .font(.system(.title2, design: .rounded, weight: .bold))
-                        .foregroundColor(.darkGrey)
-                    Spacer()
-                }
                 HStack {
                     Circle()
                         .frame(width: 50)
                         .foregroundColor(.cyan)
                     VStack {
-                        Text("Maurizio")
+                        Text(product.owner)
                             .font(.system(.title2, design: .rounded, weight: .bold))
                             .foregroundColor(.darkGrey)
                     }
@@ -257,7 +267,7 @@ extension ProductListingView {
     
     private var ConfirmButton: some View {
         Button {
-            
+            isPresented = true
         } label: {
             Text("Affitta")
                 .foregroundColor(.white)

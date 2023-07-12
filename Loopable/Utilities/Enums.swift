@@ -10,7 +10,6 @@ import Foundation
 // MARK: Firebase utilities
 enum FirestoreCollection: String {
     case users
-    case productListing = "product_listing"
 }
 
 // MARK: Shared

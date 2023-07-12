@@ -20,7 +20,7 @@ struct StarRating: View {
 
 struct StarRating_Previews: PreviewProvider {
     static var previews: some View {
-        StarRating(rating: 4)
+        StarRating(rating: 5)
     }
 }
 

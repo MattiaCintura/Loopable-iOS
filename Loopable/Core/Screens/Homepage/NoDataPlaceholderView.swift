@@ -16,7 +16,7 @@ struct NoDataPlaceholderView: View {
                 .resizable()
                 .scaledToFit()
                 .frame(height: 200)
-            Text("Homepage.NoData \(searchQuery)")
+            Text("Homepage.NoData")
                 .foregroundColor(.darkGrey)
                 .font(.system(.body, design: .rounded))
         }

@@ -8,30 +8,14 @@
 import SwiftUI
 
 struct HomepageScreen: View {
-    @State private var searchQuery: String = ""
-    @State private var resultList: Array<String> = []
-    
-    @State private var isSearching = false
-    @State private var isLoading = false
-    
-    private var displayMode: HomepageState {
-        if isSearching == true && isLoading == false && resultList.count >= 1 {
-            return .result
-        } else if isSearching == true && isLoading == true && resultList.isEmpty {
-            return .loading
-        } else if isSearching == true && isLoading == false && resultList.isEmpty {
-            return .noData
-        } else {
-            return .normal
-        }
-    }
+    @StateObject private var vm = HomepageScreenViewModel()
 
     var body: some View {
         NavigationStack {
             ScrollView {
                 SearchField
                 
-                switch displayMode {
+                switch vm.displayMode {
                 case .normal:
                     HomepageView()
                         .transition(.opacity)
@@ -39,12 +23,10 @@ struct HomepageScreen: View {
                     SearchLoadingPlaceholderView()
                         .transition(.opacity)
                 case .result:
-                    ForEach(resultList, id: \.self) { product in
-                        
-                    }
-                    .transition(.opacity)
+                    SearchResultView(resultList: vm.resultList)
+                        .transition(.opacity)
                 case .noData:
-                    NoDataPlaceholderView(searchQuery: searchQuery)
+                    NoDataPlaceholderView(searchQuery: vm.searchQuery)
                         .transition(.opacity)
                 }
             }
@@ -73,23 +55,60 @@ struct HomepageScreen_Previews: PreviewProvider {
 
 extension HomepageScreen {
     private var SearchField: some View {
-        ZStack {
-            RoundedRectangle(cornerRadius: 30)
-                .frame(height: 50)
-                .foregroundColor(Color(UIColor.systemBackground))
-                .shadow(color: .darkGrey.opacity(0.25), radius: 4)
-            
-            HStack {
-                Image(systemName: "magnifyingglass")
-                    .foregroundColor(.darkGrey)
+        VStack {
+            ZStack {
+                RoundedRectangle(cornerRadius: 30)
+                    .frame(height: 50)
+                    .foregroundColor(Color(UIColor.systemBackground))
+                    .shadow(color: .darkGrey.opacity(0.25), radius: 4)
+                
+                HStack {
+                    Image(systemName: "magnifyingglass")
+                        .foregroundColor(.darkGrey)
+                    
+                    TextField("Homepage.SearchFieldPlaceholder", text: $vm.searchQuery)
+                        .submitLabel(.search)
+                        .onSubmit {
+                            Task {
+                                await vm.filterListBySearchQuery() 
+                            }
+                        }
+                    
+                    Spacer()
 
-                TextField("Homepage.SearchFieldPlaceholder", text: $searchQuery)
-                    .submitLabel(.search)
-                    .onSubmit {
-                        print(searchQuery)
+                    if !vm.searchQuery.isEmpty {
+                        Button {
+                            vm.cancelSearch()
+                        } label: {
+                            Image(systemName: "xmark")
+                                .foregroundColor(.darkGrey)
+                        }
                     }
+                }
+                .padding()
             }
-            .padding()
+            
+            if !(vm.displayMode == .normal) {
+                HStack {
+                    Menu {
+                        ForEach(ProvinceOfItaly.allCases, id: \.self) { item in
+                            Button(item.rawValue) {
+                                vm.filterArea = item.rawValue
+                            }
+                        }
+                    } label: {
+                        Label {
+                            Text("SearchResult.Location \(vm.filterArea ?? ProvinceOfItaly.milano.rawValue)")
+                                .foregroundColor(.darkGrey)
+                        } icon: {
+                            Image(systemName: "location.circle.fill")
+                                .foregroundColor(.accentColor)
+                        }
+                        .font(.system(.subheadline, design: .rounded, weight: .bold))
+                    }
+
+                }
+            }
         }
         .padding(.horizontal)
         .padding(.bottom)
